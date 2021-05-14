@@ -12,6 +12,7 @@ const destDirs = {
 };
 
 const gulp = require("gulp");
+const browserSync = require("browser-sync").create();
 const favicons = require("gulp-favicons");
 const postcss = require("gulp-postcss");
 const cleancss = require("gulp-clean-css");
@@ -88,11 +89,36 @@ gulp.task("theme:postcss:compile", function () {
     .pipe(gulp.dest(destDir("theme")));
 });
 
+gulp.task("watch", function () {
+  browserSync.init({
+    proxy: "localhost:8000",
+    notify: false,
+  });
+
+  gulp
+    .watch("src/theme/assets/js/**/*.js", gulp.series(["theme:js:copy"]))
+    .on("change", browserSync.reload);
+
+  gulp
+    .watch(
+      "src/theme/assets/css/**/*.css",
+      gulp.series(["theme:postcss:compile"])
+    )
+    .on("change", browserSync.reload);
+
+  gulp
+    .watch("src/theme/**/*.php", gulp.series(["theme:copy"]))
+    .on("change", browserSync.reload);
+});
+
 gulp.task("dev", (done) => {
   process.env.NODE_ENV = "development";
-  return gulp.series(["theme:copy", "theme:postcss:compile", "theme:favicons"])(
-    done
-  );
+  return gulp.series([
+    "theme:copy",
+    "theme:postcss:compile",
+    "theme:favicons",
+    "watch",
+  ])(done);
 });
 
 gulp.task("build", (done) => {

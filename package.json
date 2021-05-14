@@ -1,0 +1,26 @@
+{
+  "name": "zoff-ljs-wp",
+  "version": "1.0.0",
+  "description": "WP theme for Linksjugend ['solid] based on design by Zoff Kollektiv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlmn/zoff-ljs-wp.git"
+  },
+  "author": "tlmn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlmn/zoff-ljs-wp/issues"
+  },
+  "homepage": "https://github.com/tlmn/zoff-ljs-wp#readme",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.16.3",
+    "gulp": "^4.0.2",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0"
+  }
+}

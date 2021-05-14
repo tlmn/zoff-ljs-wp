@@ -1,0 +1,33 @@
+h1 {
+  @apply font-gilroy text-2xl leading-snug italic font-black;
+}
+
+h2 {
+  @apply font-gilroy text-2xl leading-snug italic font-black;
+}
+
+h3 {
+  @apply font-gilroy text-2xl leading-snug italic font-black;
+}
+
+p {
+  @apply font-hind text-lg font-normal leading-wider;
+}
+
+@screen md {
+  h1 {
+    @apply font-gilroy text-9xl leading-sm italic font-black;
+  }
+
+  h2 {
+    @apply font-gilroy text-2xl leading-snug italic font-black;
+  }
+
+  h3 {
+    @apply font-gilroy text-2xl leading-snug italic font-black;
+  }
+
+  p {
+    @apply font-hind text-lg font-normal leading-wider;
+  }
+}

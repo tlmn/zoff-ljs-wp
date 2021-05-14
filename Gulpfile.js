@@ -133,7 +133,6 @@ gulp.task("dev", (done) => {
   return gulp.series([
     "theme:copy",
     "theme:postcss:compile",
-    "theme:favicons",
     "plugin:copy",
     "watch",
   ])(done);

@@ -19,11 +19,15 @@
   "homepage": "https://github.com/tlmn/zoff-ljs-wp#readme",
   "devDependencies": {
     "@prettier/plugin-php": "^0.16.3",
+    "autoprefixer": "^10.2.5",
     "gulp": "^4.0.2",
     "gulp-favicons": "^3.0.0",
     "gulp-run-command": "^0.0.10",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
+    "postcss": "^8.2.15",
+    "postcss-import": "^14.0.2",
+    "postcss-nesting": "^8.0.1",
     "prettier": "^2.3.0",
     "tailwindcss": "^2.1.2"
   },

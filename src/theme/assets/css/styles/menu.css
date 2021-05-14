@@ -1,0 +1,41 @@
+ul.menu {
+  @apply m-0 p-0;
+  & li {
+    @apply flex;
+    & a {
+      @apply animated;
+      @apply w-full;
+      @apply flex justify-center;
+      @apply py-5;
+      @apply font-bold text-lg uppercase;
+      &:hover {
+        box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+  &.primary_menu li {
+    & a {
+      @apply text-white;
+    }
+  }
+}
+
+@screen md {
+  ul.menu {
+    @apply flex;
+    & li {
+      @apply whitespace-nowrap;
+      & a {
+        @apply w-full;
+        @apply flex justify-center;
+        @apply py-3 px-5;
+        @apply font-bold text-sm uppercase;
+      }
+    }
+    &.primary_menu li {
+      & a {
+        @apply text-white;
+      }
+    }
+  }
+}

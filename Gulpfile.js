@@ -13,9 +13,12 @@ const destDirs = {
 
 const gulp = require("gulp");
 const favicons = require("gulp-favicons");
+const run = require("gulp-run-command").default;
 
 const destDir = (type, append = "") =>
   destDirs[type][process.env.NODE_ENV] + append;
+
+gulp.task("distDir:clean", run("rm -rf ./dist"));
 
 gulp.task("theme:copy", () => {
   return gulp
@@ -61,5 +64,5 @@ gulp.task("dev", (done) => {
 
 gulp.task("build", (done) => {
   process.env.NODE_ENV = "production";
-  return gulp.series(["theme:copy", "theme:favicons"])(done);
+  return gulp.series(["distDir:clean", "theme:copy", "theme:favicons"])(done);
 });

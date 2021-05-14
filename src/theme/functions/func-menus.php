@@ -1,4 +1,5 @@
 <?php
+
 function register_menu($locations = array())
 {
     global $_wp_registered_nav_menus;

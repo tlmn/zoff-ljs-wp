@@ -5,7 +5,7 @@ import generateSrcSet, {
   getSecondaryColorValue,
 } from "../../lib/lib";
 
-import ColorThemesSelect from "../../inspector/colorthemeselect";
+import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import Logo from "../../assets/svg/logo";
 
 const { registerBlockType } = window.wp.blocks;
@@ -45,7 +45,7 @@ const BlockEdit = (props) => {
     <>
       <InspectorControls>
         <PanelBody title={__("Farbschema wählen")} initialOpen={true}>
-          <ColorThemesSelect
+          <ColorThemeSelector
             attributes={attributes}
             setAttributes={setAttributes}
           />

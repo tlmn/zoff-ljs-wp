@@ -5,6 +5,7 @@ module.exports = {
       "./src/**/*.jsx",
       "./src/**/*.ts",
       "./src/**/*.tsx",
+      "./src/**/*.php",
     ],
     options: {
       whitelistPatterns: [/text.*$/],

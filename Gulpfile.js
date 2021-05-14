@@ -13,6 +13,8 @@ const destDirs = {
 
 const gulp = require("gulp");
 const favicons = require("gulp-favicons");
+const postcss = require("gulp-postcss");
+const cleancss = require("gulp-clean-css");
 const run = require("gulp-run-command").default;
 
 const destDir = (type, append = "") =>
@@ -63,12 +65,42 @@ gulp.task("theme:js:copy", function () {
     .pipe(gulp.dest(destDir("theme", "assets/js")));
 });
 
+gulp.task("theme:postcss:compile", function () {
+  const config = (file) => ({
+    plugins: [
+      require("postcss-import")({ root: file.dirname }),
+      require("postcss-nesting"),
+    ],
+  });
+
+  return gulp
+    .src("src/theme/assets/css/style.css")
+    .pipe(postcss(config))
+    .pipe(
+      postcss([
+        require("tailwindcss"),
+        require("postcss-import"),
+        require("tailwindcss"),
+        require("autoprefixer"),
+      ])
+    )
+    .pipe(cleancss())
+    .pipe(gulp.dest(destDir("theme")));
+});
+
 gulp.task("dev", (done) => {
   process.env.NODE_ENV = "development";
-  return gulp.series(["theme:copy", "theme:favicons"])(done);
+  return gulp.series(["theme:copy", "theme:postcss:compile", "theme:favicons"])(
+    done
+  );
 });
 
 gulp.task("build", (done) => {
   process.env.NODE_ENV = "production";
-  return gulp.series(["distDir:clean", "theme:copy", "theme:favicons"])(done);
+  return gulp.series([
+    "distDir:clean",
+    "theme:copy",
+    "theme:postcss:compile",
+    "theme:favicons",
+  ])(done);
 });

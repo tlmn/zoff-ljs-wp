@@ -1,16 +1,16 @@
 module.exports = {
-  purge: {
-    content: [
-      "./src/**/*.js",
-      "./src/**/*.jsx",
-      "./src/**/*.ts",
-      "./src/**/*.tsx",
-      "./src/**/*.php",
-    ],
-    options: {
-      whitelistPatterns: [/text.*$/],
-    },
-  },
+  // purge: {
+  //   content: [
+  //     "./src/**/*.js",
+  //     "./src/**/*.jsx",
+  //     "./src/**/*.ts",
+  //     "./src/**/*.tsx",
+  //     "./src/**/*.php",
+  //   ],
+  //   options: {
+  //     whitelistPatterns: [/text.*$/],
+  //   },
+  // },
   theme: {
     fontFamily: {
       gilroy: ["Gilroy", "Helvetica", "Arial", "sans-serif"],

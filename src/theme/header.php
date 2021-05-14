@@ -16,23 +16,3 @@
 </head>
 
 <body class="<?php print join(' ', get_body_class()); ?>'">
-
-	<div class="header">
-		<a class="text-white sm:text-<?php if ($themeColor === 'white') { ?>red<?php } else { print $themeColor; } ?> text-6xl font-bold z-50" href="<?php echo get_home_url(); ?>" id="zoff-link">zoff</a>
-		<div class="absolute w-full h-full z-40" id="hamburger-wrapper">
-			<div class="w-full h-full absolute top-0 flex justify-center items-center">
-				<a class="hidden text-white text-6xl font-bold z-50" id="menu-start" href="<?php echo get_home_url(); ?>">Start</a>
-			</div>
-			<div class="w-full h-full absolute top-0 flex justify-end items-center / pr-2">
-				<button class="hamburger hamburger--squeeze hamburger--<?php if ($themeColor === 'white') { ?>red<?php } else { print $themeColor; } ?>" type="button" id="hamburger">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
-		</div>
-		<div class="w-screen h-screen bg-<?php if ($themeColor === 'white') { ?>red<?php } else { print $themeColor; } ?> hidden fixed z-40 top-0 justify-center items-center transition-all duration-200 ease-in-out" id="menu-overlay">
-			<?php wp_nav_menu(array('theme_location' => 'menu-navigation')); ?>
-		</div>
-	</div>
-	<div class="menu-shadow hidden sm:block"></div>

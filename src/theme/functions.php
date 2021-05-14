@@ -20,3 +20,4 @@ add_action("after_setup_theme", "wp_register_menus", 0);
 
 // LOAD STYLES
 add_action("wp_enqueue_scripts", "load_theme_styles");
+add_action("after_setup_theme", "load_editor_styles");

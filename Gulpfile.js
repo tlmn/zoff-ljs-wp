@@ -89,6 +89,19 @@ gulp.task("theme:postcss:compile", function () {
     .pipe(gulp.dest(destDir("theme")));
 });
 
+gulp.task("plugin:copy", function () {
+  return gulp
+    .src(["src/plugin/index.php", "src/plugin/assets/**/*"])
+    .pipe(gulp.dest(destDir("plugin")));
+});
+
+gulp.task(
+  "plugin:compile",
+  run(
+    "wp-scripts build ./src/plugin/index.js --output ./dist/plugins/ljs-blocks/index.js"
+  )
+);
+
 gulp.task("watch", function () {
   browserSync.init({
     proxy: "localhost:8000",
@@ -117,6 +130,7 @@ gulp.task("dev", (done) => {
     "theme:copy",
     "theme:postcss:compile",
     "theme:favicons",
+    "plugin:copy",
     "watch",
   ])(done);
 });
@@ -128,5 +142,7 @@ gulp.task("build", (done) => {
     "theme:copy",
     "theme:postcss:compile",
     "theme:favicons",
+    "plugin:compile",
+    "plugin:copy",
   ])(done);
 });

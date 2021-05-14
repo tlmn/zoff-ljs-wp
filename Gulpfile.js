@@ -122,6 +122,10 @@ gulp.task("watch", function () {
   gulp
     .watch("src/theme/**/*.php", gulp.series(["theme:copy"]))
     .on("change", browserSync.reload);
+
+  gulp
+    .watch("src/plugin/**/*.php", gulp.series(["plugin:copy"]))
+    .on("change", browserSync.reload);
 });
 
 gulp.task("dev", (done) => {

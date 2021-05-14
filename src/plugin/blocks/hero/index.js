@@ -1,4 +1,5 @@
-import generateSrcSet, {
+import {
+  generateSrcSet,
   getPrimaryColorName,
   getPrimaryColorValue,
   getSecondaryColorName,

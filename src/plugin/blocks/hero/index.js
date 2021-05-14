@@ -16,6 +16,7 @@ const {
   MediaUploadCheck,
   RichText,
   useBlockProps,
+  BlockToolbar,
 } = window.wp.blockEditor;
 
 const { PanelBody, Button, ResponsiveWrapper, FormToggle } =
@@ -44,6 +45,7 @@ const BlockEdit = (props) => {
 
   return (
     <>
+      <BlockToolbar></BlockToolbar>
       <InspectorControls>
         <PanelBody title={__("Farbschema wählen")} initialOpen={true}>
           <ColorThemeSelector

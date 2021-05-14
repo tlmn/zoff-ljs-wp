@@ -98,7 +98,7 @@ gulp.task("plugin:copy", function () {
 gulp.task(
   "plugin:compile",
   run(
-    "wp-scripts build ./src/plugin/index.js --output ./dist/plugins/ljs-blocks/index.js"
+    "wp-scripts build ./src/plugin/index.js --output ./dist/plugin/ljs-blocks/index.js"
   )
 );
 

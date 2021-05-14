@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "build": "wp-scripts build ./src/plugin/index.js --output ./dist/plugins/ljs-blocks/index.js",
+    "build": "wp-scripts build ./src/plugin/index.js --output ./dist/plugin/ljs-blocks/index.js",
     "dev:watch": "wp-scripts start ./src/plugin/index.js --output ./wp-content/plugins/ljs-blocks/index.js -w"
   },
   "repository": {

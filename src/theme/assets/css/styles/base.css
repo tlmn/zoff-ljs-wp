@@ -1,4 +1,4 @@
 *,
 body {
-  @apply font-gilroy;
+  @apply font-gilroy text-black;
 }

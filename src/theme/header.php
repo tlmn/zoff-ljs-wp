@@ -1,12 +1,3 @@
-<?php
-global $post, $themeColor;
-if (get_field('themeColor', $post->ID)) {
-	$themeColor = get_field('themeColor', $post->ID);
-} else {
-	$themeColor = 'red';
-}
-?>
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
 

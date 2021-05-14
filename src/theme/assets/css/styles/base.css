@@ -2,3 +2,9 @@
 body {
   @apply font-gilroy text-black;
 }
+
+@layer utilities {
+  .animated {
+    @apply transition-all ease-in-out duration-200;
+  }
+}

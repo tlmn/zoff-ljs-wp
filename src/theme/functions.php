@@ -2,6 +2,7 @@
 
 include("functions/func-custom-post-types.php");
 include("functions/func-menus.php");
+include("functions/func-scripts.php");
 include("functions/func-styles.php");
 include("functions/func-taxonomies.php");
 
@@ -17,7 +18,10 @@ add_action("init", "custom_post_type_termin");
 // REGISTER MENUS
 add_action("after_setup_theme", "wp_register_menus", 0);
 
-
 // LOAD STYLES
 add_action("wp_enqueue_scripts", "load_theme_styles");
 add_action("after_setup_theme", "load_editor_styles");
+
+// LOAD SCRIPTS
+add_action("wp_enqueue_scripts", "scripts_jquery");
+add_action("wp_enqueue_scripts", "scripts_custom");

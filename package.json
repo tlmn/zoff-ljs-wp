@@ -36,5 +36,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "tailwindcss-hyphens": "^0.1.0"
   }
 }

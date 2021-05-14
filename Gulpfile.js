@@ -57,6 +57,12 @@ gulp.task("theme:favicons", function () {
     .pipe(gulp.dest(destDir("theme", "manifest")));
 });
 
+gulp.task("theme:js:copy", function () {
+  return gulp
+    .src(["src/theme/assets/js/**/*.js"])
+    .pipe(gulp.dest(destDir("theme", "assets/js")));
+});
+
 gulp.task("dev", (done) => {
   process.env.NODE_ENV = "development";
   return gulp.series(["theme:copy", "theme:favicons"])(done);

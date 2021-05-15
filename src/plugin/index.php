@@ -41,5 +41,12 @@ function ljs_block_category($categories, $post)
         )
     );
 }
+
+function expose_plugin_dir_url()
+{
+    wp_localize_script('ljs-editor-script', 'ljsBlocks', array('pluginURL' => plugin_dir_url(__FILE__)));
+}
+
 add_filter('block_categories', 'ljs_block_category', 10, 2);
 add_action('init', 'ljs_blocks');
+add_action('admin_init', 'expose_plugin_dir_url');

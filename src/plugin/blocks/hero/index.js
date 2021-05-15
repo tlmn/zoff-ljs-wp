@@ -26,12 +26,7 @@ const BlockEdit = (props) => {
     <>
       <BlockToolbar></BlockToolbar>
       <InspectorControls>
-        <PanelBody title={__("Farbschema wählen")} initialOpen={true}>
-          <ColorThemeSelector
-            attributes={attributes}
-            setAttributes={setAttributes}
-          />
-        </PanelBody>
+        <ColorThemeSelector {...props} />
 
         <ImageSelector {...props} />
 

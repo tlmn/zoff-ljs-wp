@@ -1,6 +1,6 @@
-import { corporateThemes, secondaryThemes } from "../config";
+import { corporateThemes, secondaryThemes } from "../../config";
 
-import ColorThemeOption from "./colorThemeOption";
+import ColorThemeOption from "../colorThemeOption";
 import React from "react";
 
 const { PanelBody } = window.wp.components;

@@ -1,15 +1,15 @@
-import black_green from "../assets/colorThemes/black_green.png";
-import black_red from "../assets/colorThemes/black_red.png";
-import black_white from "../assets/colorThemes/black_white.png";
-import green from "../assets/colorThemes/green.png";
-import green_black from "../assets/colorThemes/green_black.png";
-import purple from "../assets/colorThemes/purple.png";
-import purple_red from "../assets/colorThemes/purple_red.png";
-import red from "../assets/colorThemes/red.png";
-import red_black from "../assets/colorThemes/red_black.png";
-import red_purple from "../assets/colorThemes/red_purple.png";
-import red_white from "../assets/colorThemes/red_white.png";
-import white_red from "../assets/colorThemes/white_red.png";
+import black_green from "../../assets/colorThemes/black_green.png";
+import black_red from "../../assets/colorThemes/black_red.png";
+import black_white from "../../assets/colorThemes/black_white.png";
+import green from "../../assets/colorThemes/green.png";
+import green_black from "../../assets/colorThemes/green_black.png";
+import purple from "../../assets/colorThemes/purple.png";
+import purple_red from "../../assets/colorThemes/purple_red.png";
+import red from "../../assets/colorThemes/red.png";
+import red_black from "../../assets/colorThemes/red_black.png";
+import red_purple from "../../assets/colorThemes/red_purple.png";
+import red_white from "../../assets/colorThemes/red_white.png";
+import white_red from "../../assets/colorThemes/white_red.png";
 
 export default ({ theme, ...props }) => {
   const { attributes, setAttributes } = props;

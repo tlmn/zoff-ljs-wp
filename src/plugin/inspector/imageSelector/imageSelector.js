@@ -1,4 +1,4 @@
-import { generateSrcSet } from "../lib/lib";
+import { generateSrcSet } from "../../lib/lib";
 
 const { MediaUpload, MediaUploadCheck } = window.wp.blockEditor;
 

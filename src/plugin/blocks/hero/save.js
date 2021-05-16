@@ -12,7 +12,7 @@ const { __ } = window.wp.i18n;
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-hero-block" });
+  const blockProps = useBlockProps.save({ className: "ljs-hero__wrapper" });
   const { attributes } = props;
   return (
     <div {...blockProps}>
@@ -36,7 +36,6 @@ export default (props) => {
           <div className="ljs-hero__rotation-outer-wrapper">
             <div className="ljs-hero__rotation-inner-wrapper">
               <RichText.Content
-                {...blockProps}
                 value={attributes.title}
                 tagName="h2"
                 className={`ljs-hero__subline text-${getPrimaryColorName(

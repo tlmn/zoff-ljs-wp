@@ -1,0 +1,17 @@
+.block-editor-block-toolbar {
+  @apply absolute;
+}
+
+.block-editor-button-block-appender {
+  @apply relative;
+  @apply bg-green;
+}
+
+.block-editor-button-block-appender > svg {
+  @apply absolute;
+  @apply top-0 left-0;
+}
+
+.block-editor-button-block-appender > svg > path {
+  fill: theme("colors.green");
+}

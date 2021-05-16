@@ -14,7 +14,7 @@ export default () => {
     <>
       <BlockToolbar></BlockToolbar>
 
-      <div {...blockProps} className="container">
+      <div {...blockProps}>
         <div className="ljs-grid">
           <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
         </div>

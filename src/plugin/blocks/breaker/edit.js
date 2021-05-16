@@ -13,7 +13,7 @@ export default (props) => {
     className: `ljs-breaker bg-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 
-  const ALLOWED_BLOCKS = ["core/heading", "core/button"];
+  const ALLOWED_BLOCKS = ["core/heading", "ljs/button"];
   const TEMPLATE = [
     [
       "core/heading",
@@ -29,12 +29,7 @@ export default (props) => {
         level: 1,
       },
     ],
-    [
-      "core/button",
-      {
-        placeholder: "Jetzt Mitglied werden",
-      },
-    ],
+    ["ljs/button"],
   ];
 
   return (

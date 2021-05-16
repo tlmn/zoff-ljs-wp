@@ -1,6 +1,7 @@
 .ljs-hero__wrapper {
   @apply max-h-screen;
   @apply h-screen;
+  @apply relative;
 }
 
 .ljs-hero__background {

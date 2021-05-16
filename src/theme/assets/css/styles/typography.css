@@ -23,7 +23,7 @@ p {
   }
 
   h2 {
-    @apply font-gilroy text-2xl leading-snug italic font-black;
+    @apply font-gilroy text-5xl leading-snug italic font-black;
   }
 
   h3 {

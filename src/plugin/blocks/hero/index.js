@@ -21,7 +21,6 @@ registerBlockType("ljs/hero", {
     },
     title: {
       type: "string",
-      source: "html",
     },
     logoHide: {
       type: "boolean",

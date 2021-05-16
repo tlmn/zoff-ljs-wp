@@ -1,0 +1,11 @@
+.ljs-intro-text__body {
+  @apply my-7;
+  @apply text-lg font-gilroy font-semibold leading-wider;
+}
+
+@screen md {
+  .ljs-intro-text__body {
+    @apply my-9;
+    @apply text-3xl;
+  }
+}

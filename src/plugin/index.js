@@ -1,4 +1,5 @@
 import "./lib/unregisterBlockStyles";
+import "./blocks/button";
 import "./blocks/hero";
 import "./blocks/intro-text";
 import "./blocks/tiles/container";

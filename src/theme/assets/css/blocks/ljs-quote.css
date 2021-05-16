@@ -1,0 +1,33 @@
+.ljs-quote__image {
+  @apply object-cover w-full h-full absolute top-0 left-0 border-0;
+  @apply image-bw;
+}
+
+.ljs-quote__image-wrapper {
+  @apply col-span-full;
+  @apply ratio--1-1;
+  @apply relative;
+}
+
+.ljs-quote__content-wrapper {
+  @apply col-span-full;
+  @apply flex items-center;
+  @apply px-5;
+}
+
+.ljs-quote__content-body {
+  @apply font-gilroy italic font-black text-2xl;
+}
+
+@screen md {
+  .ljs-quote__image-wrapper,
+  .ljs-quote__content-wrapper {
+    @apply col-span-6;
+  }
+  .ljs-quote__content-wrapper {
+    @apply px-9;
+  }
+  .ljs-quote__content-body {
+    @apply text-3xl;
+  }
+}

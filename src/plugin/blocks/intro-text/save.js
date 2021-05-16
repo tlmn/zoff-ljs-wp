@@ -12,14 +12,14 @@ export default (props) => {
   return (
     <div
       {...blockProps}
-      className={`bg-${getPrimaryColorName(attributes.colorTheme)}`}
+      className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
     >
       <div className="container ljs-grid">
         <div className="col-span-10 col-start-2">
           <RichText.Content
             value={attributes.body}
             tagName="p"
-            className={`text-${getSecondaryColorName(
+            className={`text-${getPrimaryColorName(
               attributes.colorTheme
             )} ljs-intro-text__body`}
           />

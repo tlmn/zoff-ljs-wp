@@ -23,7 +23,7 @@ export default (props) => {
 
       <div
         {...blockProps}
-        className={`bg-${getPrimaryColorName(attributes.colorTheme)}`}
+        className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
       >
         <div className="container ljs-grid">
           <div className="col-span-10 col-start-2">
@@ -31,7 +31,7 @@ export default (props) => {
               value={attributes.body}
               allowedFormats={[]}
               tagName="p"
-              className={`text-${getSecondaryColorName(
+              className={`text-${getPrimaryColorName(
                 attributes.colorTheme
               )} ljs-intro-text__body`}
               onChange={(body) => setAttributes({ body })}

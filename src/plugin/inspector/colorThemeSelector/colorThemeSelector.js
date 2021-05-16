@@ -8,11 +8,13 @@ const { __ } = window.wp.i18n;
 
 export default (props) => (
   <PanelBody title={__("Farbschema wählen")} initialOpen={true}>
-    <span className="font-bold block">Hauptfarben</span>
+    <span style={{ display: "block", fontWeight: "bold" }}>Hauptfarben</span>
     {corporateThemes.map((theme) => (
       <ColorThemeOption theme={theme} {...props} />
     ))}
-    <span className="font-bold block mt-2">Geht auch...</span>
+    <span style={{ display: "block", fontWeight: "bold", marginTop: "1rem" }}>
+      Geht auch...
+    </span>
     {secondaryThemes.map((theme) => (
       <ColorThemeOption theme={theme} {...props} />
     ))}

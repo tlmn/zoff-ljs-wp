@@ -13,4 +13,28 @@ body {
   .image-bw {
     filter: grayscale(100%);
   }
+
+  .ratio--1-1 {
+    padding-top: 100%;
+  }
+
+  .ratio--2-1 {
+    padding-top: calc(1 / 2 * 100%);
+  }
+
+  .ratio--3-2 {
+    padding-top: calc(2 / 3 * 100%);
+  }
+
+  .ratio--16-9 {
+    padding-top: calc(9 / 16 * 100%);
+  }
+
+  .box-shadow--5 {
+    box-shadow: 5px 5px 0px 0px;
+  }
+
+  .box-shadow--10 {
+    box-shadow: 10px 10px 0px 0px;
+  }
 }

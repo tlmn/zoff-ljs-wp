@@ -17,7 +17,6 @@ export default (props) => {
   };
 
   const onSelectMedia = (media) => {
-    console.log(media);
     setAttributes({
       mediaId: media.id,
       mediaSrcSet: generateSrcSet(media.sizes),

@@ -6,8 +6,10 @@ export default () => {
   const blockProps = useBlockProps.save({ className: "ljs-tiles-container" });
 
   return (
-    <div {...blockProps} className="container ljs-grid">
-      <InnerBlocks.Content />
+    <div {...blockProps} className="container">
+      <div className="ljs-grid">
+        <InnerBlocks.Content />
+      </div>
     </div>
   );
 };

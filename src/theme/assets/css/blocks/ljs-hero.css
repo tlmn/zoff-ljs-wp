@@ -1,0 +1,53 @@
+.ljs-hero__wrapper {
+  @apply max-h-screen;
+  @apply h-screen;
+}
+
+.ljs-hero__background {
+  @apply object-cover w-full h-full absolute top-0 left-0 border-0;
+  filter: grayscale(100%);
+  object-position: 50% 20%;
+}
+
+.ljs-hero__overlay-wrapper {
+  @apply absolute top-0 left-0 h-full w-full z-10;
+  @apply flex flex-col items-center justify-center;
+}
+
+.ljs-hero__logo {
+  @apply mb-2;
+  @apply hidden;
+}
+
+.ljs-hero__rotation-inner-wrapper {
+  max-width: 60vw;
+  transform: rotate(-5deg);
+}
+
+.ljs-hero__rotation-outer-wrapper {
+  @apply table;
+}
+.ljs-hero__subline {
+  @apply z-20 relative;
+  @apply py-2 px-3;
+  @apply font-black uppercase italic leading-snug text-center;
+  @apply text-base tracking-tight;
+  @apply box-clone;
+  @apply inline;
+  line-height: 2.2;
+}
+
+@screen md {
+  .ljs-hero__subline {
+    @apply text-xl;
+  }
+  .ljs-hero__logo {
+    @apply block;
+  }
+}
+
+@screen lg {
+  .ljs-hero__subline {
+    @apply text-2xl;
+  }
+}

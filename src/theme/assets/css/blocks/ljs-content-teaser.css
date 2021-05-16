@@ -1,0 +1,43 @@
+.ljs-content-teaser {
+  @apply py-7;
+}
+
+.ljs-content-teaser-column-title,
+.ljs-content-teaser-column-body {
+  @apply col-span-full;
+  @apply flex flex-col justify-center items-center;
+}
+
+.ljs-content-teaser-column-title p {
+  @apply uppercase font-gilroy;
+}
+
+.ljs-content-teaser-column-title__wrapper {
+  transform: rotate(-5deg);
+  @apply text-center;
+}
+
+.ljs-content-teaser .block-editor-block-list__layout {
+  @apply ljs-grid;
+}
+
+.ljs-content-teaser .block-editor-inner-blocks {
+  @apply col-span-full;
+}
+
+.ljs-content-teaser-column-title .block-editor-block-list__layout,
+.ljs-content-teaser-column-body .block-editor-block-list__layout {
+  display: block !important;
+}
+
+@screen md {
+  .ljs-content-teaser-column-title,
+  .ljs-content-teaser-column-body {
+    @apply col-span-6;
+    @apply block;
+  }
+
+  .ljs-content-teaser-column-title__wrapper {
+    @apply text-left;
+  }
+}

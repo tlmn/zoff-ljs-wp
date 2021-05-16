@@ -30,7 +30,7 @@ export default ({ theme, ...props }) => {
   };
 
   return (
-    <div className="inline-block">
+    <div style={{ display: "inline-block" }}>
       <input
         type="radio"
         name="colorTheme"
@@ -41,10 +41,14 @@ export default ({ theme, ...props }) => {
       />
       <label htmlFor={theme}>
         <div
-          className={`${theme} colorTheme__thumbnail ${
-            theme === attributes.colorTheme &&
-            `colorTheme__thumbnail--is-active`
-          }`}
+          style={{
+            width: "3rem",
+            height: "3rem",
+            border:
+              theme === attributes.colorTheme
+                ? `3px black solid`
+                : `3px transparent solid`,
+          }}
         >
           <img
             src={`${window.ljsBlocks.pluginURL}${colorThemeThumbnails[theme]}`}

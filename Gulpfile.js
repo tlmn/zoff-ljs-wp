@@ -128,7 +128,10 @@ gulp.task("watch", function () {
     .on("change", browserSync.reload);
 
   gulp
-    .watch("src/plugin/**/*.php", gulp.series(["plugin:copy"]))
+    .watch(
+      ["src/plugin/**/*.php", "src/plugin/**/*.png"],
+      gulp.series(["plugin:copy"])
+    )
     .on("change", browserSync.reload);
 });
 

@@ -10,4 +10,7 @@ body {
   .box-clone {
     box-decoration-break: clone;
   }
+  .image-bw {
+    filter: grayscale(100%);
+  }
 }

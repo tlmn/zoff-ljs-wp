@@ -14,7 +14,11 @@ export default (props) => {
       className={`ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`}
     >
       <div className="container ljs-grid">
-        <div className="ljs-quote__image-wrapper">
+        <div
+          className={`ljs-quote__image-wrapper ${
+            attributes.imageColumnPosition === "left" ? `` : `order-last`
+          }`}
+        >
           <img
             srcSet={
               attributes.mediaId != 0

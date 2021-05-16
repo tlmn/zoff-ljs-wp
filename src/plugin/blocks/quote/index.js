@@ -18,6 +18,10 @@ registerBlockType("ljs/quote-with-image", {
       type: "string",
       default: "",
     },
+    imageColumnPosition: {
+      type: "string",
+      default: "left",
+    },
     body: {
       type: "string",
     },

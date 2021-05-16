@@ -4,6 +4,7 @@ import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import ImageSelector from "../../inspector/imageSelector";
 
 const { InspectorControls, RichText, BlockToolbar } = window.wp.blockEditor;
+const { PanelBody, FormToggle } = window.wp.components;
 
 const { __ } = window.wp.i18n;
 
@@ -15,6 +16,29 @@ export default (props) => {
       <BlockToolbar />
 
       <InspectorControls>
+        <PanelBody title={__("Bild-Position")} initialOpen={false}>
+          <div className="flex items-center">
+            <FormToggle
+              label={__("Bild-Position")}
+              help={
+                attributes.imageColumnPosition === "left" ? "links" : "rechts"
+              }
+              checked={attributes.imageColumnPosition === "left" ? true : false}
+              onChange={() =>
+                setAttributes({
+                  imageColumnPosition:
+                    attributes.imageColumnPosition === "left"
+                      ? "right"
+                      : "left",
+                })
+              }
+              id="imageColumnPosition-toggle"
+            />
+            <label htmlFor="imageColumnPosition-toggle" className="ml-2">
+              {__("Bild links")}
+            </label>
+          </div>
+        </PanelBody>
         <ColorThemeSelector {...props} />
         <ImageSelector {...props} />
       </InspectorControls>
@@ -25,7 +49,11 @@ export default (props) => {
         )}`}
       >
         <div className="container ljs-grid">
-          <div className="ljs-quote__image-wrapper">
+          <div
+            className={`ljs-quote__image-wrapper ${
+              attributes.imageColumnPosition === "left" ? `` : `order-last`
+            }`}
+          >
             <img
               srcSet={
                 attributes.mediaId != 0

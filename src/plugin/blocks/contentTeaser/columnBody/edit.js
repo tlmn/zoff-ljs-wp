@@ -1,17 +1,20 @@
 import { getPrimaryColorName } from "../../../lib/lib";
+import { useEffect } from "react";
 
-const { InnerBlocks, useBlockProps, BlockToolbar } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
-export default ({ attributes }) => {
+const { select, dispatch } = wp.data;
+
+export default ({ attributes, clientId }) => {
   const blockProps = useBlockProps.save({
     className: `ljs-content-teaser-column-body text-${getPrimaryColorName(
       attributes.colorTheme
     )}`,
   });
 
-  const ALLOWED_BLOCKS = ["core/heading", "core/paragraph", "core/button"];
+  const ALLOWED_BLOCKS = ["core/heading", "core/paragraph", "ljs/button"];
   const TEMPLATE = [
     [
       "core/heading",
@@ -27,18 +30,21 @@ export default ({ attributes }) => {
         level: 2,
       },
     ],
-    [
-      "core/button",
-      {
-        placeholder: "Hier klicken",
-      },
-    ],
+    ["ljs/button"],
   ];
+
+  useEffect(() => {
+    select("core/block-editor")
+      .getBlocksByClientId(clientId)[0]
+      .innerBlocks.forEach((block) => {
+        dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
+          colorTheme: attributes.colorTheme,
+        });
+      });
+  }, [attributes.colorTheme]);
 
   return (
     <>
-      <BlockToolbar></BlockToolbar>
-
       <div {...blockProps}>
         <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
       </div>

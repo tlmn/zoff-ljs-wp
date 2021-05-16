@@ -10,6 +10,7 @@
 @import "./styles/typography.css";
 @import "./styles/menu.css";
 @import "./styles/buttons.css";
+@import "./editor/editor.css";
 @import "./editor/toolbar.css";
 @import "./blocks/ljs-hero.css";
 @import "./blocks/ljs-intro-text.css";

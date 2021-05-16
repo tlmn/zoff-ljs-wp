@@ -17,6 +17,7 @@
 
 .ljs-quote__content-body {
   @apply font-gilroy italic font-black text-2xl;
+  @apply leading-snug;
 }
 
 @screen md {

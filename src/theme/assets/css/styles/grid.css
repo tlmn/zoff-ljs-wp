@@ -8,3 +8,13 @@
     }
   }
 }
+
+.ljs-grid {
+  @apply grid-6;
+}
+
+@screen md {
+  .ljs-grid {
+    @apply grid-12;
+  }
+}

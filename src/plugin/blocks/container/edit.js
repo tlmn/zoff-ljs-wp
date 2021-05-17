@@ -18,6 +18,7 @@ export default ({ setAttributes, attributes, clientId }) => {
     "core/paragraph",
     "ljs/button",
     "ljs/image",
+    "ljs/bio",
   ];
   const TEMPLATE = [
     [

@@ -1,4 +1,10 @@
-import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
+import {
+  getPrimaryColorName,
+  getSecondaryColorName,
+  getSecondaryColorValue,
+} from "../../lib/lib";
+
+import SlantedBorder from "../../assets/svg/slantedBorder";
 
 const { __ } = window.wp.i18n;
 
@@ -10,21 +16,37 @@ export default (props) => {
   const { attributes } = props;
 
   return (
-    <div
-      {...blockProps}
-      className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
-    >
-      <div className="container ljs-grid">
-        <div className="col-span-10 col-start-2">
-          <RichText.Content
-            value={attributes.body}
-            tagName="p"
-            className={`text-${getPrimaryColorName(
+    <>
+      {attributes.hasSlantedBorders && (
+        <SlantedBorder
+          flipped={false}
+          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+        />
+      )}
+      <div
+        {...blockProps}
+        className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
+      >
+        <div className="container ljs-grid">
+          <div
+            className={`col-span-10 col-start-2 text-${getPrimaryColorName(
               attributes.colorTheme
-            )} ljs-intro-text__body`}
-          />
+            )}`}
+          >
+            <RichText.Content
+              value={attributes.body}
+              tagName="p"
+              className="ljs-intro-text__body"
+            />
+          </div>
         </div>
       </div>
-    </div>
+      {attributes.hasSlantedBorders && (
+        <SlantedBorder
+          flipped={true}
+          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+        />
+      )}
+    </>
   );
 };

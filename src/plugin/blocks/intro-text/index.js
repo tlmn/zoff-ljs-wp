@@ -13,6 +13,10 @@ registerBlockType("ljs/intro-text", {
     body: {
       type: "string",
     },
+    hasSlantedBorders: {
+      type: "boolean",
+      default: false,
+    },
     colorTheme: {
       type: "string",
       default: "purple_red",

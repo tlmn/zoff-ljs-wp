@@ -19,6 +19,8 @@ export default ({ setAttributes, attributes, clientId }) => {
     "ljs/button",
     "ljs/image",
     "ljs/bio",
+    "ljs/list",
+    "ljs/accordion-container",
   ];
   const TEMPLATE = [
     [

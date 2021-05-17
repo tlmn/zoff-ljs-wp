@@ -9,9 +9,9 @@
 
 .ljs-image__caption {
   @apply absolute right-0 z-10;
-  bottom: -10px;
   @apply my-2 px-3;
   @apply text-xs;
+  transform: translateY(50%);
 }
 
 .col-span-full .ljs-image__caption {

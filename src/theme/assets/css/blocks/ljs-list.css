@@ -1,0 +1,42 @@
+.ljs-list {
+  @apply my-5;
+}
+
+.ljs-list h2 {
+  @apply border-b-6;
+  @apply inline-block;
+  border-color: inherit;
+  @apply mb-5;
+  @apply uppercase italic;
+  @apply text-black;
+}
+
+.ljs-list ul {
+}
+
+.ljs-list ul li {
+  @apply mb-3;
+  @apply leading-wider;
+  @apply text-black;
+}
+
+.ljs-list ul li::before {
+  content: "⬤";
+  color: inherit;
+  @apply mr-5;
+}
+
+@screen md {
+  .ljs-list {
+    @apply my-7;
+  }
+
+  .ljs-list h2 {
+    @apply text-3xl;
+  }
+
+  .ljs-list ul li {
+    @apply mb-3;
+    @apply text-lg leading-wider;
+  }
+}

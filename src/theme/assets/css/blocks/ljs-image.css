@@ -1,5 +1,6 @@
 .ljs-image {
   @apply w-full relative;
+  @apply my-5;
 }
 
 .ljs-image__image {
@@ -9,7 +10,7 @@
 .ljs-image__caption {
   @apply absolute right-0 z-10;
   bottom: -10px;
-  @apply py-2 px-3;
+  @apply my-2 px-3;
   @apply text-xs;
 }
 
@@ -18,6 +19,10 @@
 }
 
 @screen md {
+  .ljs-image {
+    @apply my-7;
+  }
+
   .ljs-image__caption {
     @apply text-sm;
   }

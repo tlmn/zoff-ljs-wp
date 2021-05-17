@@ -1,4 +1,8 @@
-import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
+import {
+  getPrimaryColorName,
+  getSecondaryColorName,
+  passColorThemeToInnerBlocks,
+} from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import { useEffect } from "react";
@@ -7,8 +11,6 @@ const { InnerBlocks, useBlockProps, BlockToolbar, InspectorControls } =
   window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
-
-const { select, dispatch } = wp.data;
 
 export default ({ clientId, ...props }) => {
   const { attributes } = props;
@@ -36,13 +38,7 @@ export default ({ clientId, ...props }) => {
   ];
 
   useEffect(() => {
-    select("core/block-editor")
-      .getBlocksByClientId(clientId)[0]
-      .innerBlocks.forEach((block) => {
-        dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
-          colorTheme: attributes.colorTheme,
-        });
-      });
+    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
   }, [attributes.colorTheme]);
 
   return (

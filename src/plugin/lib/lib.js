@@ -1,5 +1,7 @@
 import { colorThemes, colors } from "../config";
 
+const { select, dispatch } = wp.data;
+
 export const generateSrcSet = (sizes) => {
   let srcSet = "";
   const keys = Object.keys(sizes);
@@ -29,4 +31,14 @@ export const getSecondaryColorValue = (colorTheme) => {
     (theme) => theme.label === colorTheme
   )[0].colors[1];
   return colors.filter((color) => color.name === secondaryColorName)[0].value;
+};
+
+export const passColorThemeToInnerBlocks = (clientId, colorTheme) => {
+  select("core/block-editor")
+    .getBlocksByClientId(clientId)[0]
+    .innerBlocks.forEach((block) => {
+      dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
+        colorTheme: colorTheme,
+      });
+    });
 };

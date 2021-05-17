@@ -1,10 +1,9 @@
+import { passColorThemeToInnerBlocks } from "../../lib/lib";
 import { useEffect } from "react";
 
 const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
-
-const { select, dispatch } = wp.data;
 
 const { PanelBody, FormToggle } = window.wp.components;
 
@@ -41,13 +40,7 @@ export default ({ setAttributes, attributes, clientId }) => {
   ];
 
   useEffect(() => {
-    select("core/block-editor")
-      .getBlocksByClientId(clientId)[0]
-      .innerBlocks.forEach((block) => {
-        dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
-          colorTheme: attributes.colorTheme,
-        });
-      });
+    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
   }, [attributes.colorTheme]);
 
   return (

@@ -10,4 +10,20 @@
   @apply absolute right-0 z-10;
   bottom: -10px;
   @apply py-2 px-3;
+  @apply text-xs;
+}
+
+.col-span-full .ljs-image__caption {
+  @apply bottom-0 w-full text-center;
+}
+
+@screen md {
+  .ljs-image__caption {
+    @apply text-sm;
+  }
+
+  .col-span-full .ljs-image__caption {
+    bottom: -10px;
+    @apply w-auto text-right;
+  }
 }

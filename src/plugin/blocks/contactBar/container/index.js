@@ -9,6 +9,7 @@ registerBlockType("ljs/contact-bar-container", {
   title: "Kontakte Container",
   icon: "buddicons-pm",
   category: "layout",
+  parent: ["ljs/bio"],
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },
   },

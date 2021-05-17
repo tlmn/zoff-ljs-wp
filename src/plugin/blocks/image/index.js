@@ -10,6 +10,7 @@ registerBlockType("ljs/image", {
   title: "Bild",
   icon: "format-image",
   category: "layout",
+  parent: ["ljs/container"],
   attributes: {
     mediaId: {
       type: "number",

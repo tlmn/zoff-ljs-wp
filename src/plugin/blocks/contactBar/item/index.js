@@ -6,9 +6,10 @@ const { __ } = window.wp.i18n;
 
 registerBlockType("ljs/contact-bar-item", {
   apiVersion: 2,
-  title: "Text Container",
+  title: "Kontaktbar Item",
   icon: "grid-view",
   category: "layout",
+  parent: ["ljs/contact-bar-container"],
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },
     url: { type: "string", default: "" },

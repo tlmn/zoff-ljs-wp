@@ -32,6 +32,7 @@ registerBlockType("ljs/tiles-single", {
       type: "string",
     },
   },
+  parent: ["ljs/tiles-container"],
   edit: (props) => BlockEdit(props),
   save: (props) => BlockSave(props),
 });

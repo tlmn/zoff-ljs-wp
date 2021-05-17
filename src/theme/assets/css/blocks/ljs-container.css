@@ -1,0 +1,8 @@
+.ljs-container {
+  @apply container ljs-grid;
+  @apply py-7;
+}
+
+.ljs-container .block-editor-block-list__layout .wp-block {
+  margin: 0;
+}

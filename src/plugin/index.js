@@ -5,6 +5,7 @@ import "./blocks/intro-text";
 import "./blocks/tiles/container";
 import "./blocks/tiles/single";
 import "./blocks/breaker";
+import "./blocks/image";
 import "./blocks/quote";
 import "./blocks/container";
 import "./blocks/contentTeaser/container";

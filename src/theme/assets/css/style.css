@@ -14,6 +14,7 @@
 @import "./editor/toolbar.css";
 @import "./blocks/ljs-hero.css";
 @import "./blocks/ljs-container.css";
+@import "./blocks/ljs-image.css";
 @import "./blocks/ljs-intro-text.css";
 @import "./blocks/ljs-tiles-container.css";
 @import "./blocks/ljs-tiles-single.css";

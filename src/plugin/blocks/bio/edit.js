@@ -21,6 +21,7 @@ export default (props) => {
     "core/paragraph",
     "ljs/button",
     "ljs/image",
+    "ljs/contact-bar-container",
   ];
   const TEMPLATE = [
     [
@@ -38,6 +39,7 @@ export default (props) => {
       },
     ],
     ["ljs/button"],
+    ["ljs/contact-bar-container"],
   ];
 
   useEffect(() => {

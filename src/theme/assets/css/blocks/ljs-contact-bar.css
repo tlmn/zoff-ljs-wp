@@ -1,0 +1,8 @@
+.ljs-contact-bar-container {
+  @apply my-4;
+}
+
+.ljs-contact-bar-item {
+  @apply inline-block;
+  @apply mx-3;
+}

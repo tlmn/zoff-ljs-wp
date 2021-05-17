@@ -9,6 +9,8 @@ import "./blocks/image";
 import "./blocks/quote";
 import "./blocks/bio";
 import "./blocks/container";
+import "./blocks/contactBar/container";
+import "./blocks/contactBar/item";
 import "./blocks/contentTeaser/container";
 import "./blocks/contentTeaser/columnTitle";
 import "./blocks/contentTeaser/columnBody";

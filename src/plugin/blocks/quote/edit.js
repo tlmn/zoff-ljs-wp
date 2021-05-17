@@ -3,13 +3,17 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import ImageSelector from "../../inspector/imageSelector";
 
-const { InspectorControls, RichText, BlockToolbar } = window.wp.blockEditor;
+const { InspectorControls, RichText, BlockToolbar, useBlockProps } =
+  window.wp.blockEditor;
 const { PanelBody, FormToggle } = window.wp.components;
 
 const { __ } = window.wp.i18n;
 
 export default (props) => {
   const { attributes, setAttributes } = props;
+  const blockProps = useBlockProps({
+    className: `ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`,
+  });
 
   return (
     <>
@@ -43,11 +47,7 @@ export default (props) => {
         <ImageSelector {...props} />
       </InspectorControls>
 
-      <div
-        className={`ljs-quote bg-${getSecondaryColorName(
-          attributes.colorTheme
-        )}`}
-      >
+      <div {...blockProps}>
         <div className="container ljs-grid">
           <div
             className={`ljs-quote__image-wrapper ${

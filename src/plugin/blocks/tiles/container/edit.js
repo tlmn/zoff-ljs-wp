@@ -3,7 +3,7 @@ const { InnerBlocks, useBlockProps, BlockToolbar } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default () => {
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: "ljs-tiles-container",
   });
 

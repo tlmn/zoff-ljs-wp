@@ -9,7 +9,7 @@ const { __ } = window.wp.i18n;
 
 export default (props) => {
   const { attributes } = props;
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: `ljs-breaker bg-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 

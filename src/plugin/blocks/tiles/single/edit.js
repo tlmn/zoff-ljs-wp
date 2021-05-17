@@ -11,7 +11,7 @@ const { __ } = window.wp.i18n;
 
 export default (props) => {
   const { attributes, setAttributes } = props;
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: `ljs-tiles-single text-${getSecondaryColorName(
       attributes.colorTheme
     )}`,

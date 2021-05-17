@@ -5,7 +5,7 @@ const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default ({ attributes }) => {
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: "ljs-content-teaser-column-title",
   });
 

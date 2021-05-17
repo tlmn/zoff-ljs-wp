@@ -15,7 +15,7 @@ const { FormToggle, PanelBody } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: "ljs-intro-text",
   });
   const { attributes, setAttributes } = props;

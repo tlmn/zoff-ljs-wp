@@ -16,7 +16,7 @@ const { PanelBody, FormToggle } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-hero__wrapper" });
+  const blockProps = useBlockProps({ className: "ljs-hero__wrapper" });
 
   const { attributes, setAttributes } = props;
 

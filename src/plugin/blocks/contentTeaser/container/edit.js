@@ -12,7 +12,7 @@ const { select, dispatch } = window.wp.data;
 
 export default (props) => {
   const { attributes } = props;
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: `ljs-content-teaser bg-${getSecondaryColorName(
       attributes.colorTheme
     )}`,

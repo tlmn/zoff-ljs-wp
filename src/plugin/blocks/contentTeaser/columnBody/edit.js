@@ -8,7 +8,7 @@ const { __ } = window.wp.i18n;
 const { select, dispatch } = wp.data;
 
 export default ({ attributes, clientId }) => {
-  const blockProps = useBlockProps.save({
+  const blockProps = useBlockProps({
     className: `ljs-content-teaser-column-body text-${getPrimaryColorName(
       attributes.colorTheme
     )}`,

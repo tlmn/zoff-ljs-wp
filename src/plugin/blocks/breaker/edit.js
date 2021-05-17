@@ -1,13 +1,16 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
+import { useEffect } from "react";
 
 const { InnerBlocks, useBlockProps, BlockToolbar, InspectorControls } =
   window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
-export default (props) => {
+const { select, dispatch } = wp.data;
+
+export default ({ clientId, ...props }) => {
   const { attributes } = props;
   const blockProps = useBlockProps({
     className: `ljs-breaker bg-${getSecondaryColorName(attributes.colorTheme)}`,
@@ -31,6 +34,16 @@ export default (props) => {
     ],
     ["ljs/button"],
   ];
+
+  useEffect(() => {
+    select("core/block-editor")
+      .getBlocksByClientId(clientId)[0]
+      .innerBlocks.forEach((block) => {
+        dispatch("core/block-editor").updateBlockAttributes(block.clientId, {
+          colorTheme: attributes.colorTheme,
+        });
+      });
+  }, [attributes.colorTheme]);
 
   return (
     <>

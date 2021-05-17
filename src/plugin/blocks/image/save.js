@@ -7,7 +7,7 @@ const { RichText, useBlockProps } = window.wp.blockEditor;
 export default (props) => {
   const { attributes } = props;
   const blockProps = useBlockProps.save({
-    className: `ljs-image text-${getPrimaryColorName(attributes.colorTheme)}`,
+    className: "ljs-image",
   });
   return (
     <div {...blockProps}>
@@ -24,7 +24,7 @@ export default (props) => {
         tagName="div"
         className={`ljs-image__caption bg-${getSecondaryColorName(
           attributes.colorTheme
-        )}`}
+        )} text-${getPrimaryColorName(attributes.colorTheme)}`}
       />
     </div>
   );

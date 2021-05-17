@@ -13,7 +13,12 @@ export default ({ setAttributes, attributes, clientId }) => {
     className: "ljs-container",
   });
 
-  const ALLOWED_BLOCKS = ["core/heading", "core/paragraph", "ljs/button"];
+  const ALLOWED_BLOCKS = [
+    "core/heading",
+    "core/paragraph",
+    "ljs/button",
+    "ljs/image",
+  ];
   const TEMPLATE = [
     [
       "core/heading",

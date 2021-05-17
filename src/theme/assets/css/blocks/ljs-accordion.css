@@ -1,0 +1,32 @@
+.ljs-accordion {
+}
+
+.ljs-accordion-item {
+  @apply w-full;
+  @apply rounded-2xl;
+  @apply relative;
+}
+
+.ljs-accordion-item__title-wrapper {
+  @apply absolute left-0 top-0 w-full;
+  @apply flex justify-center;
+}
+
+.ljs-accordion-item__title {
+  @apply p-2;
+  @apply font-gilroy font-black text-lg uppercase;
+  @apply rounded-lg;
+  transform: translateY(-50%);
+}
+
+.ljs-accordion-item__body-wrapper {
+  @apply p-7;
+}
+
+.ljs-accordion-item__body-less {
+  @apply font-gilroy font-black italic text-3xl text-center;
+}
+
+.ljs-accordion-item__body-more {
+  @apply font-gilroy font-normal text-2xl text-center;
+}

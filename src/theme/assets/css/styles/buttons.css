@@ -5,4 +5,5 @@
   @apply my-4;
   @apply uppercase;
   border-radius: 10px;
+  @apply font-bold;
 }

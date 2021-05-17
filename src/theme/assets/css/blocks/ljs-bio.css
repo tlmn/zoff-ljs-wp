@@ -1,5 +1,6 @@
 .ljs-bio {
   @apply ljs-grid;
+  @apply my-5;
 }
 
 .ljs-bio__image-wrapper,
@@ -14,6 +15,7 @@
 @screen md {
   .ljs-bio {
     @apply grid-8;
+    @apply my-7;
   }
 
   .ljs-bio__image-wrapper {

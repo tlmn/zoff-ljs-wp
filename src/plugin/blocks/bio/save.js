@@ -1,6 +1,6 @@
 const { __ } = window.wp.i18n;
 
-const { useBlockProps } = window.wp.blockEditor;
+const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
 export default (props) => {
   const blockProps = useBlockProps.save({ className: "ljs-bio" });

@@ -15,10 +15,12 @@ const { FormToggle, PanelBody } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const blockProps = useBlockProps({
-    className: "ljs-intro-text",
-  });
   const { attributes, setAttributes } = props;
+  const blockProps = useBlockProps({
+    className: `ljs-intro-text bg-${getSecondaryColorName(
+      attributes.colorTheme
+    )}`,
+  });
 
   return (
     <>
@@ -46,16 +48,13 @@ export default (props) => {
         <ColorThemeSelector {...props} />
       </InspectorControls>
 
-      {attributes.hasSlantedBorders && (
-        <SlantedBorder
-          flipped={false}
-          fillColor={getSecondaryColorValue(attributes.colorTheme)}
-        />
-      )}
-      <div
-        {...blockProps}
-        className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
-      >
+      <div {...blockProps}>
+        {attributes.hasSlantedBorders && (
+          <SlantedBorder
+            flipped={false}
+            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          />
+        )}
         <div className="container ljs-grid">
           <div
             className={`col-span-10 col-start-2 text-${getPrimaryColorName(
@@ -72,13 +71,13 @@ export default (props) => {
             />
           </div>
         </div>
+        {attributes.hasSlantedBorders && (
+          <SlantedBorder
+            flipped={true}
+            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          />
+        )}
       </div>
-      {attributes.hasSlantedBorders && (
-        <SlantedBorder
-          flipped={true}
-          fillColor={getSecondaryColorValue(attributes.colorTheme)}
-        />
-      )}
     </>
   );
 };

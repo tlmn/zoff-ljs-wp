@@ -3,3 +3,7 @@
 .block-editor-rich-text__editable {
   color: inherit;
 }
+
+.wp-block {
+  max-width: 1100px;
+}

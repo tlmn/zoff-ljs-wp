@@ -1,5 +1,6 @@
 <?php
 
+include("functions/func-acf.php");
 include("functions/func-custom-post-types.php");
 include("functions/func-comments.php");
 include("functions/func-admin.php");
@@ -35,3 +36,6 @@ add_action("init", "remove_comment_support", 100);
 // REMOVE UNEEDED ADMIN MENUS
 add_action("admin_menu", "remove_comments_admin_menus");
 add_action("admin_menu", "remove_posts_admin_menus");
+
+// LOAD ACF FIELDS
+add_action("init", "acf_register_json_fields");

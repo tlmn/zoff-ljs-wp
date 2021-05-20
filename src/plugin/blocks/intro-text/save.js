@@ -16,17 +16,14 @@ export default (props) => {
   const { attributes } = props;
 
   return (
-    <>
+    <div {...blockProps}>
       {attributes.hasSlantedBorders && (
         <SlantedBorder
           flipped={false}
           fillColor={getSecondaryColorValue(attributes.colorTheme)}
         />
       )}
-      <div
-        {...blockProps}
-        className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}
-      >
+      <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
         <div className="container ljs-grid">
           <div
             className={`col-span-10 col-start-2 text-${getPrimaryColorName(
@@ -47,6 +44,6 @@ export default (props) => {
           fillColor={getSecondaryColorValue(attributes.colorTheme)}
         />
       )}
-    </>
+    </div>
   );
 };

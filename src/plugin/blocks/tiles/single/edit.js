@@ -33,13 +33,17 @@ export default (props) => {
           placeholder="crowd"
           {...props}
         />
-        <div className="ljs-tiles-single__wrapper">
+        <div
+          className={`ljs-tiles-single__wrapper text-${getPrimaryColorName(
+            attributes.colorTheme
+          )}`}
+        >
           <RichText
             value={attributes.title}
             tagName="h4"
-            className={`ljs-tiles-single__title text-${getPrimaryColorName(
+            className={`ljs-tiles-single__title bg-${getSecondaryColorName(
               attributes.colorTheme
-            )} bg-${getSecondaryColorName(attributes.colorTheme)}`}
+            )}`}
             allowedFormats={[]}
             onChange={(title) => setAttributes({ title })}
             placeholder={__("Titel")}

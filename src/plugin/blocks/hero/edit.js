@@ -6,6 +6,7 @@ import {
 } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
+import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 import Logo from "../../assets/svg/logo";
 
@@ -45,13 +46,10 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        <img
-          srcSet={
-            attributes.mediaId != 0
-              ? attributes.mediaSrcSet
-              : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-          }
+        <Image
           className="ljs-hero__background"
+          placeholder="crowd"
+          {...props}
         />
         <div className="ljs-hero__overlay-wrapper">
           {attributes.logoHide !== true && (
@@ -62,13 +60,17 @@ export default (props) => {
             />
           )}
           <div className="ljs-hero__rotation-outer-wrapper">
-            <div className="ljs-hero__rotation-inner-wrapper">
+            <div
+              className={`ljs-hero__rotation-inner-wrapper text-${getPrimaryColorName(
+                attributes.colorTheme
+              )}`}
+            >
               <RichText
                 value={attributes.title}
                 tagName="h2"
-                className={`ljs-hero__subline text-${getPrimaryColorName(
+                className={`ljs-hero__subline bg-${getSecondaryColorName(
                   attributes.colorTheme
-                )} bg-${getSecondaryColorName(attributes.colorTheme)}`}
+                )}`}
                 allowedFormats={[]}
                 onChange={(title) => setAttributes({ title })}
                 placeholder={__("Untertitel")}

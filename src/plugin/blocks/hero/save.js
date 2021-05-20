@@ -5,6 +5,7 @@ import {
   getSecondaryColorValue,
 } from "../../lib/lib";
 
+import Image from "../../blockComponents/image";
 import Logo from "../../assets/svg/logo";
 
 const { __ } = window.wp.i18n;
@@ -16,14 +17,7 @@ export default (props) => {
   const { attributes } = props;
   return (
     <div {...blockProps}>
-      <img
-        srcSet={
-          attributes.mediaId != 0
-            ? attributes.mediaSrcSet
-            : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-        }
-        className="ljs-hero__background"
-      />
+      <Image className="ljs-hero__background" placeHolder="crowd" {...props} />
       <div className="ljs-hero__overlay-wrapper">
         {attributes.logoHide !== true && (
           <Logo

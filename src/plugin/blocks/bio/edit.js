@@ -1,4 +1,5 @@
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
+import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 import { passColorThemeToInnerBlocks } from "../../lib/lib";
 import { useEffect } from "react";
@@ -83,13 +84,10 @@ export default (props) => {
             attributes.imageColumnPosition === "left" ? `` : `order-last`
           }`}
         >
-          <img
-            srcSet={
-              attributes.mediaId != 0
-                ? attributes.mediaSrcSet
-                : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-            }
+          <Image
             className="ljs-bio__image"
+            placeholder="personFemale"
+            {...props}
           />
         </div>
         <div className="ljs-bio__content-wrapper">

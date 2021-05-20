@@ -1,6 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
+import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 
 const { InspectorControls, RichText, BlockToolbar, useBlockProps } =
@@ -54,13 +55,10 @@ export default (props) => {
               attributes.imageColumnPosition === "left" ? `` : `order-last`
             }`}
           >
-            <img
-              srcSet={
-                attributes.mediaId != 0
-                  ? attributes.mediaSrcSet
-                  : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-              }
+            <Image
               className="ljs-quote__image"
+              placeholder="personFemale"
+              {...props}
             />
           </div>
           <div

@@ -1,5 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
+import Image from "../../../blockComponents/image";
+
 const { __ } = window.wp.i18n;
 
 const { useBlockProps, RichText } = window.wp.blockEditor;
@@ -14,16 +16,10 @@ export default (props) => {
 
   return (
     <a {...blockProps} href={attributes.url}>
-      <img
-        srcSet={
-          attributes.mediaId != 0
-            ? attributes.mediaSrcSet
-            : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-        }
-        alt={
-          attributes.mediaAlt != "" ? attributes.mediaAlt : `Bild zur Kachel`
-        }
+      <Image
         className="ljs-tiles-single__image"
+        placeholder="crowd"
+        {...props}
       />
       <div className="ljs-tiles-single__wrapper">
         {attributes.title !== "" && (

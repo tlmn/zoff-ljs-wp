@@ -1,5 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
+import Image from "../../blockComponents/image";
+
 const { __ } = window.wp.i18n;
 
 const { RichText, useBlockProps } = window.wp.blockEditor;
@@ -11,14 +13,7 @@ export default (props) => {
   });
   return (
     <div {...blockProps}>
-      <img
-        srcSet={
-          attributes.mediaId != 0
-            ? attributes.mediaSrcSet
-            : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-        }
-        className="ljs-image__image"
-      />
+      <Image className="ljs-image__image" placeholder="crowd" {...props} />
       <RichText.Content
         value={attributes.caption}
         tagName="div"

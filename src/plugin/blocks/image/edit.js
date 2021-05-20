@@ -1,6 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
+import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 
 const { InspectorControls, RichText, useBlockProps, BlockToolbar } =
@@ -23,14 +24,7 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        <img
-          srcSet={
-            attributes.mediaId != 0
-              ? attributes.mediaSrcSet
-              : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-          }
-          className="ljs-image__image"
-        />
+        <Image className="ljs-image__image" placeholder="crowd" {...props} />
         <RichText
           value={attributes.caption}
           tagName="div"

@@ -1,3 +1,5 @@
+import Image from "../../blockComponents/image";
+
 const { __ } = window.wp.i18n;
 
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
@@ -14,13 +16,10 @@ export default (props) => {
           attributes.imageColumnPosition === "left" ? `` : `order-last`
         }`}
       >
-        <img
-          srcSet={
-            attributes.mediaId != 0
-              ? attributes.mediaSrcSet
-              : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-          }
+        <Image
           className="ljs-bio__image"
+          placeholder="personFemale"
+          {...props}
         />
       </div>
       <div className="ljs-bio__content-wrapper">

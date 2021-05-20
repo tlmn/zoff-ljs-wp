@@ -1,6 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
 import ColorThemeSelector from "../../../inspector/colorThemeSelector";
+import Image from "../../../blockComponents/image";
 import ImageSelector from "../../../inspector/imageSelector";
 import URLPicker from "../../../inspector/URLPicker";
 
@@ -27,16 +28,10 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps} href={attributes.url}>
-        <img
-          srcSet={
-            attributes.mediaId != 0
-              ? attributes.mediaSrcSet
-              : `https://images.unsplash.com/photo-1613428792678-087d5d14238b`
-          }
-          alt={
-            attributes.mediaAlt != "" ? attributes.mediaAlt : `Bild zur Kachel`
-          }
+        <Image
           className="ljs-tiles-single__image"
+          placeholder="crowd"
+          {...props}
         />
         <div className="ljs-tiles-single__wrapper">
           <RichText

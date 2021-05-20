@@ -7,8 +7,7 @@ import {
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import SlantedBorder from "../../assets/svg/slantedBorder";
 
-const { InspectorControls, RichText, useBlockProps, BlockToolbar } =
-  window.wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 
 const { FormToggle, PanelBody } = window.wp.components;
 
@@ -24,8 +23,6 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar />
-
       <InspectorControls>
         <PanelBody title={__("Schräge Kanten")} initialOpen={true}>
           <div className="flex items-center">

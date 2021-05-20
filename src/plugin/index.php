@@ -29,14 +29,25 @@ function ljs_blocks()
     ));
 }
 
-function ljs_block_category($categories, $post)
+function ljs_block_categories($categories)
 {
     return array_merge(
         $categories,
         array(
             array(
-                'slug' => 'ljs',
-                'title' => __('LJS Blocks', 'ljs'),
+                'slug' => 'ljs/layout',
+                'title' => __('LJS Blöcke Layout'),
+                'icon'  => 'layout'
+            ),
+            array(
+                'slug' => 'ljs/text',
+                'title' => __('LJS Blöcke Text'),
+                'icon'  => 'text'
+            ),
+            array(
+                'slug' => 'ljs/media',
+                'title' => __('LJS Blöcke Medien'),
+                'icon'  => 'admin-media'
             ),
         )
     );
@@ -47,6 +58,6 @@ function expose_plugin_dir_url()
     wp_localize_script('ljs-editor-script', 'ljsBlocks', array('pluginURL' => plugin_dir_url(__FILE__)));
 }
 
-add_filter('block_categories', 'ljs_block_category', 10, 2);
+add_filter('block_categories', 'ljs_block_categories', 10, 2);
 add_action('init', 'ljs_blocks');
 add_action('admin_init', 'expose_plugin_dir_url');

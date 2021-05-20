@@ -16,7 +16,7 @@
 
 .ljs-tiles-single__title {
   @apply uppercase;
-  @apply font-gilroy italic font-black;
+  @apply font-gilroy italic font-black text-center;
   @apply text-2xl leading-snug;
   @apply py-2 px-3;
   transform: rotate(-4deg);

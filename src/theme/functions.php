@@ -1,6 +1,8 @@
 <?php
 
 include("functions/func-custom-post-types.php");
+include("functions/func-comments.php");
+include("functions/func-admin.php");
 include("functions/func-menus.php");
 include("functions/func-scripts.php");
 include("functions/func-styles.php");
@@ -25,3 +27,11 @@ add_action("after_setup_theme", "load_editor_styles");
 // LOAD SCRIPTS
 add_action("wp_enqueue_scripts", "scripts_jquery");
 add_action("wp_enqueue_scripts", "scripts_custom");
+
+// REMOVE COMMENTS SUPPORT
+add_action("wp_before_admin_bar_render", "remove_admin_bar_render");
+add_action("init", "remove_comment_support", 100);
+
+// REMOVE UNEEDED ADMIN MENUS
+add_action("admin_menu", "remove_comments_admin_menus");
+add_action("admin_menu", "remove_posts_admin_menus");

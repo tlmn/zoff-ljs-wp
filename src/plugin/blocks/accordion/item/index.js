@@ -8,7 +8,7 @@ registerBlockType("ljs/accordion-item", {
   apiVersion: 2,
   title: "Akkordeon-Element",
   icon: "editor-justify",
-  category: "layout",
+  category: "ljs/layout",
   parent: ["ljs/accordion-container"],
   attributes: {
     title: {

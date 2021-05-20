@@ -8,7 +8,7 @@ registerBlockType("ljs/quote-with-image", {
   apiVersion: 2,
   title: "Zitat mit Bild",
   icon: "format-gallery",
-  category: "layout",
+  category: "ljs/text",
   attributes: {
     mediaId: {
       type: "number",

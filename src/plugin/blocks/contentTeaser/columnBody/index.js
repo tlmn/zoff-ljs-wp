@@ -8,7 +8,7 @@ registerBlockType("ljs/content-teaser-column-body", {
   apiVersion: 2,
   title: "Teaser Inhalt Fließtext-Spalte",
   icon: "tide",
-  category: "layout",
+  category: "ljs/text",
   attributes: { colorTheme: { type: "string", default: "purple_red" } },
   edit: (props) => BlockEdit(props),
   save: (props) => BlockSave(props),

@@ -9,7 +9,7 @@ registerBlockType("ljs/hero", {
   apiVersion: 2,
   title: "Hero (Logo mit Bild)",
   icon: "button",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     mediaId: {
       type: "number",

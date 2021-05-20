@@ -8,7 +8,7 @@ registerBlockType("ljs/accordion-container", {
   apiVersion: 2,
   title: "Akkordeon Container",
   icon: "table-row-after",
-  category: "layout",
+  category: "ljs/layout",
   parent: ["ljs/container"],
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },

@@ -8,7 +8,7 @@ registerBlockType("ljs/tiles-container", {
   apiVersion: 2,
   title: "Container Kachel",
   icon: "grid-view",
-  category: "layout",
+  category: "ljs/layout",
   edit: () => BlockEdit(),
   save: () => BlockSave(),
 });

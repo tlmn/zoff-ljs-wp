@@ -8,7 +8,7 @@ registerBlockType("ljs/tiles-single", {
   apiVersion: 2,
   title: "Kachel",
   icon: "format-image",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     title: {
       type: "string",

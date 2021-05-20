@@ -8,7 +8,7 @@ registerBlockType("ljs/button", {
   apiVersion: 2,
   title: "Button",
   icon: "tide",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     buttonText: { type: "string", default: "Hier klicken" },
     url: { type: "string" },

@@ -8,7 +8,7 @@ registerBlockType("ljs/container", {
   apiVersion: 2,
   title: "Text Container",
   icon: "grid-view",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },
     isFullWidth: { type: "boolean", default: true },

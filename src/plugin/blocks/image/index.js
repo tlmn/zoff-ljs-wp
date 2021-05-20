@@ -9,7 +9,7 @@ registerBlockType("ljs/image", {
   apiVersion: 2,
   title: "Bild",
   icon: "format-image",
-  category: "layout",
+  category: "ljs/media",
   parent: ["ljs/container"],
   attributes: {
     mediaId: {

@@ -8,7 +8,7 @@ registerBlockType("ljs/contact-bar-container", {
   apiVersion: 2,
   title: "Kontakte Container",
   icon: "buddicons-pm",
-  category: "layout",
+  category: "ljs/layout",
   parent: ["ljs/bio"],
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },

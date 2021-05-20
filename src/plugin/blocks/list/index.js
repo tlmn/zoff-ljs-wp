@@ -8,7 +8,7 @@ registerBlockType("ljs/list", {
   apiVersion: 2,
   title: "Liste",
   icon: "editor-ul",
-  category: "layout",
+  category: "ljs/text",
   parent: ["ljs/container"],
   attributes: { colorTheme: { type: "string", default: "purple_red" } },
   edit: (props) => BlockEdit(props),

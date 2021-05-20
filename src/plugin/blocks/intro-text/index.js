@@ -8,7 +8,7 @@ registerBlockType("ljs/intro-text", {
   apiVersion: 2,
   title: "Intro Text",
   icon: "editor-justify",
-  category: "layout",
+  category: "ljs/text",
   attributes: {
     body: {
       type: "string",

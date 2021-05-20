@@ -8,7 +8,7 @@ registerBlockType("ljs/breaker", {
   apiVersion: 2,
   title: "Breaker",
   icon: "tide",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     colorTheme: {
       type: "string",

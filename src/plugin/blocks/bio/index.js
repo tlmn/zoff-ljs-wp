@@ -8,7 +8,7 @@ registerBlockType("ljs/bio", {
   apiVersion: 2,
   title: "Bio",
   icon: "universal-access",
-  category: "layout",
+  category: "ljs/text",
   attributes: {
     mediaId: {
       type: "number",

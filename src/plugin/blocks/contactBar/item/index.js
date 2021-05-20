@@ -8,7 +8,7 @@ registerBlockType("ljs/contact-bar-item", {
   apiVersion: 2,
   title: "Kontaktbar Item",
   icon: "grid-view",
-  category: "layout",
+  category: "ljs/text",
   parent: ["ljs/contact-bar-container"],
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },

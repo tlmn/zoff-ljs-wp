@@ -20,7 +20,7 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar></BlockToolbar>
+      <BlockToolbar />
       <InspectorControls>
         <ColorThemeSelector {...props} />
         <URLPicker {...props} />

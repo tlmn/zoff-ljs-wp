@@ -43,7 +43,7 @@ export default ({ clientId, ...props }) => {
 
   return (
     <>
-      <BlockToolbar></BlockToolbar>
+      <BlockToolbar />
 
       <InspectorControls>
         <ColorThemeSelector {...props} />

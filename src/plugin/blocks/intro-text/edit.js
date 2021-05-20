@@ -24,7 +24,7 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar></BlockToolbar>
+      <BlockToolbar />
 
       <InspectorControls>
         <PanelBody title={__("Schräge Kanten")} initialOpen={true}>

@@ -12,7 +12,7 @@ export default () => {
 
   return (
     <>
-      <BlockToolbar></BlockToolbar>
+      <BlockToolbar />
 
       <div {...blockProps}>
         <div className="ljs-grid">

@@ -16,9 +16,7 @@ const { __ } = window.wp.i18n;
 export default (props) => {
   const { attributes, setAttributes } = props;
   const blockProps = useBlockProps({
-    className: `ljs-intro-text bg-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: "ljs-intro-text",
   });
 
   return (
@@ -52,7 +50,11 @@ export default (props) => {
             fillColor={getSecondaryColorValue(attributes.colorTheme)}
           />
         )}
-        <div className="container ljs-grid">
+        <div
+          className={`container ljs-grid bg-${getSecondaryColorName(
+            attributes.colorTheme
+          )}`}
+        >
           <div
             className={`col-span-10 col-start-2 text-${getPrimaryColorName(
               attributes.colorTheme

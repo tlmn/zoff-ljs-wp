@@ -9,7 +9,7 @@ import InstagramIcon from "../../../assets/svg/contactItems/instagram";
 import MailIcon from "../../../assets/svg/contactItems/mail";
 import TwitterIcon from "../../../assets/svg/contactItems/twitter";
 import URLPicker from "../../../inspector/URLPicker";
-import { getPrimaryColorValue } from "../../../lib/lib";
+import { getPrimaryColorName } from "../../../lib/lib";
 
 export default (props) => {
   const { setAttributes, attributes } = props;
@@ -18,37 +18,29 @@ export default (props) => {
     {
       name: "E-Mail",
       value: "mail",
-      component: (
-        <MailIcon fillColor={getPrimaryColorValue(attributes.colorTheme)} />
-      ),
+      component: <MailIcon />,
     },
     {
       name: "Facebook",
       value: "facebook",
-      component: (
-        <FacebookIcon fillColor={getPrimaryColorValue(attributes.colorTheme)} />
-      ),
+      component: <FacebookIcon />,
     },
     {
       name: "Twitter",
       value: "twitter",
-      component: (
-        <TwitterIcon fillColor={getPrimaryColorValue(attributes.colorTheme)} />
-      ),
+      component: <TwitterIcon />,
     },
     {
       name: "Instagram",
       value: "instagram",
-      component: (
-        <InstagramIcon
-          fillColor={getPrimaryColorValue(attributes.colorTheme)}
-        />
-      ),
+      component: <InstagramIcon />,
     },
   ];
 
   const blockProps = useBlockProps({
-    className: "ljs-contact-bar-item",
+    className: `ljs-contact-bar-item fill-${getPrimaryColorName(
+      attributes.colorTheme
+    )}`,
   });
 
   return (

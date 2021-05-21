@@ -8,7 +8,7 @@ registerBlockType("ljs/content-teaser", {
   apiVersion: 2,
   title: "Teaser Inhalt",
   icon: "tide",
-  category: "layout",
+  category: "ljs/layout",
   attributes: {
     colorTheme: {
       type: "string",

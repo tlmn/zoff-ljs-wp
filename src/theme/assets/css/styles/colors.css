@@ -1,0 +1,15 @@
+.marker-green ul li::marker {
+  @apply text-green;
+}
+
+.marker-purple ul li::marker {
+  @apply text-purple;
+}
+
+.marker-red ul li::marker {
+  @apply text-red;
+}
+
+.marker-black ul li::marker {
+  @apply text-black;
+}

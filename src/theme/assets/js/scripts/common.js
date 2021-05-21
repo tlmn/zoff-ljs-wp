@@ -23,3 +23,17 @@ const toggleButtons = (currentTarget) => {
   $(currentTarget).toggleClass("hidden");
   $(currentTarget).siblings().toggleClass("hidden");
 };
+
+const setMargins = () => {
+  var slantedBorderHeight = $(".slantedBorder").height();
+  $(".slantedBorder").each((index, value) => {
+    $(value).css("margin-bottom", -slantedBorderHeight + "px");
+  });
+  $(".slantedBorder--flipped").each((index, value) => {
+    $(value).css("margin-top", -slantedBorderHeight + "px");
+  });
+};
+
+$(() => setMargins());
+
+$(window).resize(() => setMargins());

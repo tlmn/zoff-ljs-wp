@@ -1,4 +1,11 @@
-import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
+import {
+  getPrimaryColorName,
+  getSecondaryColorName,
+  getSecondaryColorValue,
+} from "../../../lib/lib";
+
+import MinusIcon from "../../../assets/svg/accordion/minus";
+import PlusIcon from "../../../assets/svg/accordion/plus";
 
 const { __ } = window.wp.i18n;
 
@@ -20,15 +27,20 @@ export default (props) => {
           )} text-${getSecondaryColorName(attributes.colorTheme)}`}
         />
       </div>
-
-      <div className="ljs-accordion-item__body-wrapper">
-        <RichText.Content
-          value={attributes.bodyLess}
-          tagName="div"
-          className={`ljs-accordion-item__body-less text-${getPrimaryColorName(
-            attributes.colorTheme
-          )}`}
-        />
+      <details
+        className={`bg-${getSecondaryColorName(
+          attributes.colorTheme
+        )} ljs-accordion-item ljs-accordion-item__body-wrapper`}
+      >
+        <summary>
+          <RichText.Content
+            value={attributes.bodyLess}
+            tagName="div"
+            className={`ljs-accordion-item__body-less text-${getPrimaryColorName(
+              attributes.colorTheme
+            )}`}
+          />
+        </summary>
 
         <RichText.Content
           value={attributes.bodyMore}
@@ -37,6 +49,23 @@ export default (props) => {
             attributes.colorTheme
           )}`}
         />
+      </details>
+
+      <div className="ljs-accordion-item__button-wrapper">
+        <button
+          className="ljs-accordion-item__button"
+          onClick="handleDetailsButtonClick(event); return false;"
+        >
+          <PlusIcon fillColor={getSecondaryColorValue(attributes.colorTheme)} />
+        </button>
+        <button
+          className="ljs-accordion-item__button hidden"
+          onClick="handleDetailsButtonClick(event); return false;"
+        >
+          <MinusIcon
+            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          />
+        </button>
       </div>
     </div>
   );

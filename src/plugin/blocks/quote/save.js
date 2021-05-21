@@ -15,7 +15,7 @@ export default (props) => {
     <div
       className={`ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`}
     >
-      <div className="container ljs-grid">
+      <div className="md:container ljs-grid">
         <div
           className={`ljs-quote__image-wrapper ${
             attributes.imageColumnPosition === "left" ? `` : `order-last`

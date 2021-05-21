@@ -1,9 +1,10 @@
 .ljs-accordion-container {
   @apply py-5;
+  max-width: 90%;
+  @apply mx-auto;
 }
 
 .ljs-accordion-item {
-  @apply w-full;
   @apply rounded-2xl;
   @apply relative;
 }
@@ -53,4 +54,10 @@
 
 .ljs-accordion-item summary::marker {
   @apply hidden;
+}
+
+@screen md {
+  .ljs-accordion-container {
+    max-width: 70%;
+  }
 }

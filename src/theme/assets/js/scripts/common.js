@@ -37,3 +37,14 @@ const setMargins = () => {
 $(() => setMargins());
 
 $(window).resize(() => setMargins());
+
+$(() =>
+  $("#mobile-menu ul.sub-menu").each((index, value) =>
+    $(value)
+      .siblings()
+      .click((event) => {
+        event.preventDefault();
+        $("#mobile-menu ul.sub-menu").toggle();
+      })
+  )
+);

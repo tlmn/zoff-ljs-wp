@@ -22,7 +22,7 @@ export const corporateThemes = [
 export const secondaryThemes = [
   "black_red",
   "red_black",
-  "red_white",
+  // "red_white",
   "white_red",
 ];
 

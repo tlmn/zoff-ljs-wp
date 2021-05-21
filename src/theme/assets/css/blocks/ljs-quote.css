@@ -12,7 +12,7 @@
 .ljs-quote__content-wrapper {
   @apply col-span-full;
   @apply flex items-center;
-  @apply px-5;
+  @apply p-5;
 }
 
 .ljs-quote__content-body {
@@ -27,6 +27,7 @@
   }
   .ljs-quote__content-wrapper {
     @apply px-9;
+    @apply py-0;
   }
   .ljs-quote__content-body {
     @apply text-3xl;

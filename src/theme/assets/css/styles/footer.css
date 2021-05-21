@@ -3,27 +3,24 @@ footer {
   @apply text-white;
 }
 
-.footer_menu {
-  & ul {
-    @apply m-0 p-0;
-    & li {
-      @apply flex;
-      & a {
-        @apply animated;
-        @apply w-full;
-        @apply flex justify-center;
-        @apply py-2;
-        @apply font-bold text-md;
-        @apply text-white;
-        &:hover {
-          box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
-        }
-      }
-    }
-    &.footer_menu li {
-      & a {
-        @apply text-white;
-      }
-    }
-  }
+ul.footer_menu {
+  @apply m-0 p-0;
+}
+
+ul.footer_menu li {
+  @apply flex;
+}
+
+ul.footer_menu li a {
+  @apply animated;
+  @apply w-full;
+  @apply flex justify-center;
+  @apply py-2;
+  @apply font-bold text-md;
+  @apply text-white;
+}
+
+ul.footer_menu li a:hover {
+  @apply underline;
+  box-shadow: none !important;
 }

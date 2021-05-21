@@ -1,4 +1,5 @@
-.ljs-accordion {
+.ljs-accordion-container {
+  @apply py-5;
 }
 
 .ljs-accordion-item {

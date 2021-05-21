@@ -11,18 +11,19 @@
   @apply text-black;
 }
 
-.ljs-list ul {
+.ljs-list ul:first-child {
+  @apply mt-3;
 }
 
 .ljs-list ul li {
-  @apply mb-3;
+  @apply mb-3 ml-7;
+  @apply pl-3;
   @apply leading-wider;
   @apply text-black;
 }
 
-.ljs-list ul li::before {
+.ljs-list ul li::marker {
   content: "⬤";
-  color: inherit;
   @apply mr-5;
 }
 

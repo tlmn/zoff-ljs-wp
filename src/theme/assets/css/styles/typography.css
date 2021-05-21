@@ -23,6 +23,9 @@ p {
   @apply font-hind text-lg font-normal leading-wider;
   & a {
     @apply underline;
+    &:hover {
+      @apply no-underline;
+    }
   }
 }
 

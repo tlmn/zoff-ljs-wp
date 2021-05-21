@@ -9,7 +9,7 @@
 
 .ljs-image__caption {
   @apply absolute right-0 z-10;
-  @apply my-2 px-3;
+  @apply mb-2 px-3;
   @apply text-xs;
   transform: translateY(50%);
 }
@@ -25,10 +25,11 @@
 
   .ljs-image__caption {
     @apply text-sm;
+    @apply mb-0;
   }
 
   .col-span-full .ljs-image__caption {
-    bottom: -10px;
+    transform: translateY(50%);
     @apply w-auto text-right;
   }
 }

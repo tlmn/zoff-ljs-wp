@@ -1,8 +1,4 @@
-import {
-  getPrimaryColorName,
-  getSecondaryColorName,
-  getSecondaryColorValue,
-} from "../../../lib/lib";
+import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
 const { RichText, useBlockProps, BlockToolbar } = window.wp.blockEditor;
 

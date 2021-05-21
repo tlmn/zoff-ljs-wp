@@ -8,7 +8,7 @@ export default ({ attributes }) => {
   const blockProps = useBlockProps({
     className: `ljs-list border-${getPrimaryColorName(
       attributes.colorTheme
-    )} text-${getPrimaryColorName(attributes.colorTheme)}`,
+    )} marker-${getPrimaryColorName(attributes.colorTheme)}`,
   });
 
   const ALLOWED_BLOCKS = ["core/heading", "core/list"];

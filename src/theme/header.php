@@ -20,7 +20,7 @@
 	<div class="hidden md:block bg-black relative z-50">
 		<div class="container flex items-center">
 			<div class="w-full flex justify-start">
-				<a href="/" style="height: 1.5rem; width: 1.5rem;">
+				<a href="/" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
 					<?php
 					echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
 					?>

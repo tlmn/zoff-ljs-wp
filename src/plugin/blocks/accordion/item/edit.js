@@ -51,12 +51,12 @@ export default (props) => {
             onChange={(bodyLess) => setAttributes({ bodyLess })}
             placeholder={__("Text zusammengeklappt")}
           />
-
+          <hr style={{ borderTopWidth: "2px" }} className="my-6" />
           <RichText
             value={attributes.bodyMore}
             allowedFormats={[]}
             tagName="div"
-            className={`ljs-accordion-item__body-more mt-6`}
+            className={`ljs-accordion-item__body-more`}
             onChange={(bodyMore) => setAttributes({ bodyMore })}
             placeholder={__("Text ausgeklappt")}
           />

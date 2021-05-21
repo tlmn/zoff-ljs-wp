@@ -20,8 +20,10 @@ ul.footer_menu li a {
   @apply text-white;
 }
 
-ul.footer_menu li a:first-child {
-  @apply pl-0;
+@screen md {
+  ul.footer_menu li a:first-child {
+    @apply pl-0;
+  }
 }
 
 ul.footer_menu li a:hover {

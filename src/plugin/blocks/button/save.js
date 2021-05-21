@@ -15,9 +15,7 @@ export default (props) => {
         attributes.colorTheme
       )} hover:bg-${getSecondaryColorName(
         attributes.colorTheme
-      )} border-2 border-transparent hover:border-${getPrimaryColorName(
-        attributes.colorTheme
-      )}`}
+      )} hover:border-${getPrimaryColorName(attributes.colorTheme)}`}
       href={attributes.url}
     >
       {attributes.buttonText}

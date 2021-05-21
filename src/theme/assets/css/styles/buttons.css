@@ -6,4 +6,5 @@
   @apply uppercase;
   border-radius: 10px;
   @apply font-bold;
+  @apply border-4 border-transparent;
 }

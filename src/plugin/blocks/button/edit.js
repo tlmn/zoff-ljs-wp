@@ -18,9 +18,7 @@ export default (props) => {
       <div
         className={`ljs-button text-${getSecondaryColorName(
           attributes.colorTheme
-        )} bg-${getPrimaryColorName(
-          attributes.colorTheme
-        )} border-2 border-transparent`}
+        )} bg-${getPrimaryColorName(attributes.colorTheme)}`}
       >
         <RichText
           value={attributes.buttonText}

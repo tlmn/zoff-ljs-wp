@@ -20,7 +20,7 @@
 	<div class="hidden md:block bg-black relative z-50">
 		<div class="container flex items-center">
 			<div class="w-full flex justify-start">
-				<a href="/" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
+				<a href="/" style="height: 1.5rem; width: 1.5rem;" class="fill-green mr-5">
 					<?php
 					echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
 					?>
@@ -37,11 +37,12 @@
 					'echo'                 => true,
 					'fallback_cb'          => 'wp_page_menu',
 					'theme_location'       => 'primary_menu',
+					'depth'				   => 1
 				));
 
 				?>
 				<div class="w-full flex justify-center items-center px-5 menu__search-icon">
-					<a href="/suche" style="height: 1.5rem; width: 1.5rem;">
+					<a href="/suche" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
 						<?php
 						echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');
 						?>
@@ -92,6 +93,8 @@
 				'echo'                 => true,
 				'fallback_cb'          => 'wp_page_menu',
 				'theme_location'       => 'primary_menu',
+				'depth'				   => 2
+
 			));
 			?>
 			<div class="w-full py-5 flex justify-center">

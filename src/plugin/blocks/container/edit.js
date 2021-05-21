@@ -1,3 +1,4 @@
+import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import { passColorThemeToInnerBlocks } from "../../lib/lib";
 import { useEffect } from "react";
 
@@ -69,6 +70,7 @@ export default ({ setAttributes, attributes, clientId }) => {
             </label>
           </div>
         </PanelBody>
+        <ColorThemeSelector {...props} />ƒ
       </InspectorControls>
 
       <div {...blockProps}>

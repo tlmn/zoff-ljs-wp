@@ -50,24 +50,22 @@ export default (props) => {
             fillColor={getSecondaryColorValue(attributes.colorTheme)}
           />
         )}
-        <div
-          className={`container ljs-grid bg-${getSecondaryColorName(
-            attributes.colorTheme
-          )}`}
-        >
-          <div
-            className={`col-span-10 col-start-2 text-${getPrimaryColorName(
-              attributes.colorTheme
-            )}`}
-          >
-            <RichText
-              value={attributes.body}
-              allowedFormats={[]}
-              tagName="p"
-              className={`ljs-intro-text__body`}
-              onChange={(body) => setAttributes({ body })}
-              placeholder={__("Hier kommt der Intro-Text rein.")}
-            />
+        <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+          <div className="container ljs-grid">
+            <div
+              className={`col-span-10 col-start-2 text-${getPrimaryColorName(
+                attributes.colorTheme
+              )}`}
+            >
+              <RichText
+                value={attributes.body}
+                allowedFormats={[]}
+                tagName="p"
+                className={`ljs-intro-text__body`}
+                onChange={(body) => setAttributes({ body })}
+                placeholder={__("Hier kommt der Intro-Text rein.")}
+              />
+            </div>
           </div>
         </div>
         {attributes.hasSlantedBorders && (

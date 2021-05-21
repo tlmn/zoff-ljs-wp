@@ -71,13 +71,13 @@ export default (props) => {
             </label>
           </div>
         </PanelBody>
-        <ColorThemeSelector {...props} />ƒ
+        <ColorThemeSelector {...props} />
       </InspectorControls>
 
       <div {...blockProps}>
         <div
           className={`col-span-full ${
-            attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
+            !attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
           }`}
         >
           <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />

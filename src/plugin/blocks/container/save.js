@@ -11,7 +11,7 @@ export default ({ attributes }) => {
     <div {...blockProps}>
       <div
         className={`col-span-full ${
-          attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
+          !attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
         }`}
       >
         <InnerBlocks.Content />

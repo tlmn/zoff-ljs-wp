@@ -7,9 +7,24 @@
   @apply relative;
 }
 
+.ljs-accordion-item__button-wrapper {
+  @apply absolute left-0 bottom-0 w-full;
+  @apply flex justify-center;
+  @apply z-10;
+}
+
+.ljs-accordion-item__button {
+  @apply p-2;
+  @apply font-gilroy font-black text-lg uppercase;
+  @apply rounded-full;
+  transform: translateY(50%);
+  @apply bg-white;
+}
+
 .ljs-accordion-item__title-wrapper {
   @apply absolute left-0 top-0 w-full;
   @apply flex justify-center;
+  @apply z-10;
 }
 
 .ljs-accordion-item__title {
@@ -29,4 +44,12 @@
 
 .ljs-accordion-item__body-more {
   @apply font-gilroy font-normal text-2xl text-center;
+}
+
+.ljs-accordion-item summary {
+  @apply list-none;
+}
+
+.ljs-accordion-item summary::marker {
+  @apply hidden;
 }

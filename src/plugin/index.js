@@ -10,6 +10,7 @@ import "./blocks/quote";
 import "./blocks/bio";
 import "./blocks/list";
 import "./blocks/container";
+import "./blocks/cover";
 import "./blocks/contactBar/container";
 import "./blocks/contactBar/item";
 import "./blocks/contentTeaser/container";

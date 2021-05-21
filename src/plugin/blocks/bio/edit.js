@@ -4,8 +4,7 @@ import ImageSelector from "../../inspector/imageSelector";
 import { passColorThemeToInnerBlocks } from "../../lib/lib";
 import { useEffect } from "react";
 
-const { InspectorControls, InnerBlocks, BlockToolbar, useBlockProps } =
-  window.wp.blockEditor;
+const { InspectorControls, InnerBlocks, useBlockProps } = window.wp.blockEditor;
 const { PanelBody, FormToggle } = window.wp.components;
 
 const { __ } = window.wp.i18n;
@@ -48,8 +47,6 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar />
-
       <InspectorControls>
         <PanelBody title={__("Bild-Position")} initialOpen={false}>
           <div className="flex items-center">

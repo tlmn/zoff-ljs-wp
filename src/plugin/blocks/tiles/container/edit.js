@@ -1,4 +1,4 @@
-const { InnerBlocks, useBlockProps, BlockToolbar } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
@@ -11,14 +11,10 @@ export default () => {
   const TEMPLATE = [["ljs/tiles-single"]];
 
   return (
-    <>
-      <BlockToolbar />
-
-      <div {...blockProps}>
-        <div className="ljs-grid">
-          <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
-        </div>
+    <div {...blockProps}>
+      <div className="ljs-grid">
+        <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
       </div>
-    </>
+    </div>
   );
 };

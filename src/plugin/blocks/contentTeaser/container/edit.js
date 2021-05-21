@@ -7,8 +7,7 @@ import {
 
 import ColorThemeSelector from "../../../inspector/colorThemeSelector";
 
-const { InnerBlocks, useBlockProps, BlockToolbar, InspectorControls } =
-  window.wp.blockEditor;
+const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
@@ -37,8 +36,6 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar />
-
       <InspectorControls>
         <ColorThemeSelector {...props} />
       </InspectorControls>

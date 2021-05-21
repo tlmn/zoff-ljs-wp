@@ -10,8 +10,7 @@ import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 import Logo from "../../assets/svg/logo";
 
-const { InspectorControls, RichText, useBlockProps, BlockToolbar } =
-  window.wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 
 const { PanelBody, FormToggle } = window.wp.components;
 const { __ } = window.wp.i18n;

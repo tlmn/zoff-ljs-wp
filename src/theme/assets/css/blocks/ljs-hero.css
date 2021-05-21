@@ -32,7 +32,7 @@
   @apply z-20 relative;
   @apply py-2 px-3;
   @apply font-black uppercase italic leading-snug text-center;
-  @apply text-base tracking-tight;
+  @apply text-4xl tracking-tight;
   @apply box-clone;
   @apply inline;
   line-height: 2.1;

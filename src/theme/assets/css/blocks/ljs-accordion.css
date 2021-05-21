@@ -16,11 +16,14 @@
 }
 
 .ljs-accordion-item__button {
+  @apply animated;
   @apply p-2;
   @apply font-gilroy font-black text-lg uppercase;
   @apply rounded-full;
   transform: translateY(50%);
   @apply bg-white;
+  @apply border-4;
+  @apply border-transparent;
 }
 
 .ljs-accordion-item__title-wrapper {

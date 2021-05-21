@@ -53,13 +53,17 @@ export default (props) => {
 
       <div className="ljs-accordion-item__button-wrapper">
         <button
-          className="ljs-accordion-item__button"
+          className={`ljs-accordion-item__button hover:border-${getPrimaryColorName(
+            attributes.colorTheme
+          )}`}
           onClick="handleDetailsButtonClick(event); return false;"
         >
           <PlusIcon fillColor={getSecondaryColorValue(attributes.colorTheme)} />
         </button>
         <button
-          className="ljs-accordion-item__button hidden"
+          className={`ljs-accordion-item__button hidden hover:border-${getPrimaryColorName(
+            attributes.colorTheme
+          )}`}
           onClick="handleDetailsButtonClick(event); return false;"
         >
           <MinusIcon

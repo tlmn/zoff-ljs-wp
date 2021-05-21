@@ -11,7 +11,6 @@ registerBlockType("ljs/container", {
   category: "ljs/layout",
   attributes: {
     colorTheme: { type: "string", default: "purple_red" },
-    isFullWidth: { type: "boolean", default: true },
   },
   edit: (props) => BlockEdit(props),
   save: (props) => BlockSave(props),

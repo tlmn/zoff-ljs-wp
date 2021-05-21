@@ -26,43 +26,45 @@
 					?>
 				</a>
 			</div>
-			<?php
+			<div class="flex items-center">
+				<?php
 
-			wp_nav_menu(array(
-				'menu'                 => 'primary_menu',
-				'container'            => 'div',
-				'container_class'      => '',
-				'menu_class'           => 'menu primary_menu',
-				'echo'                 => true,
-				'fallback_cb'          => 'wp_page_menu',
-				'theme_location'       => 'primary_menu',
-			));
+				wp_nav_menu(array(
+					'menu'                 => 'primary_menu',
+					'container'            => 'div',
+					'container_class'      => '',
+					'menu_class'           => 'menu primary_menu',
+					'echo'                 => true,
+					'fallback_cb'          => 'wp_page_menu',
+					'theme_location'       => 'primary_menu',
+				));
 
-			?>
-			<div class="w-full flex justify-center">
-				<a href="/suche" style="height: 1.5rem; width: 1.5rem;">
-					<?php
-					echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');
-					?>
-				</a>
+				?>
+				<div class="w-full flex justify-center items-center px-5 menu__search-icon">
+					<a href="/suche" style="height: 1.5rem; width: 1.5rem;">
+						<?php
+						echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');
+						?>
+					</a>
+				</div>
+				<?php
+
+				wp_nav_menu(array(
+					'menu'                 => 'top_menu',
+					'container'            => 'div',
+					'container_class'      => '',
+					'menu_class'           => 'menu top_menu',
+					'echo'                 => true,
+					'fallback_cb'          => 'wp_page_menu',
+					'theme_location'       => 'top_menu',
+				));
+
+				?>
 			</div>
-			<?php
-
-			wp_nav_menu(array(
-				'menu'                 => 'top_menu',
-				'container'            => 'div',
-				'container_class'      => '',
-				'menu_class'           => 'menu top_menu',
-				'echo'                 => true,
-				'fallback_cb'          => 'wp_page_menu',
-				'theme_location'       => 'top_menu',
-			));
-
-			?>
 		</div>
 	</div>
 
-	<div class="flex items-end flex-col justify-end md:hidden fixed top-0 left-0 h-screen h-max-screen w-screen w-max-screen" id="mobile-menu">
+	<div class="hidden items-end flex-col justify-end md:hidden fixed top-0 left-0 h-screen h-max-screen w-screen w-max-screen z-50" id="mobile-menu">
 		<div class="hidden flex-1 w-full" id="mobile-navigation">
 			<div class="w-full py-5 flex justify-center">
 				<a href="/" style="height: 2.5rem; width: 2.5rem;">
@@ -100,16 +102,16 @@
 				</a>
 			</div>
 		</div>
-		<div class="mr-2 mb-2">
-			<button role="button" class="" onclick="toggleMenu()" id="button__menu--open">
-				<?php
-				echo file_get_contents(get_template_directory() . '/assets/images/icons/hamburger--open.svg');
-				?>
-			</button>
-			<button role="button" class="hidden" onclick="toggleMenu()" id="button__menu--close">
-				<?php
-				echo file_get_contents(get_template_directory() . '/assets/images/icons/hamburger--close.svg');
-				?>
-			</button>
-		</div>
+	</div>
+	<div class="block md:hidden fixed bottom-0 right-0 mr-2 mb-2 z-50">
+		<button role="button" class="" onclick="toggleMenu()" id="button__menu--open">
+			<?php
+			echo file_get_contents(get_template_directory() . '/assets/images/icons/hamburger--open.svg');
+			?>
+		</button>
+		<button role="button" class="hidden" onclick="toggleMenu()" id="button__menu--close">
+			<?php
+			echo file_get_contents(get_template_directory() . '/assets/images/icons/hamburger--close.svg');
+			?>
+		</button>
 	</div>

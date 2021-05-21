@@ -21,6 +21,15 @@ registerBlockType("ljs/intro-text", {
       type: "string",
       default: "purple_red",
     },
+    align: {
+      type: "string",
+      default: "full",
+    },
+  },
+  getEditWrapperProps() {
+    return {
+      "data-align": "full",
+    };
   },
   edit: (props) => BlockEdit(props),
   save: (props) => BlockSave(props),

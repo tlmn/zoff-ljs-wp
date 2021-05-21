@@ -29,6 +29,15 @@ registerBlockType("ljs/hero", {
       type: "string",
       default: "purple_red",
     },
+    align: {
+      type: "string",
+      default: "full",
+    },
+  },
+  getEditWrapperProps() {
+    return {
+      "data-align": "full",
+    };
   },
   edit: withSelect((select, props) => {
     return {

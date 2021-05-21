@@ -5,6 +5,8 @@ const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
+const { select } = window.wp.data;
+
 const { PanelBody, FormToggle } = window.wp.components;
 
 export default ({ setAttributes, attributes, clientId }) => {
@@ -39,9 +41,12 @@ export default ({ setAttributes, attributes, clientId }) => {
     ["ljs/button"],
   ];
 
+  const innerBlocks =
+    select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+
   useEffect(() => {
     passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme]);
+  }, [attributes.colorTheme, innerBlocks]);
 
   return (
     <>

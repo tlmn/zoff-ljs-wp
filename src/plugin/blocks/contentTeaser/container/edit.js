@@ -11,6 +11,8 @@ const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
+const { select } = window.wp.data;
+
 export default (props) => {
   const { attributes } = props;
   const blockProps = useBlockProps({
@@ -28,11 +30,12 @@ export default (props) => {
     ["ljs/content-teaser-column-body"],
   ];
 
-  const { clientId } = props;
+  const innerBlocks =
+    select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
     passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme]);
+  }, [attributes.colorTheme, innerBlocks]);
 
   return (
     <>

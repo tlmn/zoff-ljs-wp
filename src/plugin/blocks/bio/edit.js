@@ -9,6 +9,8 @@ const { PanelBody, FormToggle } = window.wp.components;
 
 const { __ } = window.wp.i18n;
 
+const { select } = window.wp.data;
+
 export default (props) => {
   const { attributes, setAttributes, clientId } = props;
   const blockProps = useBlockProps({
@@ -41,9 +43,12 @@ export default (props) => {
     ["ljs/contact-bar-container"],
   ];
 
+  const innerBlocks =
+    select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+
   useEffect(() => {
     passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme]);
+  }, [attributes.colorTheme, innerBlocks]);
 
   return (
     <>

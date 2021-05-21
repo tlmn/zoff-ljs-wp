@@ -6,6 +6,8 @@ const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
+const { select } = window.wp.data;
+
 export default (props) => {
   const { attributes, clientId } = props;
 
@@ -16,9 +18,12 @@ export default (props) => {
   const ALLOWED_BLOCKS = ["ljs/accordion-item"];
   const TEMPLATE = [["ljs/accordion-item"]];
 
+  const innerBlocks =
+    select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+
   useEffect(() => {
     passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme]);
+  }, [attributes.colorTheme, innerBlocks]);
 
   return (
     <>

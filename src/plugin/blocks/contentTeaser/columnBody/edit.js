@@ -7,6 +7,8 @@ import { useEffect } from "react";
 
 const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
+const { select } = window.wp.data;
+
 const { __ } = window.wp.i18n;
 
 export default ({ attributes, clientId }) => {
@@ -35,9 +37,12 @@ export default ({ attributes, clientId }) => {
     ["ljs/button"],
   ];
 
+  const innerBlocks =
+    select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
+
   useEffect(() => {
     passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme]);
+  }, [attributes.colorTheme, innerBlocks]);
 
   return (
     <>

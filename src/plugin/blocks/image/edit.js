@@ -9,15 +9,20 @@ const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const { attributes, setAttributes, clientId } = props;
 
   const blockProps = useBlockProps({
     className: `ljs-image text-${getPrimaryColorName(attributes.colorTheme)}`,
   });
+
+  const isInnerBlock = (clientId) =>
+    clientId !==
+    wp.data.select("core/editor").getBlockHierarchyRootClientId(clientId);
+
   return (
     <>
       <InspectorControls>
-        <ColorThemeSelector {...props} />
+        {!isInnerBlock && <ColorThemeSelector {...props} />}
         <ImageSelector {...props} />
       </InspectorControls>
 

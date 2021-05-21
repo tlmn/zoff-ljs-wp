@@ -13,3 +13,19 @@
 .marker-black ul li::marker {
   @apply text-black;
 }
+
+.fill-green:hover svg path {
+  fill: theme("colors.green");
+}
+
+.fill-purple:hover svg path {
+  fill: theme("colors.purple");
+}
+
+.fill-red:hover svg path {
+  fill: theme("colors.red");
+}
+
+.fill-black:hover svg path {
+  fill: theme("colors.black.DEFAULT");
+}

@@ -1,4 +1,3 @@
-import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 import { passColorThemeToInnerBlocks } from "../../lib/lib";
@@ -76,7 +75,6 @@ export default (props) => {
             </label>
           </div>
         </PanelBody>
-        <ColorThemeSelector {...props} />
         <ImageSelector {...props} />
       </InspectorControls>
 

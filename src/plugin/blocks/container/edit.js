@@ -10,7 +10,8 @@ const { select } = window.wp.data;
 
 const { PanelBody, FormToggle } = window.wp.components;
 
-export default ({ setAttributes, attributes, clientId }) => {
+export default (props) => {
+  const { setAttributes, attributes, clientId } = props;
   const blockProps = useBlockProps({
     className: "ljs-container",
   });

@@ -4,22 +4,19 @@ import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
 
-const { InspectorControls, RichText, BlockToolbar, useBlockProps } =
-  window.wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 const { PanelBody, FormToggle } = window.wp.components;
 
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const { attributes, setAttributes, focus } = props;
   const blockProps = useBlockProps({
     className: `ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 
   return (
     <>
-      <BlockToolbar />
-
       <InspectorControls>
         <PanelBody title={__("Bild-Position")} initialOpen={false}>
           <div className="flex items-center">

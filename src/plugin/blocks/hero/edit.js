@@ -23,7 +23,6 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar />
       <InspectorControls>
         <ColorThemeSelector {...props} />
 

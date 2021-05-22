@@ -20,14 +20,20 @@
   @apply leading-snug;
 }
 
+@screen sm {
+  .ljs-quote__content-wrapper {
+    @apply px-3;
+    @apply py-2;
+  }
+}
+
 @screen md {
   .ljs-quote__image-wrapper,
   .ljs-quote__content-wrapper {
     @apply col-span-6;
   }
   .ljs-quote__content-wrapper {
-    @apply px-9;
-    @apply py-0;
+    @apply p-7;
   }
   .ljs-quote__content-body {
     @apply text-3xl;

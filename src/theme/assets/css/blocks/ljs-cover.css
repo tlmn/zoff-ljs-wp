@@ -1,7 +1,7 @@
 .ljs-cover {
   @apply max-h-screen;
-  @apply h-screen;
   @apply relative;
+  height: 80vh;
 }
 
 .ljs-cover__background {
@@ -43,14 +43,15 @@
 
 .ljs-cover__title h2:nth-child(even),
 .ljs-cover__title .block-editor-block-list__layout h2:nth-child(even) {
-  @apply mr-0;
+  @apply -mt-3;
+  @apply self-end;
 }
 
 .ljs-cover__title h2 {
   @apply z-20 relative;
-  @apply py-2 px-3;
+  @apply px-3;
   @apply font-black uppercase italic leading-snug text-center;
-  @apply text-3xl tracking-tight;
+  @apply text-4xl tracking-tight;
   @apply box-clone;
   @apply inline-block;
   line-height: 2.1;

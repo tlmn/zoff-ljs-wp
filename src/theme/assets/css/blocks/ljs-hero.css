@@ -1,6 +1,6 @@
 .ljs-hero__wrapper {
   @apply max-h-screen;
-  @apply h-screen;
+  height: 80vh;
   @apply relative;
 }
 

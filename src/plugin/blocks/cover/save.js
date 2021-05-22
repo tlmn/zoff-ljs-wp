@@ -7,11 +7,24 @@ const { __ } = window.wp.i18n;
 const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-cover" });
   const { attributes } = props;
+  const blockProps = useBlockProps.save({ className: "ljs-cover" });
+
   return (
     <div {...blockProps}>
-      <Image className="ljs-cover__background" placeholder="crowd" {...props} />
+      {attributes.hasColoredBg ? (
+        <div
+          className={`absolute w-full h-full top-0 left-0 bg-${getSecondaryColorName(
+            attributes.colorTheme
+          )}`}
+        />
+      ) : (
+        <Image
+          className="ljs-cover__background"
+          placeholder="crowd"
+          {...props}
+        />
+      )}
       <div className="ljs-cover__overlay-wrapper">
         <div className="max-w-max">
           <div className="ljs-cover__rotation-outer-wrapper">

@@ -19,8 +19,9 @@ registerBlockType("ljs/cover", {
       type: "string",
       default: "",
     },
-    logoHide: {
+    hasColoredBg: {
       type: "boolean",
+      default: false,
     },
     colorTheme: {
       type: "string",

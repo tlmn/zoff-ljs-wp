@@ -5,24 +5,34 @@ footer {
 
 ul.footer_menu {
   @apply m-0 p-0;
+  @apply flex flex-col;
 }
 
 ul.footer_menu li {
-  @apply flex;
+  @apply py-2;
 }
 
 ul.footer_menu li a {
   @apply animated;
-  @apply w-full;
-  @apply flex justify-center;
-  @apply py-2;
-  @apply font-bold text-md;
+  @apply font-bold text-md uppercase;
   @apply text-white;
 }
 
 @screen md {
+  ul.footer_menu li {
+    @apply py-0;
+  }
+
   ul.footer_menu li a:first-child {
     @apply pl-0;
+  }
+
+  ul.footer_menu li a {
+    @apply px-4;
+  }
+
+  ul.footer_menu {
+    @apply flex-row;
   }
 }
 

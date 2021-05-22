@@ -10,6 +10,10 @@ registerBlockType("ljs/breaker", {
   icon: "tide",
   category: "ljs/layout",
   attributes: {
+    hasSlantedBorders: {
+      type: "boolean",
+      default: false,
+    },
     colorTheme: {
       type: "string",
       default: "purple_red",

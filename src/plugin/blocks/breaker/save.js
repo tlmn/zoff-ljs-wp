@@ -1,4 +1,10 @@
-import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
+import {
+  getPrimaryColorName,
+  getSecondaryColorName,
+  getSecondaryColorValue,
+} from "../../lib/lib";
+
+import SlantedBorder from "../../assets/svg/slantedBorder";
 
 const { __ } = window.wp.i18n;
 
@@ -7,17 +13,31 @@ const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 export default (props) => {
   const { attributes } = props;
   const blockProps = useBlockProps.save({
-    className: `ljs-breaker bg-${getSecondaryColorName(attributes.colorTheme)}`,
+    className: "ljs-breaker",
   });
 
   return (
     <div {...blockProps}>
-      <div
-        className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
-          attributes.colorTheme
-        )}`}
-      >
-        <InnerBlocks.Content />
+      {attributes.hasSlantedBorders && (
+        <SlantedBorder
+          flipped={false}
+          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+        />
+      )}
+      <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+        <div
+          className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
+            attributes.colorTheme
+          )}`}
+        >
+          <InnerBlocks.Content />
+        </div>
+        {attributes.hasSlantedBorders && (
+          <SlantedBorder
+            flipped={true}
+            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          />
+        )}
       </div>
     </div>
   );

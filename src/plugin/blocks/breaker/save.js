@@ -12,9 +12,7 @@ const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
 export default (props) => {
   const { attributes } = props;
-  const blockProps = useBlockProps.save({
-    className: "ljs-breaker",
-  });
+  const blockProps = useBlockProps.save({});
 
   return (
     <div {...blockProps}>
@@ -24,7 +22,11 @@ export default (props) => {
           fillColor={getSecondaryColorValue(attributes.colorTheme)}
         />
       )}
-      <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+      <div
+        className={`bg-${getSecondaryColorName(
+          attributes.colorTheme
+        )} ljs-breaker__wrapper`}
+      >
         <div
           className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
             attributes.colorTheme

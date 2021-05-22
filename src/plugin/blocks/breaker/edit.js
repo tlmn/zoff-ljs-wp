@@ -19,9 +19,7 @@ const { select } = window.wp.data;
 
 export default ({ clientId, ...props }) => {
   const { attributes, setAttributes } = props;
-  const blockProps = useBlockProps({
-    className: "ljs-breaker",
-  });
+  const blockProps = useBlockProps({});
 
   const ALLOWED_BLOCKS = ["core/heading", "ljs/button"];
   const TEMPLATE = [
@@ -80,7 +78,11 @@ export default ({ clientId, ...props }) => {
             fillColor={getSecondaryColorValue(attributes.colorTheme)}
           />
         )}
-        <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+        <div
+          className={`bg-${getSecondaryColorName(
+            attributes.colorTheme
+          )} ljs-breaker__wrapper`}
+        >
           <div
             className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
               attributes.colorTheme

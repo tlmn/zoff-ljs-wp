@@ -47,3 +47,31 @@ p {
     @apply font-hind text-lg font-normal leading-wider;
   }
 }
+
+@layer utilities {
+  .is-style-event-title {
+    @apply block font-gilroy font-bold text-3xl leading-tight;
+  }
+
+  @screen md {
+    .is-style-event-title {
+      @apply text-6xl;
+    }
+  }
+
+  .is-style-event-date {
+    @apply block font-gilroy font-bold uppercase text-base leading-snug;
+  }
+
+  .is-style-teaser,
+  .is-style-teaser p {
+    @apply block font-gilroy font-bold text-md leading-wider;
+  }
+
+  @screen md {
+    .is-style-teaser,
+    .is-style-teaser p {
+      @apply text-xl;
+    }
+  }
+}

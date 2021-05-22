@@ -6,11 +6,9 @@ export default ({ events }) => {
 
   return (
     <div {...blockProps}>
-      {!events && "Lade Block"}
-      {events && events.length === 0 && "Keine Termine"}
-      {events && events.length > 0 && (
-        <a href={events[0].link}>{events[0].title.rendered}</a>
-      )}
+      <div className="col-span-full">
+        <h2>Hier wird der nächste Termin angezeigt</h2>
+      </div>
     </div>
   );
 };

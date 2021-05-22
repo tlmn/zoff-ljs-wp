@@ -55,7 +55,8 @@ function ljs_block_categories($categories)
 
 function expose_plugin_dir_url()
 {
-    wp_localize_script('ljs-editor-script', 'ljsBlocks', array('pluginURL' => plugin_dir_url(__FILE__)));
+    $pluginRelativePath = preg_replace('/^(?:\/\/|[^\/]+)*/', '', plugin_dir_url(__FILE__));
+    wp_localize_script('ljs-editor-script', 'ljsBlocks', array('pluginURL' => $pluginRelativePath));
 }
 
 add_filter('block_categories', 'ljs_block_categories', 10, 2);

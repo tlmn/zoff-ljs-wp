@@ -12,17 +12,17 @@ const { __ } = window.wp.i18n;
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-accordion-item" });
+  const blockProps = useBlockProps.save();
 
   const { attributes } = props;
 
   return (
     <div {...blockProps}>
-      <div className="ljs-accordion-item__title-wrapper">
+      <div className="wp-block-ljs-accordion-item__title-wrapper">
         <RichText.Content
           value={attributes.title}
           tagName="div"
-          className={`ljs-accordion-item__title bg-${getPrimaryColorName(
+          className={`wp-block-ljs-accordion-item__title bg-${getPrimaryColorName(
             attributes.colorTheme
           )} text-${getSecondaryColorName(attributes.colorTheme)}`}
         />
@@ -30,13 +30,13 @@ export default (props) => {
       <details
         className={`bg-${getSecondaryColorName(
           attributes.colorTheme
-        )} ljs-accordion-item ljs-accordion-item__body-wrapper`}
+        )} wp-block-ljs-accordion-item wp-block-ljs-accordion-item__body-wrapper`}
       >
         <summary>
           <RichText.Content
             value={attributes.bodyLess}
             tagName="div"
-            className={`ljs-accordion-item__body-less text-${getPrimaryColorName(
+            className={`wp-block-ljs-accordion-item__body-less text-${getPrimaryColorName(
               attributes.colorTheme
             )}`}
           />
@@ -45,15 +45,15 @@ export default (props) => {
         <RichText.Content
           value={attributes.bodyMore}
           tagName="div"
-          className={`ljs-accordion-item__body-more mt-6 text-${getPrimaryColorName(
+          className={`wp-block-ljs-accordion-item__body-more mt-6 text-${getPrimaryColorName(
             attributes.colorTheme
           )}`}
         />
       </details>
 
-      <div className="ljs-accordion-item__button-wrapper">
+      <div className="wp-block-ljs-accordion-item__button-wrapper">
         <button
-          className={`ljs-accordion-item__button hover:border-${getPrimaryColorName(
+          className={`wp-block-ljs-accordion-item__button hover:border-${getPrimaryColorName(
             attributes.colorTheme
           )}`}
           onClick="handleDetailsButtonClick(event); return false;"
@@ -61,7 +61,7 @@ export default (props) => {
           <PlusIcon fillColor={getSecondaryColorValue(attributes.colorTheme)} />
         </button>
         <button
-          className={`ljs-accordion-item__button hidden hover:border-${getPrimaryColorName(
+          className={`wp-block-ljs-accordion-item__button hidden hover:border-${getPrimaryColorName(
             attributes.colorTheme
           )}`}
           onClick="handleDetailsButtonClick(event); return false;"

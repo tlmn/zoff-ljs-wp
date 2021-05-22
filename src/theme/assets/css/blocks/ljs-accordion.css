@@ -1,21 +1,21 @@
-.ljs-accordion-container {
+.wp-block-ljs-accordion-container {
   @apply py-5;
   @apply max-w-full;
   @apply mx-auto;
 }
 
-.ljs-accordion-item {
+.wp-block-ljs-accordion-item {
   @apply rounded-2xl;
   @apply relative;
 }
 
-.ljs-accordion-item__button-wrapper {
+.wp-block-ljs-accordion-item__button-wrapper {
   @apply absolute left-0 bottom-0 w-full;
   @apply flex justify-center;
   @apply z-10;
 }
 
-.ljs-accordion-item__button {
+.wp-block-ljs-accordion-item__button {
   @apply animated;
   @apply p-2;
   @apply font-gilroy font-black text-lg uppercase;
@@ -26,54 +26,54 @@
   @apply border-transparent;
 }
 
-.ljs-accordion-item__title-wrapper {
+.wp-block-ljs-accordion-item__title-wrapper {
   @apply absolute left-0 top-0 w-full;
   @apply flex justify-center;
   @apply z-10;
 }
 
-.ljs-accordion-item__title {
+.wp-block-ljs-accordion-item__title {
   @apply p-2;
   @apply font-gilroy font-black text-lg uppercase;
   @apply rounded-lg;
   transform: translateY(-50%);
 }
 
-.ljs-accordion-item__body-wrapper {
+.wp-block-ljs-accordion-item__body-wrapper {
   @apply p-7;
 }
 
-.ljs-accordion-item__body-less {
+.wp-block-ljs-accordion-item__body-less {
   @apply font-gilroy font-black italic text-3xl text-center;
 }
 
-.ljs-accordion-item__body-more {
+.wp-block-ljs-accordion-item__body-more {
   @apply font-gilroy font-normal text-2xl text-center;
 }
 
-.ljs-accordion-item__body-more * {
+.wp-block-ljs-accordion-item__body-more * {
   color: inherit;
 }
 
-.ljs-accordion-item__body-more a {
+.wp-block-ljs-accordion-item__body-more a {
   @apply underline;
 }
 
-.ljs-accordion-item__body-more a:hover {
+.wp-block-ljs-accordion-item__body-more a:hover {
   @apply no-underline;
 }
 
-.ljs-accordion-item summary {
+.wp-block-ljs-accordion-item summary {
   @apply list-none;
 }
 
-.ljs-accordion-item summary::marker,
-.ljs-accordion-item summary::-webkit-details-marker {
+.wp-block-ljs-accordion-item summary::marker,
+.wp-block-ljs-accordion-item summary::-webkit-details-marker {
   @apply hidden;
 }
 
 @screen md {
-  .ljs-accordion-container {
+  .wp-block-ljs-accordion-container {
     max-width: 70%;
   }
 }

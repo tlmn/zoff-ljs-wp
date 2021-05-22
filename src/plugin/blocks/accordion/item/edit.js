@@ -7,16 +7,14 @@ const { __ } = window.wp.i18n;
 export default (props) => {
   const { attributes, setAttributes } = props;
   const blockProps = useBlockProps({
-    className: `ljs-accordion-item bg-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `bg-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 
   return (
     <>
       <div {...blockProps}>
         <div
-          className={`ljs-accordion-item__title-wrapper text-${getSecondaryColorName(
+          className={`wp-block-ljs-accordion-item__title-wrapper text-${getSecondaryColorName(
             attributes.colorTheme
           )}`}
         >
@@ -24,7 +22,7 @@ export default (props) => {
             value={attributes.title}
             allowedFormats={[]}
             tagName="div"
-            className={`ljs-accordion-item__title bg-${getPrimaryColorName(
+            className={`wp-block-ljs-accordion-item__title bg-${getPrimaryColorName(
               attributes.colorTheme
             )}`}
             onChange={(title) => setAttributes({ title })}
@@ -33,7 +31,7 @@ export default (props) => {
         </div>
 
         <div
-          className={`ljs-accordion-item__body-wrapper text-${getPrimaryColorName(
+          className={`wp-block-ljs-accordion-item__body-wrapper text-${getPrimaryColorName(
             attributes.colorTheme
           )}`}
         >
@@ -41,7 +39,7 @@ export default (props) => {
             value={attributes.bodyLess}
             allowedFormats={[]}
             tagName="div"
-            className={`ljs-accordion-item__body-less`}
+            className={`wp-block-ljs-accordion-item__body-less`}
             onChange={(bodyLess) => setAttributes({ bodyLess })}
             placeholder={__("Text zusammengeklappt")}
           />
@@ -55,7 +53,7 @@ export default (props) => {
               "core/link",
             ]}
             tagName="div"
-            className={`ljs-accordion-item__body-more`}
+            className={`wp-block-ljs-accordion-item__body-more`}
             onChange={(bodyMore) => setAttributes({ bodyMore })}
             placeholder={__("Text ausgeklappt")}
           />

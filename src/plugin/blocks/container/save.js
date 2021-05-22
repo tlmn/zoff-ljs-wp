@@ -3,9 +3,7 @@ const { __ } = window.wp.i18n;
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
 export default ({ attributes }) => {
-  const blockProps = useBlockProps.save({
-    className: "ljs-container",
-  });
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>

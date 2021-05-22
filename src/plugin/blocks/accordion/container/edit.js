@@ -11,9 +11,7 @@ const { select } = window.wp.data;
 export default (props) => {
   const { attributes, clientId } = props;
 
-  const blockProps = useBlockProps({
-    className: "ljs-accordion-container",
-  });
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = ["ljs/accordion-item"];
   const TEMPLATE = [["ljs/accordion-item"]];

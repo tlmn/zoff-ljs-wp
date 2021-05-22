@@ -22,7 +22,7 @@ function custom_post_type_beschluss()
 function custom_post_type_termin()
 {
     register_post_type(
-        'termine',
+        'event',
         array(
             'labels'        => array(
                 'name'          => __('Termine', 'textdomain'),

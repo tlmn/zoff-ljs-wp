@@ -59,7 +59,12 @@ export default (props) => {
             >
               <RichText
                 value={attributes.body}
-                allowedFormats={["core/italic", "core/bold", "core/link"]}
+                allowedFormats={[
+                  "core/italic",
+                  "core/underline",
+                  "core/bold",
+                  "core/link",
+                ]}
                 tagName="p"
                 className={`ljs-intro-text__body`}
                 onChange={(body) => setAttributes({ body })}

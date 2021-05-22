@@ -9,28 +9,30 @@ const { useBlockProps, RichText } = window.wp.blockEditor;
 export default (props) => {
   const { attributes } = props;
   const blockProps = useBlockProps.save({
-    className: `ljs-tiles-single text-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `text-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 
   return (
-    <a {...blockProps} href={attributes.url}>
-      <Image
-        className="ljs-tiles-single__image"
-        placeholder="crowd"
-        {...props}
-      />
-      <div className="ljs-tiles-single__wrapper">
-        {attributes.title !== "" && (
+    <a {...blockProps} href={attributes.link}>
+      <div className="wp-block-ljs-tiles-single__wrapper">
+        <Image
+          className="wp-block-ljs-tiles-single__image"
+          placeholder="crowd"
+          {...props}
+        />
+        <div
+          className={`wp-block-ljs-tiles-single__text-wrapper text-${getPrimaryColorName(
+            attributes.colorTheme
+          )}`}
+        >
           <RichText.Content
             value={attributes.title}
             tagName="h4"
-            className={`ljs-tiles-single__title text-${getPrimaryColorName(
+            className={`wp-block-ljs-tiles-single__title bg-${getSecondaryColorName(
               attributes.colorTheme
-            )} bg-${getSecondaryColorName(attributes.colorTheme)}`}
+            )}`}
           />
-        )}
+        </div>
       </div>
     </a>
   );

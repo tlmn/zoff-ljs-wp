@@ -11,9 +11,7 @@ const { __ } = window.wp.i18n;
 export default (props) => {
   const { attributes, setAttributes } = props;
   const blockProps = useBlockProps({
-    className: `ljs-tiles-single text-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `text-${getSecondaryColorName(attributes.colorTheme)}`,
   });
 
   return (
@@ -23,27 +21,29 @@ export default (props) => {
         <ImageSelector {...props} />
       </InspectorControls>
 
-      <div {...blockProps} href={attributes.url}>
-        <Image
-          className="ljs-tiles-single__image"
-          placeholder="crowd"
-          {...props}
-        />
-        <div
-          className={`ljs-tiles-single__wrapper text-${getPrimaryColorName(
-            attributes.colorTheme
-          )}`}
-        >
-          <RichText
-            value={attributes.title}
-            tagName="h4"
-            className={`ljs-tiles-single__title bg-${getSecondaryColorName(
+      <div {...blockProps}>
+        <div className="wp-block-ljs-tiles-single__wrapper">
+          <Image
+            className="wp-block-ljs-tiles-single__image"
+            placeholder="crowd"
+            {...props}
+          />
+          <div
+            className={`wp-block-ljs-tiles-single__text-wrapper text-${getPrimaryColorName(
               attributes.colorTheme
             )}`}
-            allowedFormats={[]}
-            onChange={(title) => setAttributes({ title })}
-            placeholder={__("Titel")}
-          />
+          >
+            <RichText
+              value={attributes.title}
+              tagName="h4"
+              className={`wp-block-ljs-tiles-single__title bg-${getSecondaryColorName(
+                attributes.colorTheme
+              )}`}
+              allowedFormats={[]}
+              onChange={(title) => setAttributes({ title })}
+              placeholder={__("Titel")}
+            />
+          </div>
         </div>
       </div>
     </>

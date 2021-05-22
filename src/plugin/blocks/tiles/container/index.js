@@ -9,6 +9,9 @@ registerBlockType("ljs/tiles-container", {
   title: "Container Kachel",
   icon: "grid-view",
   category: "ljs/layout",
-  edit: () => BlockEdit(),
-  save: () => BlockSave(),
+  attributes: {
+    colorTheme: { type: "string", default: "purple_red" },
+  },
+  edit: (props) => BlockEdit(props),
+  save: (props) => BlockSave(props),
 });

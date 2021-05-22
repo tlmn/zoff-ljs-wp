@@ -1,20 +1,18 @@
-.ljs-tiles-single {
-  @apply col-span-full;
-  @apply relative;
-  @apply ratio--1-1;
-  @apply box-shadow--5;
-  @apply my-1 mr-1;
+.wp-block-ljs-tiles-single {
+  @apply col-span-full w-full;
   @apply animated;
+  @apply p-3;
   &:hover {
     @apply opacity-75;
   }
 }
 
-.ljs-tiles-single__wrapper {
-  @apply absolute z-10 w-full h-full top-0 left-0 flex items-center justify-center;
+.wp-block-ljs-tiles-single__wrapper {
+  @apply relative w-full ratio--1-1;
+  @apply box-shadow--10;
 }
 
-.ljs-tiles-single__title {
+.wp-block-ljs-tiles-single__title {
   @apply uppercase;
   @apply font-gilroy italic font-black text-center;
   @apply text-2xl leading-snug;
@@ -22,20 +20,25 @@
   transform: rotate(-4deg);
 }
 
-.ljs-tiles-single__image {
-  @apply object-cover w-full h-full absolute top-0 left-0 border-0;
-  @apply image-bw;
+.wp-block-ljs-tiles-single__image {
+  @apply w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw;
+}
+
+.wp-block-ljs-tiles-single__text-wrapper {
+  @apply absolute top-0 left-0 w-full h-full flex items-center justify-center;
 }
 
 @screen md {
-  .ljs-tiles-single {
+  .wp-block-ljs-tiles-single {
     @apply col-span-6;
-    @apply ratio--3-2;
-    @apply box-shadow--10;
     @apply my-3 mr-3;
   }
 
-  .ljs-tiles-single__title {
+  .wp-block-ljs-tiles-single__title {
     @apply text-3xl;
+  }
+
+  .wp-block-ljs-tiles-single__wrapper {
+    @apply ratio--3-2;
   }
 }

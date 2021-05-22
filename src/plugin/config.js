@@ -23,7 +23,7 @@ export const secondaryThemes = [
   "black_red",
   "red_black",
   // "red_white",
-  "white_red",
+  // "white_red",
 ];
 
 export const colorThemes = [

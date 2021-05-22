@@ -1,6 +1,6 @@
 .ljs-accordion-container {
   @apply py-5;
-  max-width: 90%;
+  @apply max-w-full;
   @apply mx-auto;
 }
 
@@ -55,7 +55,8 @@
   @apply list-none;
 }
 
-.ljs-accordion-item summary::marker {
+.ljs-accordion-item summary::marker,
+.ljs-accordion-item summary::-webkit-details-marker {
   @apply hidden;
 }
 

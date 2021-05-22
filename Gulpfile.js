@@ -91,7 +91,13 @@ gulp.task("theme:postcss:compile", function () {
 
 gulp.task("plugin:copy", function () {
   return gulp
-    .src(["src/plugin/index.php", "src/plugin/assets/**/*"])
+    .src([
+      "src/plugin/index.php",
+      "src/plugin/assets/**/*",
+      "!src/plugin/assets/**/*.js",
+      "!src/plugin/assets/images/**/*",
+      "!src/plugin/assets/colorThemes/**/*",
+    ])
     .pipe(gulp.dest(destDir("plugin")));
 });
 

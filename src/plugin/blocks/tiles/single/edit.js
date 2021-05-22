@@ -1,6 +1,5 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
-import ColorThemeSelector from "../../../inspector/colorThemeSelector";
 import Image from "../../../blockComponents/image";
 import ImageSelector from "../../../inspector/imageSelector";
 import URLPicker from "../../../inspector/URLPicker";
@@ -20,7 +19,6 @@ export default (props) => {
   return (
     <>
       <InspectorControls>
-        <ColorThemeSelector {...props} />
         <URLPicker {...props} />
         <ImageSelector {...props} />
       </InspectorControls>

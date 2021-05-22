@@ -1,3 +1,18 @@
 .wp-block-ljs-latest-event {
   @apply container ljs-grid;
+  @apply py-7;
+}
+
+.wp-block-ljs-latest-event__date {
+  @apply is-style-event-date;
+  @apply mb-3;
+}
+
+.wp-block-ljs-latest-event__title {
+  @apply is-style-event-title;
+  @apply mb-6;
+}
+
+.wp-block-ljs-latest-event__body {
+  @apply is-style-teaser;
 }

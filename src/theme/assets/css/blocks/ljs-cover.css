@@ -1,7 +1,6 @@
 .ljs-cover {
-  @apply max-h-screen;
+  @apply max-h-screen h-screen;
   @apply relative;
-  height: 80vh;
 }
 
 .ljs-cover__background {

@@ -22,6 +22,7 @@ h3 {
 p {
   @apply font-hind text-lg font-normal leading-wider;
   & a {
+    @apply animated;
     @apply underline;
     &:hover {
       @apply no-underline;

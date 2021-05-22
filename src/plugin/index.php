@@ -62,23 +62,35 @@ function expose_plugin_dir_url()
 
 function ljs_render_latest_event()
 {
+    setlocale(LC_TIME, 'de_DE');
+
     $query_args = array(
-        'post_type' => 'event',
-        'post_status' => 'publish',
-        'posts_per_page' => 1,
-        'orderby' => 'title',
+        'post_type'         => 'event',
+        'post_status'       => 'publish',
+        'posts_per_page'    => 1,
+        'meta_key'          => 'time_startTime',
+        'orderby'           => 'meta_value_num',
+        'order'             => 'DESC'
     );
 
-    $loop = new WP_Query($query_args);
+    $query = new WP_Query($query_args);
+    $posts = $query->posts;
 
-    if (have_posts()) {
-        $block = '<div class="wp-block-ljs-latest-event">';
-
-        while ($loop->have_posts()) : $loop->the_post();
-            $block .= get_the_title();
-        endwhile;
-
-        $block .= '</div>';
+    if (count($posts) > 0) {
+        $post = $posts[0];
+        $post_id = $post->ID;
+        $block = '
+        <div class="wp-block-ljs-latest-event">
+            <div class="col-span-full flex justify-center md:col-span-2">
+            ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
+            </div>
+            <div class="col-span-full md:col-span-8">
+                <span class="wp-block-ljs-latest-event__date">' . date("d. F Y", strtotime(get_field('time', $post_id)['startTime'])) . '</span>
+                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
+                <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
+                <a href="' . get_permalink($post_id) . '" class="ljs-button bg-green text-black hover:bg-black hover:text-green">mehr Infos</a>
+            </div>
+        </div>';
         return $block;
     } else {
         return null;

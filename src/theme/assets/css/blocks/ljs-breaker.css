@@ -1,4 +1,4 @@
-.ljs-breaker {
+.ljs-breaker__wrapper {
   @apply uppercase;
   @apply py-5;
   @apply text-center;

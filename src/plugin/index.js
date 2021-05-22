@@ -8,6 +8,7 @@ import "./blocks/breaker";
 import "./blocks/image";
 import "./blocks/quote";
 import "./blocks/bio";
+import "./blocks/latest-events";
 import "./blocks/list";
 import "./blocks/container";
 import "./blocks/cover";

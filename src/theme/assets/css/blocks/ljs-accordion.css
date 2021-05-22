@@ -51,6 +51,18 @@
   @apply font-gilroy font-normal text-2xl text-center;
 }
 
+.ljs-accordion-item__body-more * {
+  color: inherit;
+}
+
+.ljs-accordion-item__body-more a {
+  @apply underline;
+}
+
+.ljs-accordion-item__body-more a:hover {
+  @apply no-underline;
+}
+
 .ljs-accordion-item summary {
   @apply list-none;
 }

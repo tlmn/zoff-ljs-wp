@@ -1,6 +1,6 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
-const { RichText, useBlockProps, BlockToolbar } = window.wp.blockEditor;
+const { RichText, useBlockProps } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
@@ -14,8 +14,6 @@ export default (props) => {
 
   return (
     <>
-      <BlockToolbar />
-
       <div {...blockProps}>
         <div
           className={`ljs-accordion-item__title-wrapper text-${getSecondaryColorName(
@@ -50,7 +48,12 @@ export default (props) => {
           <hr style={{ borderTopWidth: "2px" }} className="my-6" />
           <RichText
             value={attributes.bodyMore}
-            allowedFormats={[]}
+            allowedFormats={[
+              "core/bold",
+              "core/italic",
+              "core/underline",
+              "core/link",
+            ]}
             tagName="div"
             className={`ljs-accordion-item__body-more`}
             onChange={(bodyMore) => setAttributes({ bodyMore })}

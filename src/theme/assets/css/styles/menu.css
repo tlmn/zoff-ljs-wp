@@ -1,3 +1,22 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  @apply animated;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 ul.menu {
   @apply m-0 p-0;
   & li {
@@ -25,6 +44,7 @@ ul.menu.primary_menu .sub-menu {
   @apply bg-green;
   & li a {
     @apply text-black;
+    @apply justify-start;
   }
 }
 

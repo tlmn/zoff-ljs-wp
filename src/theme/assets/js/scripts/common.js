@@ -48,3 +48,10 @@ $(() =>
       })
   )
 );
+
+$(() =>
+  $("#menu-navigation ul.sub-menu").each((index, value) => {
+    $(value).addClass("dropdown-content");
+    $(value).parent().addClass("dropdown").css("display", "inline-block");
+  })
+);

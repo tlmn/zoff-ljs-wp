@@ -37,7 +37,7 @@
 					'echo'                 => true,
 					'fallback_cb'          => 'wp_page_menu',
 					'theme_location'       => 'primary_menu',
-					'depth'				   => 1
+					'depth'				   => 2
 				));
 
 				?>

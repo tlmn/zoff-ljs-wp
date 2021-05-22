@@ -65,7 +65,7 @@
 		</div>
 	</div>
 
-	<div class="hidden items-end flex-col justify-end md:hidden fixed top-0 left-0 h-screen h-max-screen w-screen w-max-screen z-50 overflow-scroll" id="mobile-menu">
+	<div class="hidden items-end flex-col justify-end md:hidden fixed top-0 left-0 h-screen h-max-screen w-screen w-max-screen z-50 overflow-scroll pb-8" id="mobile-menu">
 		<div class="hidden flex-1 w-full" id="mobile-navigation">
 			<div class="w-full py-5 flex justify-center">
 				<a href="/" style="height: 2.5rem; width: 2.5rem;">

@@ -24,6 +24,13 @@
   @apply bg-white;
   @apply border-4;
   @apply border-transparent;
+
+  &:hover {
+    outline: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .wp-block-ljs-accordion-item__title-wrapper {

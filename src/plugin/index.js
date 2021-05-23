@@ -1,14 +1,14 @@
 import "./lib/unregisterBlockStyles";
 import "./blocks/button";
 import "./blocks/hero";
-import "./blocks/intro-text";
+import "./blocks/introText";
 import "./blocks/tiles/container";
 import "./blocks/tiles/single";
 import "./blocks/breaker";
 import "./blocks/image";
 import "./blocks/quote";
 import "./blocks/bio";
-import "./blocks/latest-events";
+import "./blocks/latestEvents";
 import "./blocks/list";
 import "./blocks/container";
 import "./blocks/cover";

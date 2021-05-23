@@ -55,7 +55,7 @@
 }
 
 .wp-block-ljs-accordion-item__body-more {
-  @apply font-gilroy font-normal text-2xl text-center;
+  @apply font-gilroy font-normal text-2xl text-center leading-wider;
 }
 
 .wp-block-ljs-accordion-item__body-more * {

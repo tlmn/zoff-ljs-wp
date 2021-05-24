@@ -1,32 +1,35 @@
-@import "./styles/theme-info.css";
+@import "./styles/base/theme-info.css";
 
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
 @import "tailwindcss/components";
 
-@import "./styles/base.css";
-@import "./styles/grid.css";
-@import "./styles/colors.css";
-@import "./styles/fonts.css";
-@import "./styles/footer.css";
-@import "./styles/typography.css";
-@import "./styles/menu.css";
+@import "./styles/base/base.css";
+@import "./styles/base/grid.css";
+@import "./styles/base/colors.css";
+@import "./styles/base/fonts.css";
+@import "./styles/base/typography.css";
+
 @import "./styles/buttons.css";
+@import "./styles/footer.css";
+@import "./styles/menu.css";
+
 @import "./editor/editor.css";
 @import "./editor/toolbar.css";
-@import "./blocks/ljs-hero.css";
-@import "./blocks/ljs-container.css";
-@import "./blocks/ljs-latest-event.css";
-@import "./blocks/ljs-image.css";
-@import "./blocks/ljs-intro-text.css";
-@import "./blocks/ljs-tiles-container.css";
-@import "./blocks/ljs-form.css";
-@import "./blocks/ljs-tiles-single.css";
+
+@import "./blocks/ljs-accordion.css";
+@import "./blocks/ljs-bio.css";
 @import "./blocks/ljs-breaker.css";
 @import "./blocks/ljs-contact-bar.css";
+@import "./blocks/ljs-container.css";
 @import "./blocks/ljs-content-teaser.css";
-@import "./blocks/ljs-quote.css";
-@import "./blocks/ljs-bio.css";
 @import "./blocks/ljs-cover.css";
+@import "./blocks/ljs-form.css";
+@import "./blocks/ljs-hero.css";
+@import "./blocks/ljs-image.css";
+@import "./blocks/ljs-intro-text.css";
+@import "./blocks/ljs-latest-event.css";
 @import "./blocks/ljs-list.css";
-@import "./blocks/ljs-accordion.css";
+@import "./blocks/ljs-quote.css";
+@import "./blocks/ljs-tiles-container.css";
+@import "./blocks/ljs-tiles-single.css";

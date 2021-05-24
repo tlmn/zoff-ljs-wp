@@ -88,7 +88,7 @@ function ljs_render_latest_event()
                 <span class="wp-block-ljs-latest-event__date">' . date("d. F Y", strtotime(get_field('time', $post_id)['startTime'])) . '</span>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
                 <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
-                <a href="' . get_permalink($post_id) . '" class="ljs-button bg-green text-black hover:bg-black hover:text-green">mehr Infos</a>
+                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-green text-black hover:bg-black hover:text-green">mehr Infos</a>
             </div>
         </div>';
         return $block;

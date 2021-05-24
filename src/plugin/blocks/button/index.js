@@ -12,6 +12,13 @@ registerBlockType("ljs/button", {
   attributes: {
     buttonText: { type: "string", default: "Hier klicken" },
     url: { type: "string" },
+    mediaUrl: { type: "string" },
+    mediaId: {
+      type: "number",
+      default: 0,
+    },
+    isMediaUrl: { type: "boolean", default: false },
+    openInNewTab: { type: "boolean", default: false },
     colorTheme: {
       type: "string",
       default: "purple_red",

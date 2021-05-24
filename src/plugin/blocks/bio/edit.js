@@ -12,9 +12,7 @@ const { select } = window.wp.data;
 
 export default (props) => {
   const { attributes, setAttributes, clientId } = props;
-  const blockProps = useBlockProps({
-    className: "ljs-bio",
-  });
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = [
     "core/heading",
@@ -23,6 +21,7 @@ export default (props) => {
     "ljs/image",
     "ljs/contact-bar-container",
   ];
+
   const TEMPLATE = [
     [
       "core/heading",
@@ -53,7 +52,7 @@ export default (props) => {
     <>
       <InspectorControls>
         <PanelBody title={__("Bild-Position")} initialOpen={false}>
-          <div className="flex items-center">
+          <div>
             <FormToggle
               label={__("Bild-Position")}
               help={
@@ -70,7 +69,7 @@ export default (props) => {
               }
               id="imageColumnPosition-toggle"
             />
-            <label htmlFor="imageColumnPosition-toggle" className="ml-2">
+            <label htmlFor="imageColumnPosition-toggle">
               {__("Bild links")}
             </label>
           </div>
@@ -80,17 +79,17 @@ export default (props) => {
 
       <div {...blockProps}>
         <div
-          className={`ljs-bio__image-wrapper ${
+          className={`wp-block-ljs-bio__image-wrapper ${
             attributes.imageColumnPosition === "left" ? `` : `order-last`
           }`}
         >
           <Image
-            className="ljs-bio__image"
+            className="wp-block-ljs-bio__image"
             placeholder="personFemale"
             {...props}
           />
         </div>
-        <div className="ljs-bio__content-wrapper">
+        <div className="wp-block-ljs-bio__content-wrapper">
           <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
         </div>
       </div>

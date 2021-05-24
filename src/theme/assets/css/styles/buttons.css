@@ -1,4 +1,4 @@
-.ljs-button {
+.wp-block-ljs-button {
   @apply inline-block;
   @apply animated;
   @apply px-5 py-3;

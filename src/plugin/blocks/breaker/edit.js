@@ -17,9 +17,14 @@ const { __ } = window.wp.i18n;
 
 const { select } = window.wp.data;
 
-export default ({ clientId, ...props }) => {
-  const { attributes, setAttributes } = props;
-  const blockProps = useBlockProps({});
+export default (props) => {
+  const {
+    attributes: { colorTheme, hasSlantedBorders },
+    setAttributes,
+    clientId,
+  } = props;
+
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = ["core/heading", "ljs/button"];
   const TEMPLATE = [
@@ -44,26 +49,26 @@ export default ({ clientId, ...props }) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>
       <InspectorControls>
         <PanelBody title={__("Schräge Kanten")} initialOpen={true}>
-          <div className="flex items-center">
+          <div>
             <FormToggle
               label={__("Hat schräge Kanten")}
-              help={attributes.hasSlantedBorders ? "ja" : "nein"}
-              checked={attributes.hasSlantedBorders}
+              help={hasSlantedBorders ? "ja" : "nein"}
+              checked={hasSlantedBorders}
               onChange={() =>
                 setAttributes({
-                  hasSlantedBorders: !attributes.hasSlantedBorders,
+                  hasSlantedBorders: !hasSlantedBorders,
                 })
               }
               id="hasSlantedBorders-toggle"
             />
-            <label htmlFor="hasSlantedBorders-toggle" className="ml-2">
+            <label htmlFor="hasSlantedBorders-toggle">
               {__("Hat schräge Kante")}
             </label>
           </div>
@@ -72,35 +77,35 @@ export default ({ clientId, ...props }) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        {attributes.hasSlantedBorders && (
+        {hasSlantedBorders && (
           <SlantedBorder
             flipped={false}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+            fillColor={getSecondaryColorValue(colorTheme)}
           />
         )}
         <div
           className={`bg-${getSecondaryColorName(
-            attributes.colorTheme
-          )} ljs-breaker__wrapper`}
+            colorTheme
+          )} wp-block-ljs-breaker__wrapper`}
         >
           <div
-            className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
-              attributes.colorTheme
+            className={`wp-block-ljs-breaker__content text-${getPrimaryColorName(
+              colorTheme
             )}`}
           >
             <InnerBlocks
               allowedBlocks={ALLOWED_BLOCKS}
               template={TEMPLATE}
-              className="flex justify-center flex-col items-center"
+              className="wp-block-ljs-breaker__inner-blocks"
             />
           </div>
-          {attributes.hasSlantedBorders && (
-            <SlantedBorder
-              flipped={true}
-              fillColor={getSecondaryColorValue(attributes.colorTheme)}
-            />
-          )}
         </div>
+        {hasSlantedBorders && (
+          <SlantedBorder
+            flipped={true}
+            fillColor={getSecondaryColorValue(colorTheme)}
+          />
+        )}
       </div>
     </>
   );

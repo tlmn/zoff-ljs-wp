@@ -1,3 +1,6 @@
+.wp-block-ljs-accordion-item {
+  @apply rounded-2xl;
+}
 .wp-block-ljs-accordion-container {
   @apply py-5;
   @apply max-w-full;

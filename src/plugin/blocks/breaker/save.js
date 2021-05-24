@@ -10,34 +10,33 @@ const { __ } = window.wp.i18n;
 
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
-export default (props) => {
-  const { attributes } = props;
-  const blockProps = useBlockProps.save({});
+export default ({ attributes: { colorTheme, hasSlantedBorders } }) => {
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>
-      {attributes.hasSlantedBorders && (
+      {hasSlantedBorders && (
         <SlantedBorder
           flipped={false}
-          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          fillColor={getSecondaryColorValue(colorTheme)}
         />
       )}
       <div
         className={`bg-${getSecondaryColorName(
-          attributes.colorTheme
-        )} ljs-breaker__wrapper`}
+          colorTheme
+        )} wp-block-ljs-breaker__wrapper`}
       >
         <div
-          className={`container flex flex-col items-center justify-center text-${getPrimaryColorName(
-            attributes.colorTheme
+          className={`wp-block-ljs-breaker__content text-${getPrimaryColorName(
+            colorTheme
           )}`}
         >
           <InnerBlocks.Content />
         </div>
-        {attributes.hasSlantedBorders && (
+        {hasSlantedBorders && (
           <SlantedBorder
             flipped={true}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+            fillColor={getSecondaryColorValue(colorTheme)}
           />
         )}
       </div>

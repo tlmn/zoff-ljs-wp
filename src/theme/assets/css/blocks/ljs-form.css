@@ -1,0 +1,9 @@
+.wp-block-ljs-form {
+  @apply max-w-full;
+  @apply mx-auto;
+}
+
+.wp-block-ljs-form__wrapper {
+  @apply container ljs-grid;
+  @apply py-5;
+}

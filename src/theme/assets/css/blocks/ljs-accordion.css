@@ -5,8 +5,8 @@
 }
 
 .wp-block-ljs-accordion-item {
-  @apply rounded-2xl;
   @apply relative;
+  @apply my-9;
 }
 
 .wp-block-ljs-accordion-item__button-wrapper {
@@ -48,6 +48,8 @@
 
 .wp-block-ljs-accordion-item__body-wrapper {
   @apply p-7;
+  @apply rounded-2xl;
+  @apply relative;
 }
 
 .wp-block-ljs-accordion-item__body-less {

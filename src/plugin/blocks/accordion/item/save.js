@@ -12,9 +12,9 @@ const { __ } = window.wp.i18n;
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save();
-
   const { attributes } = props;
+
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>
@@ -30,7 +30,7 @@ export default (props) => {
       <details
         className={`bg-${getSecondaryColorName(
           attributes.colorTheme
-        )} wp-block-ljs-accordion-item wp-block-ljs-accordion-item__body-wrapper`}
+        )} wp-block-ljs-accordion-item__body-wrapper`}
       >
         <summary>
           <RichText.Content

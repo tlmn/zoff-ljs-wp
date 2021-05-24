@@ -9,6 +9,7 @@ import "./blocks/image";
 import "./blocks/quote";
 import "./blocks/bio";
 import "./blocks/latestEvent";
+import "./blocks/form";
 import "./blocks/list";
 import "./blocks/container";
 import "./blocks/cover";

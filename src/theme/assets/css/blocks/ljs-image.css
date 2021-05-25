@@ -1,35 +1,35 @@
-.ljs-image {
+.wp-block-ljs-image {
   @apply w-full relative;
   @apply my-5;
 }
 
-.ljs-image__image {
+.wp-block-ljs-image__image {
   @apply w-full;
 }
 
-.ljs-image__caption {
+.wp-block-ljs-image__caption {
   @apply absolute right-0 z-10;
   @apply mb-2 px-3;
   @apply text-xs;
-  transform: translateY(50%);
+  transform: translateY(-50%);
 }
 
-.col-span-full .ljs-image__caption {
+.col-span-full .wp-block-ljs-image__caption {
   @apply bottom-0 w-full text-center;
 }
 
 @screen md {
-  .ljs-image {
+  .wp-block-ljs-image {
     @apply my-7;
   }
 
-  .ljs-image__caption {
+  .wp-block-ljs-image__caption {
     @apply text-sm;
     @apply mb-0;
   }
 
-  .col-span-full .ljs-image__caption {
-    transform: translateY(50%);
+  .col-span-full .wp-block-ljs-image__caption {
+    transform: translateY(-50%);
     @apply w-auto text-right;
   }
 }

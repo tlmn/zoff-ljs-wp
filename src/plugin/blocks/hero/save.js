@@ -8,33 +8,37 @@ import {
 import Image from "../../blockComponents/image";
 import Logo from "../../assets/svg/logo";
 
-const { __ } = window.wp.i18n;
-
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-hero__wrapper" });
-  const { attributes } = props;
+  const {
+    attributes: { colorTheme, title, logoHide },
+  } = props;
+  const blockProps = useBlockProps.save();
   return (
     <div {...blockProps}>
-      <Image className="ljs-hero__background" placeHolder="crowd" {...props} />
-      <div className="ljs-hero__overlay-wrapper">
-        {attributes.logoHide !== true && (
+      <Image
+        className="wp-block-ljs-hero__background"
+        placeHolder="crowd"
+        {...props}
+      />
+      <div className="wp-block-ljs-hero__overlay-wrapper">
+        {logoHide !== true && (
           <Logo
-            className="ljs-hero__logo"
-            textFill={getSecondaryColorValue(attributes.colorTheme)}
-            barsFill={getPrimaryColorValue(attributes.colorTheme)}
+            className="wp-block-ljs-hero__logo"
+            textFill={getSecondaryColorValue(colorTheme)}
+            barsFill={getPrimaryColorValue(colorTheme)}
           />
         )}
-        {attributes.title !== "" && (
-          <div className="ljs-hero__rotation-outer-wrapper">
-            <div className="ljs-hero__rotation-inner-wrapper">
+        {title !== "" && (
+          <div className="wp-block-ljs-hero__rotation-outer-wrapper">
+            <div className="wp-block-ljs-hero__rotation-inner-wrapper">
               <RichText.Content
-                value={attributes.title}
+                value={title}
                 tagName="h2"
-                className={`ljs-hero__subline text-${getPrimaryColorName(
-                  attributes.colorTheme
-                )} bg-${getSecondaryColorName(attributes.colorTheme)}`}
+                className={`wp-block-ljs-hero__subline text-${getPrimaryColorName(
+                  colorTheme
+                )} bg-${getSecondaryColorName(colorTheme)}`}
               />
             </div>
           </div>

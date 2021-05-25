@@ -3,7 +3,6 @@ import BlockSave from "./save";
 
 const { registerBlockType } = window.wp.blocks;
 const { withSelect } = window.wp.data;
-const { __ } = window.wp.i18n;
 
 registerBlockType("ljs/cover", {
   apiVersion: 2,

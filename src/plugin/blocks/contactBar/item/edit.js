@@ -12,8 +12,10 @@ import URLPicker from "../../../inspector/URLPicker";
 import { getPrimaryColorName } from "../../../lib/lib";
 
 export default (props) => {
-  const { setAttributes, attributes } = props;
-
+  const {
+    attributes: { contactType, colorTheme },
+    setAttributes,
+  } = props;
   const CONTACT_TYPES = [
     {
       name: "E-Mail",
@@ -38,9 +40,7 @@ export default (props) => {
   ];
 
   const blockProps = useBlockProps({
-    className: `ljs-contact-bar-item fill-${getPrimaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `fill-${getPrimaryColorName(colorTheme)}`,
   });
 
   return (
@@ -52,7 +52,7 @@ export default (props) => {
             onChange={(event) =>
               setAttributes({ contactType: event.target.value })
             }
-            value={attributes.contactType}
+            value={contactType}
           >
             {CONTACT_TYPES.map((item, index) => (
               <option value={item.value} key={index}>
@@ -65,9 +65,8 @@ export default (props) => {
 
       <div {...blockProps}>
         {
-          CONTACT_TYPES.filter(
-            (item) => item.value === attributes.contactType
-          )[0].component
+          CONTACT_TYPES.filter((item) => item.value === contactType)[0]
+            .component
         }
       </div>
     </>

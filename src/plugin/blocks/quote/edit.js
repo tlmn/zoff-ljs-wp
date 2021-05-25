@@ -10,33 +10,32 @@ const { PanelBody, FormToggle } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes, focus } = props;
+  const {
+    attributes: { imageColumnPosition, colorTheme, body },
+    setAttributes,
+  } = props;
   const blockProps = useBlockProps({
-    className: `ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`,
+    className: `bg-${getSecondaryColorName(colorTheme)}`,
   });
 
   return (
     <>
       <InspectorControls>
         <PanelBody title={__("Bild-Position")} initialOpen={false}>
-          <div className="flex items-center">
+          <div>
             <FormToggle
               label={__("Bild-Position")}
-              help={
-                attributes.imageColumnPosition === "left" ? "links" : "rechts"
-              }
-              checked={attributes.imageColumnPosition === "left" ? true : false}
+              help={imageColumnPosition === "left" ? "links" : "rechts"}
+              checked={imageColumnPosition === "left" ? true : false}
               onChange={() =>
                 setAttributes({
                   imageColumnPosition:
-                    attributes.imageColumnPosition === "left"
-                      ? "right"
-                      : "left",
+                    imageColumnPosition === "left" ? "right" : "left",
                 })
               }
               id="imageColumnPosition-toggle"
             />
-            <label htmlFor="imageColumnPosition-toggle" className="ml-2">
+            <label htmlFor="imageColumnPosition-toggle">
               {__("Bild links")}
             </label>
           </div>
@@ -46,28 +45,28 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        <div className="container ljs-grid">
+        <div className="wp-block-ljs-quote__wrapper">
           <div
-            className={`ljs-quote__image-wrapper ${
-              attributes.imageColumnPosition === "left" ? `` : `order-last`
+            className={`wp-block-ljs-quote__image-wrapper ${
+              imageColumnPosition === "left" ? `` : `order-last`
             }`}
           >
             <Image
-              className="ljs-quote__image"
+              className="wp-block-ljs-quote__image"
               placeholder="personFemale"
               {...props}
             />
           </div>
           <div
-            className={`ljs-quote__content-wrapper text-${getPrimaryColorName(
-              attributes.colorTheme
+            className={`wp-block-ljs-quote__content-wrapper text-${getPrimaryColorName(
+              colorTheme
             )}`}
           >
             <RichText
-              value={attributes.body}
+              value={body}
               allowedFormats={["core/italic", "core/underline"]}
               tagName="p"
-              className="ljs-quote__content-body"
+              className="wp-block-ljs-quote__content-body"
               onChange={(body) => setAttributes({ body })}
               placeholder={__("Hier kommt der Zitat-Text rein.")}
             />

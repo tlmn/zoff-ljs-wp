@@ -4,12 +4,13 @@ import { useEffect } from "react";
 
 const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
-const { __ } = window.wp.i18n;
-
 const { select } = window.wp.data;
 
 export default (props) => {
-  const { clientId, attributes } = props;
+  const {
+    clientId,
+    attributes: { colorTheme },
+  } = props;
   const blockProps = useBlockProps({
     className: "ljs-tiles-container",
   });
@@ -21,8 +22,8 @@ export default (props) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>

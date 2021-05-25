@@ -16,10 +16,11 @@ const { PanelBody, FormToggle } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const blockProps = useBlockProps({ className: "ljs-hero__wrapper" });
-
-  const { attributes, setAttributes } = props;
-
+  const {
+    attributes: { logoHide, colorTheme, title },
+    setAttributes,
+  } = props;
+  const blockProps = useBlockProps();
   return (
     <>
       <InspectorControls>
@@ -28,46 +29,44 @@ export default (props) => {
         <ImageSelector {...props} />
 
         <PanelBody title={__("Logo")} initialOpen={false}>
-          <div className="flex items-center">
+          <div>
             <FormToggle
               label={__("Logo anzeigen")}
-              help={attributes.logoHide ? "Ja" : "Nein"}
-              checked={attributes.logoHide}
-              onChange={() => setAttributes({ logoHide: !attributes.logoHide })}
+              help={logoHide ? "Ja" : "Nein"}
+              checked={logoHide}
+              onChange={() => setAttributes({ logoHide: !logoHide })}
               id="logoHide-toggle"
             />
-            <label htmlFor="logoHide-toggle" className="ml-2">
-              {__("Logo anzeigen")}
-            </label>
+            <label htmlFor="logoHide-toggle">{__("Logo anzeigen")}</label>
           </div>
         </PanelBody>
       </InspectorControls>
 
       <div {...blockProps}>
         <Image
-          className="ljs-hero__background"
+          className="wp-block-ljs-hero__background"
           placeholder="crowd"
           {...props}
         />
-        <div className="ljs-hero__overlay-wrapper">
-          {attributes.logoHide !== true && (
+        <div className="wp-block-ljs-hero__overlay-wrapper">
+          {logoHide !== true && (
             <Logo
-              className="ljs-hero__logo"
-              textFill={getSecondaryColorValue(attributes.colorTheme)}
-              barsFill={getPrimaryColorValue(attributes.colorTheme)}
+              className="wp-block-ljs-hero__logo"
+              textFill={getSecondaryColorValue(colorTheme)}
+              barsFill={getPrimaryColorValue(colorTheme)}
             />
           )}
-          <div className="ljs-hero__rotation-outer-wrapper">
+          <div className="wp-block-ljs-hero__rotation-outer-wrapper">
             <div
-              className={`ljs-hero__rotation-inner-wrapper text-${getPrimaryColorName(
-                attributes.colorTheme
+              className={`wp-block-ljs-hero__rotation-inner-wrapper text-${getPrimaryColorName(
+                colorTheme
               )}`}
             >
               <RichText
-                value={attributes.title}
+                value={title}
                 tagName="h2"
-                className={`ljs-hero__subline bg-${getSecondaryColorName(
-                  attributes.colorTheme
+                className={`wp-block-ljs-hero__subline bg-${getSecondaryColorName(
+                  colorTheme
                 )}`}
                 allowedFormats={[]}
                 onChange={(title) => setAttributes({ title })}

@@ -3,14 +3,12 @@ import BlockSave from "./save";
 
 const { registerBlockType } = window.wp.blocks;
 const { withSelect } = window.wp.data;
-const { __ } = window.wp.i18n;
 
 registerBlockType("ljs/image", {
   apiVersion: 2,
   title: "Bild",
   icon: "format-image",
   category: "ljs/media",
-  parent: ["ljs/container"],
   attributes: {
     mediaId: {
       type: "number",

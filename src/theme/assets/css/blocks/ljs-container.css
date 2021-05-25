@@ -1,4 +1,14 @@
-.ljs-container {
+.wp-block-ljs-container {
   @apply container ljs-grid;
   @apply py-7;
+}
+
+.wp-block-ljs-container__content-wrapper {
+  @apply col-span-full;
+}
+
+@screen md {
+  .wp-block-ljs-container__content-wrapper--constraint {
+    @apply col-span-10 col-start-2;
+  }
 }

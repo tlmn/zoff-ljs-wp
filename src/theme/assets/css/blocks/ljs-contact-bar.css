@@ -1,18 +1,18 @@
-.ljs-contact-bar-container {
+.wp-block-ljs-contact-bar-container {
   @apply my-4;
 }
 
-.ljs-contact-bar-item:first-child {
+.wp-block-ljs-contact-bar-item:first-child {
   @apply ml-0;
 }
 
-.ljs-contact-bar-item {
+.wp-block-ljs-contact-bar-item {
   @apply inline-block;
   @apply mx-3;
   width: theme("spacing.7");
   height: theme("spacing.7");
 }
 
-.ljs-contact-bar-item svg {
+.wp-block-ljs-contact-bar-item svg {
   @apply w-full h-full;
 }

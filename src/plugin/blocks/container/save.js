@@ -1,15 +1,15 @@
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
-export default ({ attributes }) => {
+export default ({ attributes: { isFullWidth } }) => {
   const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>
       <div
-        className={`col-span-full ${
-          !attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
+        className={`wp-block-ljs-container__content-wrapper ${
+          !isFullWidth
+            ? `wp-block-ljs-container__content-wrapper--constraint`
+            : ``
         }`}
       >
         <InnerBlocks.Content />

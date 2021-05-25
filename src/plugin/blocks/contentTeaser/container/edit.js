@@ -9,16 +9,15 @@ import ColorThemeSelector from "../../../inspector/colorThemeSelector";
 
 const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
 
-const { __ } = window.wp.i18n;
-
 const { select } = window.wp.data;
 
 export default (props) => {
-  const { attributes } = props;
+  const {
+    attributes: { colorTheme },
+    clientId,
+  } = props;
   const blockProps = useBlockProps({
-    className: `ljs-content-teaser bg-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `bg-${getSecondaryColorName(colorTheme)}`,
   });
 
   const ALLOWED_BLOCKS = [
@@ -34,8 +33,8 @@ export default (props) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>
@@ -45,8 +44,8 @@ export default (props) => {
 
       <div {...blockProps}>
         <div
-          className={`container ljs-grid text-${getPrimaryColorName(
-            attributes.colorTheme
+          className={`wp-blocks-ljs-content-teaser__wrapper text-${getPrimaryColorName(
+            colorTheme
           )}`}
         >
           <InnerBlocks

@@ -2,9 +2,8 @@ import BlockEdit from "./edit";
 import BlockSave from "./save";
 
 const { registerBlockType } = window.wp.blocks;
-const { __ } = window.wp.i18n;
 
-registerBlockType("ljs/quote-with-image", {
+registerBlockType("ljs/quote", {
   apiVersion: 2,
   title: "Zitat mit Bild",
   icon: "format-gallery",

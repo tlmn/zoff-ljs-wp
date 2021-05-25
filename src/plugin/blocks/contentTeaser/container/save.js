@@ -1,22 +1,17 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
-export default (props) => {
-  const { attributes } = props;
+export default ({ attributes: { colorTheme } }) => {
   const blockProps = useBlockProps.save({
-    className: `ljs-content-teaser bg-${getSecondaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `bg-${getSecondaryColorName(colorTheme)}`,
   });
 
   return (
     <div {...blockProps}>
       <div
-        className={`container ljs-grid text-${getPrimaryColorName(
-          attributes.colorTheme
+        className={`wp-block-ljs-content-teaser__wrapper text-${getPrimaryColorName(
+          colorTheme
         )}`}
       >
         <InnerBlocks.Content />

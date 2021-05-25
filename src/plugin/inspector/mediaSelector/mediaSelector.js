@@ -4,9 +4,7 @@ const { PanelBody, Button } = window.wp.components;
 
 const { __ } = window.wp.i18n;
 
-export default (props) => {
-  const { attributes, setAttributes } = props;
-
+export default ({ attributes, setAttributes }) => {
   const onSelectMedia = (media) => {
     setAttributes({
       mediaId: media.id,

@@ -9,10 +9,14 @@ const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes, clientId } = props;
+  const {
+    attributes: { colorTheme, caption },
+    setAttributes,
+    clientId,
+  } = props;
 
   const blockProps = useBlockProps({
-    className: `ljs-image text-${getPrimaryColorName(attributes.colorTheme)}`,
+    className: `text-${getPrimaryColorName(colorTheme)}`,
   });
 
   const isInnerBlock = (clientId) =>
@@ -27,12 +31,16 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        <Image className="ljs-image__image" placeholder="crowd" {...props} />
+        <Image
+          className="wp-block-ljs-image__image"
+          placeholder="crowd"
+          {...props}
+        />
         <RichText
-          value={attributes.caption}
+          value={caption}
           tagName="div"
-          className={`ljs-image__caption bg-${getSecondaryColorName(
-            attributes.colorTheme
+          className={`wp-block-ljs-image__caption bg-${getSecondaryColorName(
+            colorTheme
           )}`}
           allowedFormats={["core/bold"]}
           onChange={(caption) => setAttributes({ caption })}

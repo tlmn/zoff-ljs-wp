@@ -4,10 +4,8 @@ const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 const { __ } = window.wp.i18n;
 
-export default ({ attributes }) => {
-  const blockProps = useBlockProps({
-    className: "ljs-content-teaser-column-title",
-  });
+export default ({ attributes: { colorTheme } }) => {
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
   const TEMPLATE = [
@@ -37,8 +35,8 @@ export default ({ attributes }) => {
     <>
       <div {...blockProps}>
         <div
-          className={`ljs-content-teaser-column-title__wrapper text-${getPrimaryColorName(
-            attributes.colorTheme
+          className={`wp-block-ljs-content-teaser-column-title__wrapper text-${getPrimaryColorName(
+            colorTheme
           )}`}
         >
           <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />

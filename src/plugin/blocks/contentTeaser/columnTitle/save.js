@@ -1,19 +1,15 @@
 import { getPrimaryColorName } from "../../../lib/lib";
 
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
-export default ({ attributes }) => {
-  const blockProps = useBlockProps.save({
-    className: "ljs-content-teaser-column-title",
-  });
+export default ({ attributes: { colorTheme } }) => {
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>
       <div
-        className={`ljs-content-teaser-column-title__wrapper text-${getPrimaryColorName(
-          attributes.colorTheme
+        className={`wp-block-ljs-content-teaser-column-title__wrapper text-${getPrimaryColorName(
+          colorTheme
         )}`}
       >
         <InnerBlocks.Content />

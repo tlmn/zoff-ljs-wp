@@ -1,14 +1,12 @@
 import { getPrimaryColorName } from "../../lib/lib";
 
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
-export default ({ attributes }) => {
+export default ({ attributes: { colorTheme } }) => {
   const blockProps = useBlockProps.save({
-    className: `ljs-list border-${getPrimaryColorName(
-      attributes.colorTheme
-    )} marker-${getPrimaryColorName(attributes.colorTheme)}`,
+    className: `border-${getPrimaryColorName(
+      colorTheme
+    )} marker-${getPrimaryColorName(colorTheme)}`,
   });
 
   return (

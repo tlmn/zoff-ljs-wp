@@ -7,35 +7,36 @@ const { __ } = window.wp.i18n;
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const blockProps = useBlockProps.save({ className: "ljs-intro-text" });
-
-  const { attributes } = props;
+  const {
+    attributes: { colorTheme, body, imageColumnPosition },
+  } = props;
+  const blockProps = useBlockProps.save({
+    className: `bg-${getSecondaryColorName(colorTheme)}`,
+  });
 
   return (
-    <div
-      className={`ljs-quote bg-${getSecondaryColorName(attributes.colorTheme)}`}
-    >
-      <div className="md:container ljs-grid">
+    <div {...blockProps}>
+      <div className="wp-block-ljs-quote__wrapper">
         <div
-          className={`ljs-quote__image-wrapper ${
-            attributes.imageColumnPosition === "left" ? `` : `order-last`
+          className={`wp-block-ljs-quote__image-wrapper ${
+            imageColumnPosition === "left" ? `` : `order-last`
           }`}
         >
           <Image
-            className="ljs-quote__image"
+            className="wp-block-ljs-quote__image"
             placeholder="personFemale"
             {...props}
           />
         </div>
         <div
-          className={`ljs-quote__content-wrapper text-${getPrimaryColorName(
-            attributes.colorTheme
+          className={`wp-block-ljs-quote__content-wrapper text-${getPrimaryColorName(
+            colorTheme
           )}`}
         >
           <RichText.Content
-            value={attributes.body}
+            value={body}
             tagName="p"
-            className="ljs-quote__content-body"
+            className="wp-block-ljs-quote__content-body"
           />
         </div>
       </div>

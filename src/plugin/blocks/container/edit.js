@@ -11,10 +11,12 @@ const { select } = window.wp.data;
 const { PanelBody, FormToggle } = window.wp.components;
 
 export default (props) => {
-  const { setAttributes, attributes, clientId } = props;
-  const blockProps = useBlockProps({
-    className: "ljs-container",
-  });
+  const {
+    setAttributes,
+    attributes: { isFullWidth, colorTheme },
+    clientId,
+  } = props;
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = [
     "core/heading",
@@ -47,26 +49,26 @@ export default (props) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("Container Breite")} initialOpen={true}>
-          <div className="flex items-center">
+        <PanelBody title={__("Container-Breite")} initialOpen={true}>
+          <div>
             <FormToggle
               label={__("breiter Container")}
-              help={attributes.isFullWidth ? "breit" : "schmal"}
-              checked={attributes.isFullWidth}
+              help={isFullWidth ? "breit" : "schmal"}
+              checked={isFullWidth}
               onChange={() =>
                 setAttributes({
-                  isFullWidth: !attributes.isFullWidth,
+                  isFullWidth: !isFullWidth,
                 })
               }
               id="isFullWidth-toggle"
             />
-            <label htmlFor="isFullWidth-toggle" className="ml-2">
+            <label htmlFor="isFullWidth-toggle">
               {__("breiter Container")}
             </label>
           </div>
@@ -76,8 +78,10 @@ export default (props) => {
 
       <div {...blockProps}>
         <div
-          className={`col-span-full ${
-            !attributes.isFullWidth ? `md:col-span-10 md:col-start-2` : ``
+          className={`wp-block-ljs-container__content-wrapper ${
+            !isFullWidth
+              ? `wp-block-ljs-container__content-wrapper--constraint`
+              : ``
           }`}
         >
           <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />

@@ -9,13 +9,9 @@ const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 const { select } = window.wp.data;
 
-const { __ } = window.wp.i18n;
-
-export default ({ attributes, clientId }) => {
+export default ({ attributes: { colorTheme }, clientId }) => {
   const blockProps = useBlockProps({
-    className: `ljs-content-teaser-column-body text-${getPrimaryColorName(
-      attributes.colorTheme
-    )}`,
+    className: `text-${getPrimaryColorName(colorTheme)}`,
   });
 
   const ALLOWED_BLOCKS = ["core/heading", "core/paragraph", "ljs/button"];
@@ -41,8 +37,8 @@ export default ({ attributes, clientId }) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>

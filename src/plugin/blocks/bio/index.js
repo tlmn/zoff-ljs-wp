@@ -2,13 +2,13 @@ import BlockEdit from "./edit";
 import BlockSave from "./save";
 
 const { registerBlockType } = window.wp.blocks;
-const { __ } = window.wp.i18n;
 
 registerBlockType("ljs/bio", {
   apiVersion: 2,
   title: "Bio",
   icon: "universal-access",
   category: "ljs/text",
+  parent: ["ljs/container"],
   attributes: {
     mediaId: {
       type: "number",

@@ -1,11 +1,7 @@
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
 export default () => {
-  const blockProps = useBlockProps.save({
-    className: "ljs-contact-bar-container",
-  });
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>

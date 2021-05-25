@@ -1,52 +1,52 @@
-.ljs-cover {
+.wp-block-ljs-cover {
   @apply max-h-screen h-screen;
   @apply relative;
 }
 
-.ljs-cover__background {
+.wp-block-ljs-cover__background {
   @apply object-cover w-full h-full absolute top-0 left-0 border-0;
   @apply image-bw;
   object-position: 50% 20%;
 }
 
-.ljs-cover__overlay-wrapper {
+.wp-block-ljs-cover__overlay-wrapper {
   @apply absolute top-0 left-0 h-full w-full z-10;
   @apply flex flex-col items-center justify-center;
 }
 
-.ljs-cover__logo {
+.wp-block-ljs-cover__logo {
   @apply mb-2;
   @apply hidden;
 }
 
-.ljs-cover__rotation-inner-wrapper {
+.wp-block-ljs-cover__rotation-inner-wrapper {
   max-width: 60vw;
   transform: rotate(-5deg);
 }
 
-.ljs-cover__rotation-outer-wrapper {
+.wp-block-ljs-cover__rotation-outer-wrapper {
   @apply table;
   width: 120%;
 }
 
-.ljs-cover__title,
-.ljs-cover__title .block-editor-block-list__layout {
+.wp-block-ljs-cover__title,
+.wp-block-ljs-cover__title .block-editor-block-list__layout {
   @apply flex;
   @apply flex-col;
 }
 
-.ljs-cover__title h2:nth-child(odd),
-.ljs-cover__title .block-editor-block-list__layout h2:nth-child(odd) {
+.wp-block-ljs-cover__title h2:nth-child(odd),
+.wp-block-ljs-cover__title .block-editor-block-list__layout h2:nth-child(odd) {
   @apply ml-0;
 }
 
-.ljs-cover__title h2:nth-child(even),
-.ljs-cover__title .block-editor-block-list__layout h2:nth-child(even) {
+.wp-block-ljs-cover__title h2:nth-child(even),
+.wp-block-ljs-cover__title .block-editor-block-list__layout h2:nth-child(even) {
   @apply -mt-3;
   @apply self-end;
 }
 
-.ljs-cover__title h2 {
+.wp-block-ljs-cover__title h2 {
   @apply z-20 relative;
   @apply px-3;
   @apply font-black uppercase italic leading-snug text-center;
@@ -58,16 +58,16 @@
 }
 
 @screen md {
-  .ljs-cover__title h2 {
+  .wp-block-ljs-cover__title h2 {
     @apply text-5xl;
   }
-  .ljs-cover__logo {
+  .wp-block-ljs-cover__logo {
     @apply block;
   }
 }
 
 @screen lg {
-  .ljs-cover__title {
+  .wp-block-ljs-cover__title {
     @apply text-2xl;
   }
 }

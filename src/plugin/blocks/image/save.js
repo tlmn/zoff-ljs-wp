@@ -2,24 +2,26 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import Image from "../../blockComponents/image";
 
-const { __ } = window.wp.i18n;
-
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
-  const { attributes } = props;
-  const blockProps = useBlockProps.save({
-    className: "ljs-image",
-  });
+  const {
+    attributes: { colorTheme, caption },
+  } = props;
+  const blockProps = useBlockProps.save();
   return (
     <div {...blockProps}>
-      <Image className="ljs-image__image" placeholder="crowd" {...props} />
+      <Image
+        className="wp-block-ljs-image__image"
+        placeholder="crowd"
+        {...props}
+      />
       <RichText.Content
-        value={attributes.caption}
+        value={caption}
         tagName="div"
-        className={`ljs-image__caption bg-${getSecondaryColorName(
-          attributes.colorTheme
-        )} text-${getPrimaryColorName(attributes.colorTheme)}`}
+        className={`wp-block-ljs-image__caption bg-${getSecondaryColorName(
+          colorTheme
+        )} text-${getPrimaryColorName(colorTheme)}`}
       />
     </div>
   );

@@ -1,41 +1,48 @@
-.ljs-quote__image {
+.wp-block-ljs-quote__image {
   @apply object-cover w-full h-full absolute top-0 left-0 border-0;
   @apply image-bw;
 }
 
-.ljs-quote__image-wrapper {
+.wp-block-ljs-quote__wrapper {
+  @apply ljs-grid;
+}
+
+.wp-block-ljs-quote__image-wrapper {
   @apply col-span-full;
   @apply ratio--1-1;
   @apply relative;
 }
 
-.ljs-quote__content-wrapper {
+.wp-block-ljs-quote__content-wrapper {
   @apply col-span-full;
   @apply flex items-center;
   @apply p-5;
 }
 
-.ljs-quote__content-body {
+.wp-block-ljs-quote__content-body {
   @apply font-gilroy italic font-black text-2xl;
   @apply leading-snug;
 }
 
 @screen sm {
-  .ljs-quote__content-wrapper {
+  .wp-block-ljs-quote__content-wrapper {
     @apply px-3;
     @apply py-2;
   }
 }
 
 @screen md {
-  .ljs-quote__image-wrapper,
-  .ljs-quote__content-wrapper {
+  .wp-block-ljs-quote__image-wrapper,
+  .wp-block-ljs-quote__content-wrapper {
     @apply col-span-6;
   }
-  .ljs-quote__content-wrapper {
+  .wp-block-ljs-quote__content-wrapper {
     @apply p-7;
   }
-  .ljs-quote__content-body {
+  .wp-block-ljs-quote__content-body {
     @apply text-3xl;
+  }
+  .wp-block-ljs-quote__wrapper {
+    @apply container;
   }
 }

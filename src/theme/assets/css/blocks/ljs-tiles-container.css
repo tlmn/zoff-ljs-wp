@@ -1,12 +1,16 @@
-.ljs-tiles-container {
+.wp-block-ljs-tiles-container {
   @apply container;
   @apply py-7;
 }
 
-.ljs-tiles-container .block-editor-block-list__layout {
+.wp-block-tiles-container__wrapper {
   @apply ljs-grid;
 }
 
-.ljs-tiles-container .block-editor-inner-blocks {
+.wp-block-ljs-tiles-container .block-editor-block-list__layout {
+  @apply ljs-grid;
+}
+
+.wp-block-ljs-tiles-container .block-editor-inner-blocks {
   @apply col-span-full;
 }

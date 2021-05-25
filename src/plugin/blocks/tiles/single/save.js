@@ -2,18 +2,18 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
 import Image from "../../../blockComponents/image";
 
-const { __ } = window.wp.i18n;
-
 const { useBlockProps, RichText } = window.wp.blockEditor;
 
 export default (props) => {
-  const { attributes } = props;
+  const {
+    attributes: { url, title, colorTheme },
+  } = props;
   const blockProps = useBlockProps.save({
-    className: `text-${getSecondaryColorName(attributes.colorTheme)}`,
+    className: `text-${getSecondaryColorName(colorTheme)}`,
   });
 
   return (
-    <a {...blockProps} href={attributes.link}>
+    <a {...blockProps} href={url}>
       <div className="wp-block-ljs-tiles-single__wrapper">
         <Image
           className="wp-block-ljs-tiles-single__image"
@@ -22,14 +22,14 @@ export default (props) => {
         />
         <div
           className={`wp-block-ljs-tiles-single__text-wrapper text-${getPrimaryColorName(
-            attributes.colorTheme
+            colorTheme
           )}`}
         >
           <RichText.Content
-            value={attributes.title}
+            value={title}
             tagName="h4"
             className={`wp-block-ljs-tiles-single__title bg-${getSecondaryColorName(
-              attributes.colorTheme
+              colorTheme
             )}`}
           />
         </div>

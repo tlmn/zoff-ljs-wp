@@ -3,7 +3,6 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import Image from "../../blockComponents/image";
 import ImageSelector from "../../inspector/imageSelector";
-import Logo from "../../assets/svg/logo";
 
 const { InnerBlocks, InspectorControls, useBlockProps } = window.wp.blockEditor;
 const { PanelBody, FormToggle } = window.wp.components;
@@ -11,9 +10,12 @@ const { PanelBody, FormToggle } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { colorTheme, hasColoredBg },
+    setAttributes,
+  } = props;
 
-  const blockProps = useBlockProps({ className: "ljs-cover" });
+  const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = ["core/heading"];
   const TEMPLATE = [
@@ -23,10 +25,10 @@ export default (props) => {
         placeholder: "erste Zeile",
         level: 2,
         className: `bg-${getSecondaryColorName(
-          attributes.colorTheme
-        )} text-${getPrimaryColorName(
-          attributes.colorTheme
-        )} shadow-${getPrimaryColorName(attributes.colorTheme)}`,
+          colorTheme
+        )} text-${getPrimaryColorName(colorTheme)} shadow-${getPrimaryColorName(
+          colorTheme
+        )}`,
       },
     ],
     [
@@ -35,10 +37,10 @@ export default (props) => {
         placeholder: "zweite Zeile",
         level: 2,
         className: `bg-${getSecondaryColorName(
-          attributes.colorTheme
-        )} text-${getPrimaryColorName(
-          attributes.colorTheme
-        )} shadow-${getPrimaryColorName(attributes.colorTheme)}`,
+          colorTheme
+        )} text-${getPrimaryColorName(colorTheme)} shadow-${getPrimaryColorName(
+          colorTheme
+        )}`,
       },
     ],
   ];
@@ -50,11 +52,11 @@ export default (props) => {
           <div className="flex items-center">
             <FormToggle
               label={__("hat farbigen Hintergrund")}
-              help={attributes.hasColoredBg ? "ja" : "nein"}
-              checked={attributes.hasColoredBg}
+              help={hasColoredBg ? "ja" : "nein"}
+              checked={hasColoredBg}
               onChange={() =>
                 setAttributes({
-                  hasColoredBg: !attributes.hasColoredBg,
+                  hasColoredBg: !hasColoredBg,
                 })
               }
               id="hasColoredBg-toggle"
@@ -65,33 +67,33 @@ export default (props) => {
           </div>
         </PanelBody>
         <ColorThemeSelector {...props} />
-        <ImageSelector {...props} />
+        {!hasColoredBg && <ImageSelector {...props} />}
       </InspectorControls>
 
       <div {...blockProps}>
-        {attributes.hasColoredBg ? (
+        {hasColoredBg ? (
           <div
             className={`absolute w-full h-full top-0 left-0 bg-${getSecondaryColorName(
-              attributes.colorTheme
+              colorTheme
             )}`}
           />
         ) : (
           <Image
-            className="ljs-cover__background"
+            className="wp-block-ljs-cover__background"
             placeholder="crowd"
             {...props}
           />
         )}
 
-        <div className="ljs-cover__overlay-wrapper">
+        <div className="wp-block-ljs-cover__overlay-wrapper">
           <div className="max-w-max">
-            <div className="ljs-cover__rotation-outer-wrapper">
+            <div className="wp-block-ljs-cover__rotation-outer-wrapper">
               <div
-                className={`ljs-cover__rotation-inner-wrapper text-${getPrimaryColorName(
-                  attributes.colorTheme
+                className={`wp-block-ljs-cover__rotation-inner-wrapper text-${getPrimaryColorName(
+                  colorTheme
                 )}`}
               >
-                <div className="ljs-cover__title">
+                <div className="wp-block-ljs-cover__title">
                   <InnerBlocks
                     allowedBlocks={ALLOWED_BLOCKS}
                     template={TEMPLATE}

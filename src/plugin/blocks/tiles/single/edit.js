@@ -9,9 +9,12 @@ const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { colorTheme, title },
+    setAttributes,
+  } = props;
   const blockProps = useBlockProps({
-    className: `text-${getSecondaryColorName(attributes.colorTheme)}`,
+    className: `text-${getSecondaryColorName(colorTheme)}`,
   });
 
   return (
@@ -30,14 +33,14 @@ export default (props) => {
           />
           <div
             className={`wp-block-ljs-tiles-single__text-wrapper text-${getPrimaryColorName(
-              attributes.colorTheme
+              colorTheme
             )}`}
           >
             <RichText
-              value={attributes.title}
+              value={title}
               tagName="h4"
               className={`wp-block-ljs-tiles-single__title bg-${getSecondaryColorName(
-                attributes.colorTheme
+                colorTheme
               )}`}
               allowedFormats={[]}
               onChange={(title) => setAttributes({ title })}

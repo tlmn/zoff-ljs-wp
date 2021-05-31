@@ -26,8 +26,7 @@ const toggleButtons = (currentTarget) => {
 
 const setMargins = () => {
   $(".has-slanted-borders").each((index, value) => {
-    $(value).css("margin-bottom", "-12px");
-    $(value).css("margin-top", "-12px");
+    $(value).css("margin-bottom", "-12px").css("margin-top", "-12px");
   });
 };
 

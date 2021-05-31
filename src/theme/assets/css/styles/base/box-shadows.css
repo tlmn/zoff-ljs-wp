@@ -1,0 +1,33 @@
+@layer utilities {
+  .box-shadow--5--green {
+    box-shadow: 5px 5px 0px 0px theme("colors.green");
+  }
+
+  .box-shadow--10--green {
+    box-shadow: 10px 10px 0px 0px theme("colors.green");
+  }
+
+  .box-shadow--5--purple {
+    box-shadow: 5px 5px 0px 0px theme("colors.purple");
+  }
+
+  .box-shadow--10--purple {
+    box-shadow: 10px 10px 0px 0px theme("colors.purple");
+  }
+
+  .box-shadow--5--red {
+    box-shadow: 5px 5px 0px 0px theme("colors.red");
+  }
+
+  .box-shadow--10--red {
+    box-shadow: 10px 10px 0px 0px theme("colors.red");
+  }
+
+  .box-shadow--5--black {
+    box-shadow: 5px 5px 0px 0px theme("colors.black.DEFAULT");
+  }
+
+  .box-shadow--10--black {
+    box-shadow: 10px 10px 0px 0px theme("colors.black.DEFAULT");
+  }
+}

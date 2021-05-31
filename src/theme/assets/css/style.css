@@ -5,9 +5,11 @@
 @import "tailwindcss/components";
 
 @import "./styles/base/base.css";
+@import "./styles/base/box-shadows.css";
 @import "./styles/base/grid.css";
 @import "./styles/base/colors.css";
 @import "./styles/base/fonts.css";
+@import "./styles/base/ratios.css";
 @import "./styles/base/slanted-borders.css";
 @import "./styles/base/typography.css";
 

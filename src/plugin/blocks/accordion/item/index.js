@@ -11,6 +11,7 @@ registerBlockType("ljs/accordion-item", {
   parent: ["ljs/accordion-container"],
   attributes: {
     title: {
+      default: "",
       type: "string",
     },
     bodyLess: {

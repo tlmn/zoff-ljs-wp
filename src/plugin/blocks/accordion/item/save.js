@@ -20,15 +20,18 @@ export default (props) => {
 
   return (
     <div {...blockProps}>
-      <div className="wp-block-ljs-accordion-item__title-wrapper">
-        <RichText.Content
-          value={title}
-          tagName="div"
-          className={`wp-block-ljs-accordion-item__title bg-${getPrimaryColorName(
-            colorTheme
-          )} text-${getSecondaryColorName(colorTheme)}`}
-        />
-      </div>
+      {title !== "" && (
+        <div className="wp-block-ljs-accordion-item__title-wrapper">
+          <RichText.Content
+            value={title}
+            tagName="div"
+            className={`wp-block-ljs-accordion-item__title bg-${getPrimaryColorName(
+              colorTheme
+            )} text-${getSecondaryColorName(colorTheme)}`}
+          />
+        </div>
+      )}
+
       <details
         className={`bg-${getSecondaryColorName(
           colorTheme

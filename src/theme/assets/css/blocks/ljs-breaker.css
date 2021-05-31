@@ -30,4 +30,7 @@
   .wp-block-ljs-breaker {
     @apply py-7;
   }
+  .wp-block-ljs-breaker__wrapper {
+    @apply py-6;
+  }
 }

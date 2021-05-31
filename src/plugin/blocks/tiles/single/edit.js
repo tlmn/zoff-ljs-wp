@@ -34,7 +34,7 @@ export default (props) => {
           <div
             className={`wp-block-ljs-tiles-single__text-wrapper text-${getPrimaryColorName(
               colorTheme
-            )}`}
+            )} box-shadow--10--${getPrimaryColorName(colorTheme)}`}
           >
             <RichText
               value={title}

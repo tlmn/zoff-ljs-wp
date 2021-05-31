@@ -14,7 +14,11 @@ export default (props) => {
 
   return (
     <a {...blockProps} href={url}>
-      <div className="wp-block-ljs-tiles-single__wrapper">
+      <div
+        className={`wp-block-ljs-tiles-single__wrapper  box-shadow--10--${getPrimaryColorName(
+          colorTheme
+        )}`}
+      >
         <Image
           className="wp-block-ljs-tiles-single__image"
           placeholder="crowd"

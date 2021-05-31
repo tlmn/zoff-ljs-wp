@@ -113,27 +113,33 @@ gulp.task("watch", function () {
   });
 
   gulp
-    .watch("src/theme/assets/js/**/*.js", gulp.series(["theme:js:copy"]))
+    .watch(
+      "src/theme/assets/js/**/*.js",
+      { interval: 750 },
+      gulp.series(["theme:js:copy"])
+    )
     .on("change", browserSync.reload);
 
   gulp
     .watch(
       "src/theme/assets/css/**/*.css",
+      { interval: 750 },
       gulp.series(["theme:postcss:compile"])
     )
     .on("change", browserSync.reload);
 
   gulp
-    .watch("src/theme/**/*.php", gulp.series(["theme:copy"]))
+    .watch("src/theme/**/*.php", { interval: 750 }, gulp.series(["theme:copy"]))
     .on("change", browserSync.reload);
 
   gulp
-    .watch("src/theme/**/*.svg", gulp.series(["theme:copy"]))
+    .watch("src/theme/**/*.svg", { interval: 750 }, gulp.series(["theme:copy"]))
     .on("change", browserSync.reload);
 
   gulp
     .watch(
       ["src/plugin/**/*.php", "src/plugin/**/*.png"],
+      { interval: 750 },
       gulp.series(["plugin:copy"])
     )
     .on("change", browserSync.reload);

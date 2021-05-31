@@ -5,24 +5,27 @@ const { RichText, useBlockProps } = window.wp.blockEditor;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { colorTheme, title, bodyLess, bodyMore },
+    setAttributes,
+  } = props;
   const blockProps = useBlockProps({
-    className: `bg-${getSecondaryColorName(attributes.colorTheme)}`,
+    className: `bg-${getSecondaryColorName(colorTheme)}`,
   });
 
   return (
     <div {...blockProps}>
       <div
         className={`wp-block-ljs-accordion-item__title-wrapper text-${getSecondaryColorName(
-          attributes.colorTheme
+          colorTheme
         )}`}
       >
         <RichText
-          value={attributes.title}
+          value={title}
           allowedFormats={[]}
           tagName="div"
           className={`wp-block-ljs-accordion-item__title bg-${getPrimaryColorName(
-            attributes.colorTheme
+            colorTheme
           )}`}
           onChange={(title) => setAttributes({ title })}
           placeholder={__("Titel")}
@@ -31,11 +34,11 @@ export default (props) => {
 
       <div
         className={`wp-block-ljs-accordion-item__body-wrapper text-${getPrimaryColorName(
-          attributes.colorTheme
+          colorTheme
         )}`}
       >
         <RichText
-          value={attributes.bodyLess}
+          value={bodyLess}
           allowedFormats={[]}
           tagName="div"
           className={`wp-block-ljs-accordion-item__body-less`}
@@ -44,7 +47,7 @@ export default (props) => {
         />
         <hr style={{ borderTopWidth: "2px" }} className="my-6" />
         <RichText
-          value={attributes.bodyMore}
+          value={bodyMore}
           allowedFormats={[
             "core/bold",
             "core/italic",

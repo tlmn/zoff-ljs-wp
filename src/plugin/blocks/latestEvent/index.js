@@ -1,6 +1,5 @@
 import BlockEdit from "./edit";
 const { registerBlockType } = window.wp.blocks;
-const { __ } = window.wp.i18n;
 
 const { withSelect } = window.wp.data;
 
@@ -9,6 +8,12 @@ registerBlockType("ljs/latest-event", {
   title: "LJS: Nächster Termin",
   icon: "megaphone",
   category: "ljs/layout",
+  attributes: {
+    colorTheme: {
+      type: "string",
+      default: "purple_red",
+    },
+  },
   edit: withSelect((select) => {
     return {
       events: select("core").getEntityRecords("postType", "event"),

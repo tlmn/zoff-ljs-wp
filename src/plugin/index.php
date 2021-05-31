@@ -60,8 +60,43 @@ function expose_plugin_dir_url()
     wp_localize_script('ljs-editor-script', 'ljsBlocks', array('pluginURL' => $pluginRelativePath));
 }
 
-function ljs_render_latest_event()
+function ljs_render_latest_event($attributes)
 {
+    $colorThemes = [
+        "black_green" => [
+            "black",
+            "green"
+        ],
+        "green_black" => [
+            "green",
+            "black"
+        ],
+        "purple_red" => [
+            "purple",
+            "red"
+        ],
+        "red_purple" => [
+            "red",
+            "purple"
+        ],
+        "black_red" => [
+            "black",
+            "red"
+        ],
+        "red_black" => [
+            "red",
+            "black"
+        ],
+        "red_white" => [
+            "red",
+            "white"
+        ],
+        "white_red" => [
+            "white",
+            "red"
+        ]
+    ];
+
     setlocale(LC_TIME, 'de_DE');
 
     $query_args = array(
@@ -82,7 +117,9 @@ function ljs_render_latest_event()
         $block = '
         <div class="wp-block-ljs-latest-event">
             <div class="col-span-full flex justify-center md:col-span-2">
-            ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
+                <div class="' . $colorThemes[$attributes['colorTheme']][0] . '">
+                ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
+                </div>
             </div>
             <div class="col-span-full md:col-span-8">
                 <span class="wp-block-ljs-latest-event__date">' . date("d. F Y", strtotime(get_field('time', $post_id)['startTime'])) . '</span>

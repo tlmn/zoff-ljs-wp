@@ -8,6 +8,7 @@
 @import "./styles/base/grid.css";
 @import "./styles/base/colors.css";
 @import "./styles/base/fonts.css";
+@import "./styles/base/slanted-borders.css";
 @import "./styles/base/typography.css";
 
 @import "./styles/buttons.css";

@@ -25,12 +25,9 @@ const toggleButtons = (currentTarget) => {
 };
 
 const setMargins = () => {
-  var slantedBorderHeight = $(".slantedBorder").height();
-  $(".slantedBorder").each((index, value) => {
-    $(value).css("margin-bottom", -slantedBorderHeight + "px");
-  });
-  $(".slantedBorder--flipped").each((index, value) => {
-    $(value).css("margin-top", -slantedBorderHeight + "px");
+  $(".has-slanted-borders").each((index, value) => {
+    $(value).css("margin-bottom", "-12px");
+    $(value).css("margin-top", "-12px");
   });
 };
 

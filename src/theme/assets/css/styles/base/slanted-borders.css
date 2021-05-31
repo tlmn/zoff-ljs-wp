@@ -1,3 +1,8 @@
 .has-slanted-borders {
-  clip-path: polygon(0 4%, 100% 0%, 100% 96%, 0% 100%);
+  clip-path: polygon(
+    0 theme("spacing.3"),
+    100% 0%,
+    100% calc(100% - theme("spacing.3")),
+    0% 100%
+  );
 }

@@ -1,8 +1,7 @@
 .wp-block-ljs-tiles-single {
   @apply col-span-full w-full;
-  @apply animated;
   @apply p-3;
-  &:hover {
+  &:hover .wp-block-ljs-tiles-single__image {
     @apply opacity-75;
   }
 }
@@ -22,6 +21,7 @@
 
 .wp-block-ljs-tiles-single__image {
   @apply w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw;
+  @apply animated;
 }
 
 .wp-block-ljs-tiles-single__text-wrapper {

@@ -11,7 +11,11 @@ const { __ } = window.wp.i18n;
 const { select } = window.wp.data;
 
 export default (props) => {
-  const { attributes, setAttributes, clientId } = props;
+  const {
+    attributes: { colorTheme, imageColumnPosition },
+    setAttributes,
+    clientId,
+  } = props;
   const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = [
@@ -45,26 +49,22 @@ export default (props) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("Bild-Position")} initialOpen={false}>
+        <PanelBody title={__("Bild-Position")} initialOpen={true}>
           <div>
             <FormToggle
               label={__("Bild-Position")}
-              help={
-                attributes.imageColumnPosition === "left" ? "links" : "rechts"
-              }
-              checked={attributes.imageColumnPosition === "left" ? true : false}
+              help={imageColumnPosition === "left" ? "links" : "rechts"}
+              checked={imageColumnPosition === "left" ? true : false}
               onChange={() =>
                 setAttributes({
                   imageColumnPosition:
-                    attributes.imageColumnPosition === "left"
-                      ? "right"
-                      : "left",
+                    imageColumnPosition === "left" ? "right" : "left",
                 })
               }
               id="imageColumnPosition-toggle"
@@ -80,7 +80,7 @@ export default (props) => {
       <div {...blockProps}>
         <div
           className={`wp-block-ljs-bio__image-wrapper ${
-            attributes.imageColumnPosition === "left" ? `` : `order-last`
+            imageColumnPosition === "left" ? `` : `order-last`
           }`}
         >
           <Image

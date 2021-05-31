@@ -1,11 +1,6 @@
-import {
-  getPrimaryColorName,
-  getSecondaryColorName,
-  getSecondaryColorValue,
-} from "../../lib/lib";
+import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
-import SlantedBorder from "../../assets/svg/slantedBorder";
 
 const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
 
@@ -14,7 +9,10 @@ const { FormToggle, PanelBody } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { body, colorTheme, hasSlantedBorders },
+    setAttributes,
+  } = props;
   const blockProps = useBlockProps({
     className: "ljs-intro-text",
   });
@@ -26,11 +24,11 @@ export default (props) => {
           <div className="flex items-center">
             <FormToggle
               label={__("Hat schräge Kanten")}
-              help={attributes.hasSlantedBorders ? "ja" : "nein"}
-              checked={attributes.hasSlantedBorders}
+              help={hasSlantedBorders ? "ja" : "nein"}
+              checked={hasSlantedBorders}
               onChange={() =>
                 setAttributes({
-                  hasSlantedBorders: !attributes.hasSlantedBorders,
+                  hasSlantedBorders: !hasSlantedBorders,
                 })
               }
               id="hasSlantedBorders-toggle"
@@ -44,21 +42,19 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        {attributes.hasSlantedBorders && (
-          <SlantedBorder
-            flipped={false}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
-          />
-        )}
-        <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+        <div
+          className={`bg-${getSecondaryColorName(colorTheme)} ${
+            hasSlantedBorders ? `has-slanted-borders` : ``
+          }`}
+        >
           <div className="container ljs-grid">
             <div
               className={`col-span-10 col-start-2 text-${getPrimaryColorName(
-                attributes.colorTheme
+                colorTheme
               )}`}
             >
               <RichText
-                value={attributes.body}
+                value={body}
                 allowedFormats={[
                   "core/italic",
                   "core/underline",
@@ -73,12 +69,6 @@ export default (props) => {
             </div>
           </div>
         </div>
-        {attributes.hasSlantedBorders && (
-          <SlantedBorder
-            flipped={true}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
-          />
-        )}
       </div>
     </>
   );

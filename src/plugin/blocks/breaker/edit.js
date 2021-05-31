@@ -1,12 +1,10 @@
 import {
   getPrimaryColorName,
   getSecondaryColorName,
-  getSecondaryColorValue,
   passColorThemeToInnerBlocks,
 } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
-import SlantedBorder from "../../assets/svg/slantedBorder";
 import { useEffect } from "react";
 
 const { PanelBody, FormToggle } = window.wp.components;
@@ -77,16 +75,10 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        {hasSlantedBorders && (
-          <SlantedBorder
-            flipped={false}
-            fillColor={getSecondaryColorValue(colorTheme)}
-          />
-        )}
         <div
-          className={`bg-${getSecondaryColorName(
+          className={`wp-block-ljs-breaker__wrapper bg-${getSecondaryColorName(
             colorTheme
-          )} wp-block-ljs-breaker__wrapper`}
+          )} ${hasSlantedBorders ? `has-slanted-borders` : ``}`}
         >
           <div
             className={`wp-block-ljs-breaker__content text-${getPrimaryColorName(
@@ -100,12 +92,6 @@ export default (props) => {
             />
           </div>
         </div>
-        {hasSlantedBorders && (
-          <SlantedBorder
-            flipped={true}
-            fillColor={getSecondaryColorValue(colorTheme)}
-          />
-        )}
       </div>
     </>
   );

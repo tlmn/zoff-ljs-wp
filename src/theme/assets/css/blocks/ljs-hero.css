@@ -28,6 +28,7 @@
 .wp-block-ljs-hero__rotation-outer-wrapper {
   @apply table;
 }
+
 .wp-block-ljs-hero__subline {
   @apply z-20 relative;
   @apply py-2 px-3;
@@ -35,13 +36,15 @@
   @apply text-lg tracking-tight;
   @apply box-clone;
   @apply inline;
-  line-height: 2.1;
+  line-height: 2.3;
 }
 
 @screen md {
   .wp-block-ljs-hero__subline {
     @apply text-xl;
+    line-height: 2.1;
   }
+
   .wp-block-ljs-hero__logo {
     @apply block;
   }

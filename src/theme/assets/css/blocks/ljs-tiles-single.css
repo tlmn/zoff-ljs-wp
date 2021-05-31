@@ -8,7 +8,6 @@
 
 .wp-block-ljs-tiles-single__wrapper {
   @apply relative w-full ratio--1-1;
-  @apply box-shadow--10;
 }
 
 .wp-block-ljs-tiles-single__title {

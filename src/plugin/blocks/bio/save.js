@@ -5,7 +5,9 @@ const { __ } = window.wp.i18n;
 const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
 export default (props) => {
-  const { attributes } = props;
+  const {
+    attributes: { imageColumnPosition },
+  } = props;
 
   const blockProps = useBlockProps.save();
 
@@ -13,7 +15,7 @@ export default (props) => {
     <div {...blockProps}>
       <div
         className={`wp-block-ljs-bio__image-wrapper ${
-          attributes.imageColumnPosition === "left" ? `` : `order-last`
+          imageColumnPosition === "left" ? `` : `order-last`
         }`}
       >
         <Image

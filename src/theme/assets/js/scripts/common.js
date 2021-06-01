@@ -10,7 +10,6 @@ const toggleMenu = () => {
 
 const handleDetailsButtonClick = ({ currentTarget }) => {
   var details = $(currentTarget).parents().eq(1).find("details");
-  console.log(details);
   if (typeof details.attr("open") !== typeof undefined) {
     details.removeAttr("open");
     toggleButtons(currentTarget);

@@ -12,7 +12,10 @@ import red_white from "../../assets/colorThemes/red_white.png";
 import white_red from "../../assets/colorThemes/white_red.png";
 
 export default ({ theme, ...props }) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { colorTheme },
+    setAttributes,
+  } = props;
 
   const colorThemeThumbnails = {
     black_green: black_green,
@@ -45,7 +48,7 @@ export default ({ theme, ...props }) => {
             width: "3rem",
             height: "3rem",
             border:
-              theme === attributes.colorTheme
+              theme === colorTheme
                 ? `3px black solid`
                 : `3px transparent solid`,
           }}

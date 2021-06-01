@@ -4,7 +4,10 @@ const { PanelBody } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { url },
+    setAttributes,
+  } = props;
 
   return (
     <PanelBody label={__("URL auswählen")}>
@@ -15,10 +18,7 @@ export default (props) => {
           alignItems: "center",
         }}
       >
-        <URLInputButton
-          url={attributes.url}
-          onChange={(url) => setAttributes({ url })}
-        />
+        <URLInputButton url={url} onChange={(url) => setAttributes({ url })} />
         <span style={{ marginLeft: "10px" }}>Link auswählen</span>
       </div>
     </PanelBody>

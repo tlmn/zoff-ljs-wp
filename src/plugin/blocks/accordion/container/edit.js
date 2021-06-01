@@ -9,7 +9,10 @@ const { __ } = window.wp.i18n;
 const { select } = window.wp.data;
 
 export default (props) => {
-  const { attributes, clientId } = props;
+  const {
+    attributes: { colorTheme },
+    clientId,
+  } = props;
 
   const blockProps = useBlockProps();
 
@@ -20,8 +23,8 @@ export default (props) => {
     select("core/block-editor").getBlocksByClientId(clientId)[0].innerBlocks;
 
   useEffect(() => {
-    passColorThemeToInnerBlocks(clientId, attributes.colorTheme);
-  }, [attributes.colorTheme, innerBlocks]);
+    passColorThemeToInnerBlocks(clientId, colorTheme);
+  }, [colorTheme, innerBlocks]);
 
   return (
     <>

@@ -5,39 +5,38 @@ import {
 } from "../../lib/lib";
 
 import SlantedBorder from "../../assets/svg/slantedBorder";
+import { has } from "browser-sync";
 
 const { __ } = window.wp.i18n;
 
 const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
-export default (props) => {
-  const { attributes } = props;
-
+export default ({ attributes: { colorTheme, hasSlantedBorders } }) => {
   const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>
-      {attributes.hasSlantedBorders && (
+      {hasSlantedBorders && (
         <SlantedBorder
           flipped={false}
-          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          fillColor={getSecondaryColorValue(colorTheme)}
         />
       )}
-      <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+      <div className={`bg-${getSecondaryColorName(colorTheme)}`}>
         <div className="wp-block-ljs-form__wrapper">
           <div
             className={`col-span-10 col-start-2 text-${getPrimaryColorName(
-              attributes.colorTheme
+              colorTheme
             )}`}
           >
             <InnerBlocks.Content />
           </div>
         </div>
       </div>
-      {attributes.hasSlantedBorders && (
+      {hasSlantedBorders && (
         <SlantedBorder
           flipped={true}
-          fillColor={getSecondaryColorValue(attributes.colorTheme)}
+          fillColor={getSecondaryColorValue(colorTheme)}
         />
       )}
     </div>

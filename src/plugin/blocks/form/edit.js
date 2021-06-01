@@ -14,7 +14,10 @@ const { FormToggle, PanelBody } = window.wp.components;
 const { __ } = window.wp.i18n;
 
 export default (props) => {
-  const { attributes, setAttributes } = props;
+  const {
+    attributes: { colorTheme, hasSlantedBorders },
+    setAttributes,
+  } = props;
   const blockProps = useBlockProps();
 
   const ALLOWED_BLOCKS = ["core/shortcode"];
@@ -28,11 +31,11 @@ export default (props) => {
           <div className="flex items-center">
             <FormToggle
               label={__("Hat schräge Kanten")}
-              help={attributes.hasSlantedBorders ? "ja" : "nein"}
-              checked={attributes.hasSlantedBorders}
+              help={hasSlantedBorders ? "ja" : "nein"}
+              checked={hasSlantedBorders}
               onChange={() =>
                 setAttributes({
-                  hasSlantedBorders: !attributes.hasSlantedBorders,
+                  hasSlantedBorders: !hasSlantedBorders,
                 })
               }
               id="hasSlantedBorders-toggle"
@@ -46,27 +49,27 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        {attributes.hasSlantedBorders && (
+        {hasSlantedBorders && (
           <SlantedBorder
             flipped={false}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+            fillColor={getSecondaryColorValue(colorTheme)}
           />
         )}
-        <div className={`bg-${getSecondaryColorName(attributes.colorTheme)}`}>
+        <div className={`bg-${getSecondaryColorName(colorTheme)}`}>
           <div className="wp-block-ljs-form__wrapper">
             <div
               className={`col-span-10 col-start-2 text-${getPrimaryColorName(
-                attributes.colorTheme
+                colorTheme
               )}`}
             >
               <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
             </div>
           </div>
         </div>
-        {attributes.hasSlantedBorders && (
+        {hasSlantedBorders && (
           <SlantedBorder
             flipped={true}
-            fillColor={getSecondaryColorValue(attributes.colorTheme)}
+            fillColor={getSecondaryColorValue(colorTheme)}
           />
         )}
       </div>

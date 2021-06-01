@@ -5,7 +5,6 @@ import {
 } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
-import SlantedBorder from "../../assets/svg/slantedBorder";
 
 const { InspectorControls, useBlockProps, InnerBlocks } = window.wp.blockEditor;
 
@@ -49,29 +48,17 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
-        {hasSlantedBorders && (
-          <SlantedBorder
-            flipped={false}
-            fillColor={getSecondaryColorValue(colorTheme)}
-          />
-        )}
         <div className={`bg-${getSecondaryColorName(colorTheme)}`}>
           <div className="wp-block-ljs-form__wrapper">
             <div
               className={`col-span-10 col-start-2 text-${getPrimaryColorName(
                 colorTheme
-              )}`}
+              )} ${hasSlantedBorders ? `has-slanted-borders` : ``}`}
             >
               <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} template={TEMPLATE} />
             </div>
           </div>
         </div>
-        {hasSlantedBorders && (
-          <SlantedBorder
-            flipped={true}
-            fillColor={getSecondaryColorValue(colorTheme)}
-          />
-        )}
       </div>
     </>
   );

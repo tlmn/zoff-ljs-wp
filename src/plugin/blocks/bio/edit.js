@@ -56,22 +56,24 @@ export default (props) => {
     <>
       <InspectorControls>
         <PanelBody title={__("Bild-Position")} initialOpen={true}>
-          <div>
-            <FormToggle
-              label={__("Bild-Position")}
-              help={imageColumnPosition === "left" ? "links" : "rechts"}
-              checked={imageColumnPosition === "left" ? true : false}
-              onChange={() =>
-                setAttributes({
-                  imageColumnPosition:
-                    imageColumnPosition === "left" ? "right" : "left",
-                })
-              }
-              id="imageColumnPosition-toggle"
-            />
-            <label htmlFor="imageColumnPosition-toggle">
-              {__("Bild links")}
-            </label>
+          <div className="editor-styles-wrapper">
+            <div className="inspector-controls">
+              <FormToggle
+                label={__("Bild-Position")}
+                help={imageColumnPosition === "left" ? "links" : "rechts"}
+                checked={imageColumnPosition === "left" ? true : false}
+                onChange={() =>
+                  setAttributes({
+                    imageColumnPosition:
+                      imageColumnPosition === "left" ? "right" : "left",
+                  })
+                }
+                id="imageColumnPosition-toggle"
+              />
+              <label htmlFor="imageColumnPosition-toggle">
+                {__("Bild links")}
+              </label>
+            </div>
           </div>
         </PanelBody>
         <ImageSelector {...props} />

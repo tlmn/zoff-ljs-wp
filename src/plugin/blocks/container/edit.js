@@ -56,21 +56,23 @@ export default (props) => {
     <>
       <InspectorControls>
         <PanelBody title={__("Container-Breite")} initialOpen={true}>
-          <div>
-            <FormToggle
-              label={__("breiter Container")}
-              help={isFullWidth ? "breit" : "schmal"}
-              checked={isFullWidth}
-              onChange={() =>
-                setAttributes({
-                  isFullWidth: !isFullWidth,
-                })
-              }
-              id="isFullWidth-toggle"
-            />
-            <label htmlFor="isFullWidth-toggle">
-              {__("breiter Container")}
-            </label>
+          <div className="editor-styles-wrapper">
+            <div className="inspector-controls">
+              <FormToggle
+                label={__("breiter Container")}
+                help={isFullWidth ? "breit" : "schmal"}
+                checked={isFullWidth}
+                onChange={() =>
+                  setAttributes({
+                    isFullWidth: !isFullWidth,
+                  })
+                }
+                id="isFullWidth-toggle"
+              />
+              <label htmlFor="isFullWidth-toggle">
+                {__("breiter Container")}
+              </label>
+            </div>
           </div>
         </PanelBody>
         <ColorThemeSelector {...props} />

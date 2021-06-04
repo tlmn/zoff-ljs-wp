@@ -1,0 +1,3 @@
+.inspector-controls label {
+  @apply ml-2 text-sm font-sans;
+}

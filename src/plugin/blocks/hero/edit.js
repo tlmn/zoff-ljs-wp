@@ -29,15 +29,17 @@ export default (props) => {
         <ImageSelector {...props} />
 
         <PanelBody title={__("Logo")} initialOpen={false}>
-          <div>
-            <FormToggle
-              label={__("Logo anzeigen")}
-              help={logoHide ? "Ja" : "Nein"}
-              checked={logoHide}
-              onChange={() => setAttributes({ logoHide: !logoHide })}
-              id="logoHide-toggle"
-            />
-            <label htmlFor="logoHide-toggle">{__("Logo anzeigen")}</label>
+          <div className="editor-styles-wrapper">
+            <div className="inspector-controls">
+              <FormToggle
+                label={__("Logo anzeigen")}
+                help={logoHide ? "Ja" : "Nein"}
+                checked={logoHide}
+                onChange={() => setAttributes({ logoHide: !logoHide })}
+                id="logoHide-toggle"
+              />
+              <label htmlFor="logoHide-toggle">{__("Logo anzeigen")}</label>
+            </div>
           </div>
         </PanelBody>
       </InspectorControls>

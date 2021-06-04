@@ -11,15 +11,9 @@ export default (props) => {
 
   return (
     <PanelBody label={__("URL auswählen")}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="flex justify-center items-center">
         <URLInputButton url={url} onChange={(url) => setAttributes({ url })} />
-        <span style={{ marginLeft: "10px" }}>Link auswählen</span>
+        <span className="ml-3">Link auswählen</span>
       </div>
     </PanelBody>
   );

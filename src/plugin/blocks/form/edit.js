@@ -27,21 +27,23 @@ export default (props) => {
     <>
       <InspectorControls>
         <PanelBody title={__("Schräge Kanten")} initialOpen={true}>
-          <div className="flex items-center">
-            <FormToggle
-              label={__("Hat schräge Kanten")}
-              help={hasSlantedBorders ? "ja" : "nein"}
-              checked={hasSlantedBorders}
-              onChange={() =>
-                setAttributes({
-                  hasSlantedBorders: !hasSlantedBorders,
-                })
-              }
-              id="hasSlantedBorders-toggle"
-            />
-            <label htmlFor="hasSlantedBorders-toggle" className="ml-2">
-              {__("Hat schräge Kante")}
-            </label>
+          <div className="editor-styles-wrapper">
+            <div className="inspector-controls">
+              <FormToggle
+                label={__("Hat schräge Kanten")}
+                help={hasSlantedBorders ? "ja" : "nein"}
+                checked={hasSlantedBorders}
+                onChange={() =>
+                  setAttributes({
+                    hasSlantedBorders: !hasSlantedBorders,
+                  })
+                }
+                id="hasSlantedBorders-toggle"
+              />
+              <label htmlFor="hasSlantedBorders-toggle">
+                {__("Hat schräge Kante")}
+              </label>
+            </div>
           </div>
         </PanelBody>
         <ColorThemeSelector {...props} />

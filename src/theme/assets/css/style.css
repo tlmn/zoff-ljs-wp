@@ -19,6 +19,7 @@
 
 @import "./editor/editor.css";
 @import "./editor/toolbar.css";
+@import "./editor/inspector.css";
 
 @import "./blocks/ljs-accordion.css";
 @import "./blocks/ljs-bio.css";

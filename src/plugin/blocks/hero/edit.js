@@ -45,6 +45,7 @@ export default (props) => {
       </InspectorControls>
 
       <div {...blockProps}>
+        <div className="wp-block-ljs-hero__overlay" />
         <Image
           className="wp-block-ljs-hero__background"
           placeholder="crowd"

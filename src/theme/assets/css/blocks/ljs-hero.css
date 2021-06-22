@@ -3,6 +3,10 @@
   @apply relative;
 }
 
+.wp-block-ljs-hero__overlay {
+  @apply w-full h-full absolute top-0 left-0 z-10;
+  background-color: rgba(37, 37, 37, 0.4);
+}
 .wp-block-ljs-hero__background {
   @apply object-cover w-full h-full absolute top-0 left-0 border-0;
   @apply image-bw;

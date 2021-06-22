@@ -13,9 +13,7 @@ export default (props) => {
     attributes: { body, colorTheme, hasSlantedBorders },
     setAttributes,
   } = props;
-  const blockProps = useBlockProps({
-    className: "ljs-intro-text",
-  });
+  const blockProps = useBlockProps();
 
   return (
     <>

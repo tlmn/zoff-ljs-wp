@@ -3,7 +3,7 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 const { RichText, useBlockProps } = window.wp.blockEditor;
 
 export default ({ attributes: { colorTheme, hasSlantedBorders, body } }) => {
-  const blockProps = useBlockProps.save({ className: "ljs-intro-text" });
+  const blockProps = useBlockProps.save();
 
   return (
     <div {...blockProps}>

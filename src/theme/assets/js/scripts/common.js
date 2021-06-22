@@ -34,6 +34,8 @@ $(() => setMargins());
 
 $(window).resize(() => setMargins());
 
+$(window).scroll(() => handleScroll());
+
 $(() =>
   $("#mobile-menu ul.sub-menu").each((index, value) =>
     $(value)
@@ -51,3 +53,17 @@ $(() =>
     $(value).parent().addClass("dropdown").css("display", "inline-block");
   })
 );
+
+const handleScroll = () => {
+  if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+    $("#header-logo")
+      .css("margin-bottom", "0")
+      .css("width", "2.5rem")
+      .css("height", "1.5rem");
+  } else {
+    $("#header-logo")
+      .css("margin-bottom", "-30px")
+      .css("width", "2.5rem")
+      .css("height", "2.5rem");
+  }
+};

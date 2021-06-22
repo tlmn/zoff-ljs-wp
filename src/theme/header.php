@@ -19,7 +19,7 @@
 	<div class="hidden md:block bg-black relative z-50">
 		<div class="container flex items-center">
 			<div class="w-full flex justify-start">
-				<a href="/" style="height: 1.5rem; width: 1.5rem;" class="fill-green mr-5">
+				<a href="/" style="height: 2.5rem; width: 2.5rem; margin-bottom: -30px;" class="fill-green mr-5 animated duration-1000" id="header-logo">
 					<?php
 					echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
 					?>

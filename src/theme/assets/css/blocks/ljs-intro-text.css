@@ -1,19 +1,23 @@
-.ljs-intro-text__body {
+.wp-block-ljs-intro {
+  @apply relative;
+}
+
+.wp-block-ljs-intro-text__body {
   @apply my-7;
   @apply text-lg font-gilroy font-semibold leading-wider;
 }
 
 @screen md {
-  .ljs-intro-text__body {
+  .wp-block-ljs-intro-text__body {
     @apply my-9;
     @apply text-3xl;
   }
 }
 
-.ljs-intro-text__body * {
+.wp-block-ljs-intro-text__body * {
   color: inherit;
 }
 
-.ljs-intro-text__body a {
+.wp-block-ljs-intro-text__body a {
   @apply underline;
 }

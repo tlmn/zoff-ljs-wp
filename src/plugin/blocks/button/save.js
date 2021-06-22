@@ -16,11 +16,7 @@ export default ({
   const blockProps = useBlockProps.save({
     className: `text-${getSecondaryColorName(
       colorTheme
-    )} bg-${getPrimaryColorName(colorTheme)} hover:text-${getPrimaryColorName(
-      colorTheme
-    )} hover:bg-${getSecondaryColorName(
-      colorTheme
-    )} hover:border-${getPrimaryColorName(colorTheme)}`,
+    )} bg-${getPrimaryColorName(colorTheme)}`,
   });
 
   return (

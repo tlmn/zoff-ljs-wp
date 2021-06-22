@@ -8,3 +8,11 @@
   @apply font-bold;
   @apply border-4 border-transparent;
 }
+
+.wp-block-ljs-button:hover {
+  transform: scale(1.1);
+}
+
+.wp-block-ljs-button:focus {
+  transform: scale(0.9);
+}

@@ -12,8 +12,13 @@
   @apply flex flex-col justify-center items-center;
 }
 
-.wp-block-ljs-content-teaser-column-title p {
+.wp-block-ljs-content-teaser-column-title {
   @apply uppercase font-gilroy;
+}
+
+.wp-block-ljs-content-teaser-column-body h2,
+.wp-block-ljs-content-teaser-column-body p {
+  @apply hidden;
 }
 
 .wp-block-ljs-content-teaser-column-title__wrapper {
@@ -43,5 +48,10 @@
 
   .wp-block-ljs-content-teaser-column-title__wrapper {
     @apply text-left;
+  }
+
+  .wp-block-ljs-content-teaser-column-body h2,
+  .wp-block-ljs-content-teaser-column-body p {
+    @apply block;
   }
 }

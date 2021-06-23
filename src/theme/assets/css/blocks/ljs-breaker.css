@@ -1,6 +1,6 @@
 .wp-block-ljs-breaker__wrapper {
   @apply uppercase;
-  @apply py-5;
+  @apply py-6;
   @apply text-center;
 }
 
@@ -28,6 +28,6 @@
 
 @screen md {
   .wp-block-ljs-breaker__wrapper {
-    @apply py-6;
+    @apply py-7;
   }
 }

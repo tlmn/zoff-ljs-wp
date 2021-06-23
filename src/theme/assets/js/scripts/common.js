@@ -42,7 +42,7 @@ $(() =>
       .siblings()
       .click((event) => {
         event.preventDefault();
-        $("#mobile-menu ul.sub-menu").toggle();
+        $(value).toggle();
       })
   )
 );

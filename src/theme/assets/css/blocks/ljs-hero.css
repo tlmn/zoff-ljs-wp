@@ -19,8 +19,7 @@
 }
 
 .wp-block-ljs-hero__logo {
-  @apply mb-2;
-  @apply hidden;
+  max-width: 80vw;
 }
 
 .wp-block-ljs-hero__rotation-inner-wrapper {
@@ -39,7 +38,7 @@
   @apply font-black uppercase italic leading-snug text-center;
   @apply text-lg tracking-tight;
   @apply box-clone;
-  @apply inline;
+  @apply hidden;
   line-height: 2.3;
 }
 
@@ -47,10 +46,12 @@
   .wp-block-ljs-hero__subline {
     @apply text-xl;
     line-height: 2.1;
+    @apply inline;
   }
 
   .wp-block-ljs-hero__logo {
     @apply block;
+    @apply mb-2;
   }
 }
 

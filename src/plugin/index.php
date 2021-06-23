@@ -116,7 +116,7 @@ function ljs_render_latest_event($attributes)
         $post_id = $post->ID;
         $block = '
         <div class="wp-block-ljs-latest-event">
-            <div class="col-span-full flex justify-center md:col-span-2">
+            <div class="col-span-full hidden md:flex justify-center md:col-span-2">
                 <div class="' . $colorThemes[$attributes['colorTheme']][0] . '">
                 ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
                 </div>

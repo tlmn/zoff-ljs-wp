@@ -1,5 +1,5 @@
 .wp-block-ljs-content-teaser {
-  @apply py-7;
+  @apply py-8;
 }
 
 .wp-block-ljs-content-teaser__wrapper {
@@ -26,6 +26,12 @@
   @apply text-center;
 }
 
+.wp-block-ljs-content-teaser-column-title__wrapper h1,
+.wp-block-ljs-content-teaser-column-title__wrapper h2,
+.wp-block-ljs-content-teaser-column-title__wrapper p {
+  @apply text-center !important;
+}
+
 .wp-block-ljs-content-teaser .block-editor-block-list__layout {
   @apply ljs-grid;
 }
@@ -44,10 +50,6 @@
   .wp-block-ljs-content-teaser-column-body {
     @apply col-span-6;
     @apply block;
-  }
-
-  .wp-block-ljs-content-teaser-column-title__wrapper {
-    @apply text-left;
   }
 
   .wp-block-ljs-content-teaser-column-body h2,

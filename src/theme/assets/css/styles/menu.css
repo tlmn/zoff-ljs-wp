@@ -50,6 +50,9 @@ ul.menu.primary_menu .sub-menu {
 
 #mobile-menu .sub-menu {
   @apply hidden;
+  & li a {
+    @apply justify-center;
+  }
 }
 
 @screen md {

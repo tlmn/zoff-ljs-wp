@@ -21,7 +21,7 @@ export default ({ attributes: { colorTheme, hasSlantedBorders, body } }) => {
             <RichText.Content
               value={body}
               tagName="p"
-              className="ljs-intro-text__body"
+              className="wp-block-ljs-intro-text__body"
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 .wp-block-ljs-intro-text {
   @apply relative;
+  @apply z-20;
 }
 
 .wp-block-ljs-intro-text__body {

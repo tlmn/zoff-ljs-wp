@@ -62,7 +62,7 @@ export default (props) => {
                   "core/link",
                 ]}
                 tagName="p"
-                className={`ljs-intro-text__body`}
+                className={`wp-block-ljs-intro-text__body`}
                 onChange={(body) => setAttributes({ body })}
                 placeholder={__("Hier kommt der Intro-Text rein.")}
               />

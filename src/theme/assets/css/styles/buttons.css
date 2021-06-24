@@ -15,13 +15,8 @@
 
 .wp-block-ljs-button:hover {
   transform: scale(1.1);
-  color: inherit !important;
-  background-color: initial;
-  @apply border-0;
 }
 
 .wp-block-ljs-button:focus {
   transform: scale(0.9);
-  color: inherit !important;
-  border: 0;
 }

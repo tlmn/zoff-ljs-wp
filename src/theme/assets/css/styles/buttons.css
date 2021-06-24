@@ -7,6 +7,7 @@
   border-radius: 10px;
   @apply font-bold;
   @apply border-0;
+  @apply cursor-pointer;
 }
 
 .wp-block-ljs-button:last-child {

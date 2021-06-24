@@ -45,6 +45,24 @@
   display: block !important;
 }
 
+@screen sm {
+  .wp-block-ljs-content-teaser-column-title {
+    @apply pb-5;
+  }
+
+  .wp-block-ljs-content-teaser-column-title,
+  .wp-block-ljs-content-teaser-column-body {
+    @apply col-span-full;
+    @apply block;
+  }
+
+  .wp-block-ljs-content-teaser-column-body h2,
+  .wp-block-ljs-content-teaser-column-body p {
+    @apply block;
+    @apply text-center;
+  }
+}
+
 @screen md {
   .wp-block-ljs-content-teaser-column-title,
   .wp-block-ljs-content-teaser-column-body {
@@ -55,5 +73,6 @@
   .wp-block-ljs-content-teaser-column-body h2,
   .wp-block-ljs-content-teaser-column-body p {
     @apply block;
+    @apply text-left;
   }
 }

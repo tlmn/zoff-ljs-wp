@@ -99,6 +99,8 @@ function ljs_render_latest_event($attributes)
 
     setlocale(LC_TIME, 'de_DE');
 
+    $months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+
     $query_args = array(
         'post_type'         => 'event',
         'post_status'       => 'publish',
@@ -114,6 +116,7 @@ function ljs_render_latest_event($attributes)
     if (count($posts) > 0) {
         $post = $posts[0];
         $post_id = $post->ID;
+        $time = strtotime(get_field('time', $post_id)['startTime']);
         $block = '
         <div class="wp-block-ljs-latest-event">
             <div class="col-span-full hidden md:flex justify-center md:col-span-2">
@@ -122,7 +125,7 @@ function ljs_render_latest_event($attributes)
                 </div>
             </div>
             <div class="col-span-full md:col-span-8">
-                <span class="wp-block-ljs-latest-event__date">' . date("d. F Y", strtotime(get_field('time', $post_id)['startTime'])) . '</span>
+                <span class="wp-block-ljs-latest-event__date">' . date("d. ", $time) . $months[date("n", $time) - 1] . date(" Y", $time) . '</span>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
                 <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-green text-black hover:bg-black hover:text-green">mehr Infos</a>

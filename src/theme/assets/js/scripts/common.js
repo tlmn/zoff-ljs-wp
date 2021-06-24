@@ -37,6 +37,16 @@ $(window).resize(() => setMargins());
 $(window).scroll(() => handleScroll());
 
 $(() =>
+  $(".menu-navigation-container ul.sub-menu").each((index, value) =>
+    $(value)
+      .siblings()
+      .click((event) => {
+        event.preventDefault();
+      })
+  )
+);
+
+$(() =>
   $("#mobile-menu ul.sub-menu").each((index, value) =>
     $(value)
       .siblings()

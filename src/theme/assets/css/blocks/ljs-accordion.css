@@ -60,7 +60,7 @@
 }
 
 .wp-block-ljs-accordion-item__body-more {
-  @apply font-gilroy font-normal text-2xl text-center leading-wider;
+  @apply font-gilroy font-normal text-lg text-center leading-wider;
 }
 
 .wp-block-ljs-accordion-item__body-more * {
@@ -82,10 +82,4 @@
 .wp-block-ljs-accordion-item summary::marker,
 .wp-block-ljs-accordion-item summary::-webkit-details-marker {
   @apply hidden;
-}
-
-@screen md {
-  .wp-block-ljs-accordion-container {
-    max-width: 70%;
-  }
 }

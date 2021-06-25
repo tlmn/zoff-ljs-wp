@@ -19,14 +19,13 @@
   @apply hidden;
 }
 
-.wp-block-ljs-cover__rotation-inner-wrapper {
-  max-width: 60vw;
-  transform: rotate(-5deg);
+.wp-block-ljs-cover__rotation-outer-wrapper {
+  width: 120%;
+  transform: translateX(-10%);
 }
 
-.wp-block-ljs-cover__rotation-outer-wrapper {
-  @apply table;
-  width: 120%;
+.wp-block-ljs-cover__rotation-inner-wrapper {
+  transform: rotate(-5deg);
 }
 
 .wp-block-ljs-cover__title,
@@ -37,7 +36,7 @@
 
 .wp-block-ljs-cover__title h2:nth-child(odd),
 .wp-block-ljs-cover__title .block-editor-block-list__layout h2:nth-child(odd) {
-  @apply ml-0;
+  @apply self-start;
 }
 
 .wp-block-ljs-cover__title h2:nth-child(even),
@@ -48,26 +47,85 @@
 
 .wp-block-ljs-cover__title h2 {
   @apply z-20 relative;
-  @apply px-3;
-  @apply font-black uppercase italic leading-snug text-center;
-  @apply text-4xl tracking-tight;
+  @apply px-4;
+  @apply font-black uppercase italic leading-none text-center;
+  @apply tracking-tight;
   @apply box-clone;
   @apply inline-block;
   line-height: 2.1;
   @apply max-w-min;
+  font-size: calc(100vw / 16);
+  @apply whitespace-nowrap !important;
 }
 
 @screen md {
-  .wp-block-ljs-cover__title h2 {
-    @apply text-5xl;
-  }
   .wp-block-ljs-cover__logo {
     @apply block;
   }
 }
 
 @screen lg {
-  .wp-block-ljs-cover__title {
-    @apply text-2xl;
+  .wp-block-ljs-cover__title h2 {
+    @apply text-6xl;
   }
+}
+
+.wp-block-ljs-cover__title-bg--purple h2 {
+  @apply bg-purple;
+}
+
+.wp-block-ljs-cover__title-bg--red h2 {
+  @apply bg-red;
+}
+
+.wp-block-ljs-cover__title-bg--green h2 {
+  @apply bg-green;
+}
+
+.wp-block-ljs-cover__title-bg--black h2 {
+  @apply bg-black;
+}
+
+.wp-block-ljs-cover__title-bg--white h2 {
+  @apply bg-white;
+}
+
+.wp-block-ljs-cover__title--purple h2 {
+  @apply text-purple;
+}
+
+.wp-block-ljs-cover__title--red h2 {
+  @apply text-red;
+}
+
+.wp-block-ljs-cover__title--green h2 {
+  @apply text-green;
+}
+
+.wp-block-ljs-cover__title--black h2 {
+  @apply text-black;
+}
+
+.wp-block-ljs-cover__title--white h2 {
+  @apply text-white;
+}
+
+.wp-block-ljs-cover__title-shadow--purple h2 {
+  @apply shadow-purple;
+}
+
+.wp-block-ljs-cover__title-shadow--green h2 {
+  @apply shadow-green;
+}
+
+.wp-block-ljs-cover__title-shadow--red h2 {
+  @apply shadow-red;
+}
+
+.wp-block-ljs-cover__title-shadow--white h2 {
+  @apply shadow-white;
+}
+
+.wp-block-ljs-cover__title-shadow--black h2 {
+  @apply shadow-black;
 }

@@ -1,69 +1,75 @@
-.marker-green ul li::marker {
-  @apply text-green;
-}
+@layer utilities {
+  .marker-green ul li::marker {
+    @apply text-green;
+  }
 
-.marker-purple ul li::marker {
-  @apply text-purple;
-}
+  .marker-purple ul li::marker {
+    @apply text-purple;
+  }
 
-.marker-red ul li::marker {
-  @apply text-red;
-}
+  .marker-red ul li::marker {
+    @apply text-red;
+  }
 
-.marker-black ul li::marker {
-  @apply text-black;
-}
+  .marker-black ul li::marker {
+    @apply text-black;
+  }
 
-.fill-green:hover svg path {
-  @apply animated;
-  fill: theme("colors.green");
-}
+  .fill-green:hover svg path {
+    @apply animated;
+    fill: theme("colors.green");
+  }
 
-.fill-purple:hover svg path {
-  @apply animated;
-  fill: theme("colors.purple");
-}
+  .fill-purple:hover svg path {
+    @apply animated;
+    fill: theme("colors.purple");
+  }
 
-.fill-red:hover svg path {
-  @apply animated;
-  fill: theme("colors.red");
-}
+  .fill-red:hover svg path {
+    @apply animated;
+    fill: theme("colors.red");
+  }
 
-.fill-black:hover svg path {
-  @apply animated;
-  fill: theme("colors.black.DEFAULT");
-}
+  .fill-black:hover svg path {
+    @apply animated;
+    fill: theme("colors.black.DEFAULT");
+  }
 
-.shadow-green {
-  box-shadow: 10px 10px 0px theme("colors.green");
-}
-
-.shadow-purple {
-  box-shadow: 10px 10px 0px theme("colors.purple");
-}
-
-.shadow-red {
-  box-shadow: 10px 10px 0px theme("colors.red");
-}
-
-.shadow-black {
-  box-shadow: 10px 10px 0px theme("colors.black.DEFAULT");
-}
-
-@screen md {
   .shadow-green {
-    box-shadow: 20px 20px 0px theme("colors.green");
+    box-shadow: 10px 10px 0px theme("colors.green");
   }
 
   .shadow-purple {
-    box-shadow: 20px 20px 0px theme("colors.purple");
+    box-shadow: 10px 10px 0px theme("colors.purple");
   }
 
   .shadow-red {
-    box-shadow: 20px 20px 0px theme("colors.red");
+    box-shadow: 10px 10px 0px theme("colors.red");
   }
 
   .shadow-black {
-    box-shadow: 20px 20px 0px theme("colors.black.DEFAULT");
+    box-shadow: 10px 10px 0px theme("colors.black.DEFAULT");
+  }
+
+  .shadow-white {
+    box-shadow: 10px 10px 0px theme("colors.white");
+  }
+
+  @screen md {
+    .shadow-green {
+      box-shadow: 20px 20px 0px theme("colors.green");
+    }
+
+    .shadow-purple {
+      box-shadow: 20px 20px 0px theme("colors.purple");
+    }
+
+    .shadow-red {
+      box-shadow: 20px 20px 0px theme("colors.red");
+    }
+
+    .shadow-black {
+      box-shadow: 20px 20px 0px theme("colors.black.DEFAULT");
+    }
   }
 }

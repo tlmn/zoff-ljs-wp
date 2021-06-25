@@ -12,7 +12,6 @@ export default (props) => {
 
   return (
     <div {...blockProps} style={{ height: `${height}vh` }}>
-      {height}
       {hasColoredBg ? (
         <div
           className={`absolute w-full h-full top-0 left-0 bg-${getSecondaryColorName(
@@ -34,7 +33,26 @@ export default (props) => {
                 colorTheme
               )}`}
             >
-              <div className="wp-block-ljs-cover__title">
+              <div
+                className={`wp-block-ljs-cover__title ${
+                  hasColoredBg
+                    ? `wp-block-ljs-cover__title-shadow--white`
+                    : `wp-block-ljs-cover__title-shadow--${getPrimaryColorName(
+                        colorTheme
+                      )}`
+                }
+                wp-block-ljs-cover__title-bg--${
+                  hasColoredBg
+                    ? getPrimaryColorName(colorTheme)
+                    : getSecondaryColorName(colorTheme)
+                }
+                wp-block-ljs-cover__title--${
+                  hasColoredBg
+                    ? getSecondaryColorName(colorTheme)
+                    : getPrimaryColorName(colorTheme)
+                }
+                    `}
+              >
                 <InnerBlocks.Content />
               </div>
             </div>

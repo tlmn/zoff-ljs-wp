@@ -22,25 +22,17 @@ export default (props) => {
     [
       "core/heading",
       {
-        placeholder: "erste Zeile",
+        placeholder: "Zeile",
         level: 2,
-        className: `bg-${getSecondaryColorName(
-          colorTheme
-        )} text-${getPrimaryColorName(colorTheme)} shadow-${getPrimaryColorName(
-          colorTheme
-        )}`,
+        className: `bg-${getSecondaryColorName(colorTheme)}`,
       },
     ],
     [
       "core/heading",
       {
-        placeholder: "zweite Zeile",
+        placeholder: "Zeile",
         level: 2,
-        className: `bg-${getSecondaryColorName(
-          colorTheme
-        )} text-${getPrimaryColorName(colorTheme)} shadow-${getPrimaryColorName(
-          colorTheme
-        )}`,
+        className: `bg-${getSecondaryColorName(colorTheme)}`,
       },
     ],
   ];
@@ -100,19 +92,36 @@ export default (props) => {
         )}
 
         <div className="wp-block-ljs-cover__overlay-wrapper">
-          <div className="max-w-max">
-            <div className="wp-block-ljs-cover__rotation-outer-wrapper">
+          <div className="wp-block-ljs-cover__rotation-outer-wrapper">
+            <div
+              className={`wp-block-ljs-cover__rotation-inner-wrapper text-${getPrimaryColorName(
+                colorTheme
+              )}`}
+            >
               <div
-                className={`wp-block-ljs-cover__rotation-inner-wrapper text-${getPrimaryColorName(
-                  colorTheme
-                )}`}
+                className={`wp-block-ljs-cover__title ${
+                  hasColoredBg
+                    ? `wp-block-ljs-cover__title-shadow--white`
+                    : `wp-block-ljs-cover__title-shadow--${getPrimaryColorName(
+                        colorTheme
+                      )}`
+                }
+                wp-block-ljs-cover__title-bg--${
+                  hasColoredBg
+                    ? getPrimaryColorName(colorTheme)
+                    : getSecondaryColorName(colorTheme)
+                }
+                wp-block-ljs-cover__title--${
+                  hasColoredBg
+                    ? getSecondaryColorName(colorTheme)
+                    : getPrimaryColorName(colorTheme)
+                }
+                    `}
               >
-                <div className="wp-block-ljs-cover__title">
-                  <InnerBlocks
-                    allowedBlocks={ALLOWED_BLOCKS}
-                    template={TEMPLATE}
-                  />
-                </div>
+                <InnerBlocks
+                  allowedBlocks={ALLOWED_BLOCKS}
+                  template={TEMPLATE}
+                />
               </div>
             </div>
           </div>

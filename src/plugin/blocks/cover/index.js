@@ -26,6 +26,10 @@ registerBlockType("ljs/cover", {
       type: "string",
       default: "purple_red",
     },
+    height: {
+      type: "string",
+      default: "50",
+    },
     align: {
       type: "string",
       default: "full",

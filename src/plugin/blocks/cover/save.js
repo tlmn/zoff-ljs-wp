@@ -6,12 +6,13 @@ const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
 
 export default (props) => {
   const {
-    attributes: { colorTheme, hasColoredBg },
+    attributes: { colorTheme, hasColoredBg, height },
   } = props;
   const blockProps = useBlockProps.save();
 
   return (
-    <div {...blockProps}>
+    <div {...blockProps} style={{ height: `${height}vh` }}>
+      {height}
       {hasColoredBg ? (
         <div
           className={`absolute w-full h-full top-0 left-0 bg-${getSecondaryColorName(

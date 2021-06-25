@@ -11,7 +11,7 @@ const { __ } = window.wp.i18n;
 
 export default (props) => {
   const {
-    attributes: { colorTheme, hasColoredBg },
+    attributes: { colorTheme, hasColoredBg, height },
     setAttributes,
   } = props;
 
@@ -48,6 +48,20 @@ export default (props) => {
   return (
     <>
       <InspectorControls>
+        <PanelBody title={__("Höhe")} initialOpen={true}>
+          <div className="flex items-center">
+            <select
+              value={height}
+              onChange={(event) =>
+                setAttributes({ height: event.target.value })
+              }
+            >
+              {[20, 30, 50, 80, 100].map((item) => (
+                <option value={item}>{item} %</option>
+              ))}
+            </select>
+          </div>
+        </PanelBody>
         <PanelBody title={__("Farbiger Hintergrund")} initialOpen={true}>
           <div className="flex items-center">
             <FormToggle
@@ -70,7 +84,7 @@ export default (props) => {
         {!hasColoredBg && <ImageSelector {...props} />}
       </InspectorControls>
 
-      <div {...blockProps}>
+      <div {...blockProps} style={{ height: `${height}vh` }}>
         {hasColoredBg ? (
           <div
             className={`absolute w-full h-full top-0 left-0 bg-${getSecondaryColorName(

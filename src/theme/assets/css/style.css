@@ -9,6 +9,7 @@
 @import "./styles/base/grid.css";
 @import "./styles/base/colors.css";
 @import "./styles/base/fonts.css";
+@import "./styles/base/header.css";
 @import "./styles/base/ratios.css";
 @import "./styles/base/slanted-borders.css";
 @import "./styles/base/typography.css";

@@ -17,50 +17,59 @@
 <body class="<?php print join(' ', get_body_class()); ?>'">
 
 	<div class="hidden md:block bg-black relative z-50">
-		<div class="container flex items-center">
-			<div class="w-full flex justify-start">
-				<a href="/" style="height: 2.5rem; width: 2.5rem; margin-bottom: -30px;" class="fill-green mr-5 animated duration-1000" id="header-logo">
-					<?php
-					echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
-					?>
-				</a>
-			</div>
-			<div class="flex items-center">
-				<?php
-
-				wp_nav_menu(array(
-					'menu'                 => 'primary_menu',
-					'container'            => 'div',
-					'container_class'      => '',
-					'menu_class'           => 'menu primary_menu',
-					'echo'                 => true,
-					'fallback_cb'          => 'wp_page_menu',
-					'theme_location'       => 'primary_menu',
-					'depth'				   => 2
-				));
-
-				?>
-				<div class="w-full flex justify-center items-center px-5 menu__search-icon">
-					<a href="/suche" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
+		<div class="container flex flex-wrap items-center">
+			<div class="flex-1 flex">
+				<div class="w-full flex justify-start items-center flex-1">
+					<a href="/" class="
+					<?php if (is_front_page()) {
+						echo "header-logo--landing";
+					} else {
+						echo "header-logo";
+					} ?> fill-green mr-5 animated duration-1000" id="header-logo">
 						<?php
-						echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');
+						echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
 						?>
 					</a>
 				</div>
-				<?php
+				<div class="flex items-center">
+					<?php
 
-				wp_nav_menu(array(
-					'menu'                 => 'top_menu',
-					'container'            => 'div',
-					'container_class'      => '',
-					'menu_class'           => 'menu top_menu',
-					'echo'                 => true,
-					'fallback_cb'          => 'wp_page_menu',
-					'theme_location'       => 'top_menu',
-				));
+					wp_nav_menu(array(
+						'menu'                 => 'primary_menu',
+						'container'            => 'div',
+						'container_class'      => '',
+						'menu_class'           => 'menu primary_menu',
+						'echo'                 => true,
+						'fallback_cb'          => 'wp_page_menu',
+						'theme_location'       => 'primary_menu',
+						'depth'				   => 2
+					));
 
-				?>
+					?>
+					<div class="w-full justify-center items-center px-5 menu__search-icon hidden">
+						<!-- hide link to search for now -->
+						<a href="/suche" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
+							<?php
+							echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');
+							?>
+						</a>
+					</div>
+				</div>
 			</div>
+			<?php
+
+			wp_nav_menu(array(
+				'menu'                 => 'top_menu',
+				'container'            => 'div',
+				'container_class'      => '',
+				'menu_class'           => 'menu top_menu w-full',
+				'menu_id'			   => 'top_menu',
+				'echo'                 => true,
+				'fallback_cb'          => 'wp_page_menu',
+				'theme_location'       => 'top_menu',
+			));
+
+			?>
 		</div>
 	</div>
 

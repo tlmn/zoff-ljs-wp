@@ -2,7 +2,7 @@
 
 $query = new WP_Query(array(
 	'posts_per_page' => 5,
-	'post_type' => 'event',
+	'post_type' => 'beschluss',
 ));
 get_header();
 ?>

@@ -86,14 +86,6 @@ function ljs_render_latest_event($attributes)
         "red_black" => [
             "red",
             "black"
-        ],
-        "red_white" => [
-            "red",
-            "white"
-        ],
-        "white_red" => [
-            "white",
-            "red"
         ]
     ];
 
@@ -128,7 +120,7 @@ function ljs_render_latest_event($attributes)
                 <span class="wp-block-ljs-latest-event__date">' . date("d. ", $time) . $months[date("n", $time) - 1] . date(" Y", $time) . '</span>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
                 <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
-                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-green text-black hover:bg-black hover:text-green">mehr Infos</a>
+                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-green text-black">mehr Infos</a>
             </div>
         </div>';
         return $block;

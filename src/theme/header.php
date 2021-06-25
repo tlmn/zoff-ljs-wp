@@ -17,7 +17,7 @@
 <body class="<?php print join(' ', get_body_class()); ?>'">
 
 	<div class="hidden md:block bg-black relative z-50">
-		<div class="container flex flex-wrap items-center">
+		<div class="container flex flex-wrap items-center justify-end">
 			<div class="flex-1 flex">
 				<div class="w-full flex justify-start items-center flex-1">
 					<a href="/" class="

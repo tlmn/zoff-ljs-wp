@@ -60,7 +60,7 @@
 }
 
 .wp-block-ljs-accordion-item__body-more {
-  @apply font-gilroy font-normal text-lg text-center leading-wider;
+  @apply font-gilroy font-normal text-lg text-left leading-wider;
 }
 
 .wp-block-ljs-accordion-item__body-more * {

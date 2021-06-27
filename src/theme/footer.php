@@ -16,7 +16,7 @@
 
             wp_nav_menu(array(
                 'menu'                 => 'social-media_menu',
-                'menu_class'           => 'social-media_menu',
+                'menu_class'           => 'social-media_menu flex gap-3 mr-5',
                 'echo'                 => true,
                 'fallback_cb'          => 'wp_page_menu',
                 'theme_location'       => 'social-media_menu',

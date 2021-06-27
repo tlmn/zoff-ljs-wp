@@ -36,6 +36,7 @@ if ($query->have_posts()) {
 			<h2 class="mb-3">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
+			<h3><?php the_date(); ?></h3>
 
 			<p>
 				<?php the_excerpt(); ?>

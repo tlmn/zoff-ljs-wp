@@ -35,6 +35,22 @@
     fill: theme("colors.black.DEFAULT");
   }
 
+  .fill--green svg path {
+    fill: theme("colors.green");
+  }
+
+  .fill--purple svg path {
+    fill: theme("colors.purple");
+  }
+
+  .fill--red svg path {
+    fill: theme("colors.red");
+  }
+
+  .fill--black svg path {
+    fill: theme("colors.black.DEFAULT");
+  }
+
   .shadow-green {
     box-shadow: 10px 10px 0px theme("colors.green");
   }

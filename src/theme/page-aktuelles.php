@@ -1,20 +1,21 @@
 <?php
-
-$query = new WP_Query(array(
-	'posts_per_page' => 5,
-	'post_type' => 'event',
-));
 get_header();
-?>
 
-<div class="container">
-	<?php while ($query->have_posts()) : $query->the_post(); ?>
-		<div>
-			<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+if (have_posts()) :
+	while (have_posts()) : the_post();
+		the_content();
+
+?>
+		<div class="container grid-12 py-8">
+			<div class="col-span-full md:col-start-3 md:col-span-8">
+				<?php
+				echo do_shortcode('[searchandfilter slug="aktuelles"]');
+				echo do_shortcode('[searchandfilter slug="aktuelles" show="results"]');
+				?>
+			</div>
 		</div>
-	<?php endwhile; ?>
-	<div class="nav-previous alignleft"><?php next_posts_link('Older posts'); ?></div>
-	<div class="nav-next alignright"><?php previous_posts_link('Newer posts'); ?></div>
-</div>
 <?php
+	endwhile;
+endif;
+
 get_footer();

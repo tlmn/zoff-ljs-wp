@@ -36,7 +36,22 @@ if ($query->have_posts()) {
 			<h2 class="mb-3">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
-			<h3><?php the_date(); ?></h3>
+
+			<h4 class="font-bold mb-4">
+				<?php
+
+				if (get_post_type(get_the_ID()) === "event") {
+					$startTime = strtotime(get_field('time')['startTime']);
+					$endTime = strtotime(get_field('time')['endTime']);
+
+					if (get_field('time')['isPeriodOfTime']) {
+						echo date('d.m.Y', $startTime) . " bis " . date('d.m.Y', $endTime);
+					} else {
+						echo  date('d.m.Y H:i', $startTime);
+					}
+				}
+				?>
+				<?php the_terms(get_the_ID(), 'congress', '', ' ', ''); ?></h4>
 
 			<p>
 				<?php the_excerpt(); ?>
@@ -45,6 +60,7 @@ if ($query->have_posts()) {
 
 	<?php
 	}
+	
 	?>
 	Seite <?php echo $currentPage; ?> von <?php echo $maxPage; ?><br />
 

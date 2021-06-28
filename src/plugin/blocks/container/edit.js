@@ -21,6 +21,7 @@ export default (props) => {
   const ALLOWED_BLOCKS = [
     "core/heading",
     "core/paragraph",
+    "core/shortcode",
     "ljs/button",
     "ljs/image",
     "ljs/bio",

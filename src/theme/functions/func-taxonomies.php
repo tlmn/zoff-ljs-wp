@@ -2,7 +2,6 @@
 
 function custom_taxonomy_buko()
 {
-
 	$labels = array(
 		'name'                       => _x('Bundeskongresse', 'Taxonomy General Name', 'text_domain'),
 		'singular_name'              => _x('Bundeskongress', 'Taxonomy Singular Name', 'text_domain'),

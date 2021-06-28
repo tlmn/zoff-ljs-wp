@@ -4,17 +4,17 @@ function custom_taxonomy_buko()
 {
 
 	$labels = array(
-		'name'                       => _x('BuKos', 'Taxonomy General Name', 'text_domain'),
-		'singular_name'              => _x('BuKo', 'Taxonomy Singular Name', 'text_domain'),
-		'menu_name'                  => __('BuKos', 'text_domain'),
-		'all_items'                  => __('Alle BuKos', 'text_domain'),
+		'name'                       => _x('Bundeskongresse', 'Taxonomy General Name', 'text_domain'),
+		'singular_name'              => _x('Bundeskongress', 'Taxonomy Singular Name', 'text_domain'),
+		'menu_name'                  => __('Bundeskongresse', 'text_domain'),
+		'all_items'                  => __('Alle Bundeskongresse', 'text_domain'),
 		'parent_item'                => __('Eltern-Element:', 'text_domain'),
 		'parent_item_colon'          => __('Eltern-Element:', 'text_domain'),
-		'new_item_name'              => __('Neues BuKo', 'text_domain'),
-		'add_new_item'               => __('BuKo hinzufügen', 'text_domain'),
-		'edit_item'                  => __('BuKo bearbeiten', 'text_domain'),
-		'update_item'                => __('BuKo aktualisieren', 'text_domain'),
-		'view_item'                  => __('BuKo anzeigen', 'text_domain'),
+		'new_item_name'              => __('Neuer Bundeskongress', 'text_domain'),
+		'add_new_item'               => __('Bundeskongress hinzufügen', 'text_domain'),
+		'edit_item'                  => __('Bundeskongress bearbeiten', 'text_domain'),
+		'update_item'                => __('Bundeskongress aktualisieren', 'text_domain'),
+		'view_item'                  => __('Bundeskongress anzeigen', 'text_domain'),
 		'no_terms'                   => __('Keine Elemente', 'text_domain'),
 		'items_list'                 => __('Liste von Elementen', 'text_domain'),
 	);

@@ -30,6 +30,7 @@
 
 .wp-block-ljs-hero__rotation-outer-wrapper {
   @apply table;
+  @apply mt-4;
 }
 
 .wp-block-ljs-hero__subline {

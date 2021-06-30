@@ -25,7 +25,7 @@
 						echo "header-logo--landing";
 					} else {
 						echo "header-logo";
-					} ?> fill-green mr-5 animated duration-1000" id="header-logo">
+					} ?> fill-green animated duration-1000" id="header-logo">
 						<?php
 						echo file_get_contents(get_template_directory() . '/assets/images/icons/ljs-logo--white.svg');
 						?>

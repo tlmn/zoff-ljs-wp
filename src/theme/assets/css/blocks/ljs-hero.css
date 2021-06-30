@@ -1,6 +1,8 @@
 .wp-block-ljs-hero {
-  @apply max-h-screen h-screen;
+  @apply max-h-screen;
   @apply relative;
+  min-height: 580px;
+  height: 75vh;
 }
 
 .wp-block-ljs-hero__overlay {
@@ -10,7 +12,7 @@
 .wp-block-ljs-hero__background {
   @apply object-cover w-full h-full absolute top-0 left-0 border-0;
   @apply image-bw;
-  object-position: 50% 20%;
+  object-position: 50% 50%;
 }
 
 .wp-block-ljs-hero__overlay-wrapper {
@@ -44,6 +46,10 @@
 }
 
 @screen md {
+  .wp-block-ljs-hero {
+    min-height: 580px;
+  }
+
   .wp-block-ljs-hero__subline {
     @apply text-xl;
     line-height: 2.1;

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 
 include("functions/func-acf.php");
 include("functions/func-custom-post-types.php");

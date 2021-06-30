@@ -26,8 +26,24 @@
   color: inherit;
 }
 
+.wp-block-ljs-breaker h1 {
+  @apply text-3xl;
+}
+
+.wp-block-ljs-breaker h3 {
+  @apply text-xl;
+}
+
 @screen md {
   .wp-block-ljs-breaker__wrapper {
     @apply py-7;
+  }
+
+  .wp-block-ljs-breaker h1 {
+    @apply text-9xl;
+  }
+
+  .wp-block-ljs-breaker h3 {
+    @apply text-2xl;
   }
 }

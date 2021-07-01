@@ -38,9 +38,13 @@
   @apply box-clone;
   @apply inline-block;
   line-height: 2.1;
+  font-size: calc(100vw / 20);
   @apply max-w-min;
-  font-size: calc(100vw / 16);
   @apply whitespace-nowrap !important;
+}
+
+.wp-block-ljs-cover__title h2 {
+  max-width: 80vw;
 }
 
 .wp-block-ljs-cover__title h2:first-child:nth-last-child(1) {

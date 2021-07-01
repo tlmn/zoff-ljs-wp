@@ -112,6 +112,11 @@ function ljs_render_latest_event($attributes)
         $time = strtotime(get_field('time', $post_id)['startTime']);
         $block = '
         <div class="wp-block-ljs-latest-event">
+            <div class="col-span-full flex justify-center my-4">
+                <h3 class="wp-block-ljs-latest-event__caption box-shadow--5--' . $colorThemes[$colorTheme][1] . ' bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
+                    Nicht verpassen
+                </h3>
+            </div>
             <div class="col-span-full hidden md:flex justify-center md:col-span-2">
                 <div class="fill--' . $colorThemes[$colorTheme][0] . '">
                 ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
@@ -122,6 +127,11 @@ function ljs_render_latest_event($attributes)
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
                 <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">mehr Infos</a>
+            </div>
+            <div class="col-span-full flex justify-center">
+                <a href="/aktuelles" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
+                    Alle Termine >
+                </a>
             </div>
         </div>';
         return $block;

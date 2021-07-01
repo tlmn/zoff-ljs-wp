@@ -16,3 +16,9 @@
 .wp-block-ljs-latest-event__body {
   @apply is-style-teaser;
 }
+
+.wp-block-ljs-latest-event__caption {
+  @apply py-2 px-3;
+  transform: rotate(-4deg);
+  @apply uppercase;
+}

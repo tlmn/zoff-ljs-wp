@@ -43,7 +43,7 @@
   @apply whitespace-nowrap !important;
 }
 
-.wp-block-ljs-cover__title h2 {
+.wp-block-ljs-cover__title {
   max-width: 80vw;
 }
 

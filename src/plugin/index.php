@@ -115,7 +115,7 @@ function ljs_render_latest_event($attributes)
         $block = '
         <div class="wp-block-ljs-latest-event">
             <div class="col-span-full flex justify-center my-4">
-                <h3 class="wp-block-ljs-latest-event__caption mb-3 box-shadow--5--' . $colorThemes[$colorTheme][1] . ' bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
+                <h3 class="wp-block-ljs-latest-event__caption mb-5 box-shadow--5--' . $colorThemes[$colorTheme][1] . ' bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
                     Nicht verpassen
                 </h3>
             </div>
@@ -127,7 +127,7 @@ function ljs_render_latest_event($attributes)
             <div class="col-span-full md:col-span-8">
                 <span class="wp-block-ljs-latest-event__date"> ' . date("d. ", $time) . $months[date("n", $time) - 1] . date(" Y", $time) . '</span>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
-                <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
+                <div class="wp-block-ljs-latest-event__body">' . substr(get_the_excerpt($post_id), 0, 200) . '...</div>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">mehr Infos</a>
             </div>
             <div class="col-span-full flex justify-center">

@@ -43,6 +43,10 @@
   @apply whitespace-nowrap !important;
 }
 
+.wp-block-ljs-cover__title h2:first-child:nth-last-child(1) {
+  @apply m-0 !important;
+}
+
 .wp-block-ljs-cover__title h2:first-child:nth-last-child(2) {
   @apply -ml-9;
 }

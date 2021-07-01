@@ -115,7 +115,7 @@ function ljs_render_latest_event($attributes)
         $block = '
         <div class="wp-block-ljs-latest-event">
             <div class="col-span-full flex justify-center my-4">
-                <h3 class="wp-block-ljs-latest-event__caption box-shadow--5--' . $colorThemes[$colorTheme][1] . ' bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
+                <h3 class="wp-block-ljs-latest-event__caption mb-3 box-shadow--5--' . $colorThemes[$colorTheme][1] . ' bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
                     Nicht verpassen
                 </h3>
             </div>

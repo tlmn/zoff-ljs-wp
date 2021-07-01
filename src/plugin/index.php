@@ -62,6 +62,7 @@ function expose_plugin_dir_url()
 
 function ljs_render_latest_event($attributes)
 {
+    $colorTheme = !isset($attributes['colorTheme']) || $attributes['colorTheme'] === "" ? 'purple_red' : $attributes['colorTheme'];
     $colorThemes = [
         "black_green" => [
             "black",
@@ -98,8 +99,8 @@ function ljs_render_latest_event($attributes)
         'post_status'       => 'publish',
         'posts_per_page'    => 1,
         'meta_key'          => 'time_startTime',
-        'orderby'           => 'meta_value_num',
-        'order'             => 'DESC'
+        'orderby'           => 'meta_value',
+        'order'             => 'ASC'
     );
 
     $query = new WP_Query($query_args);
@@ -112,15 +113,15 @@ function ljs_render_latest_event($attributes)
         $block = '
         <div class="wp-block-ljs-latest-event">
             <div class="col-span-full hidden md:flex justify-center md:col-span-2">
-                <div class="fill--green">
+                <div class="fill--' . $colorThemes[$colorTheme][0] . '">
                 ' . file_get_contents(plugin_dir_path(__FILE__) . 'svg/calendar.svg') . '
                 </div>
             </div>
             <div class="col-span-full md:col-span-8">
-                <span class="wp-block-ljs-latest-event__date">' . date("d. ", $time) . $months[date("n", $time) - 1] . date(" Y", $time) . '</span>
+                <span class="wp-block-ljs-latest-event__date"> ' . date("d. ", $time) . $months[date("n", $time) - 1] . date(" Y", $time) . '</span>
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-latest-event__title">' . get_the_title($post_id) . '</a>
                 <div class="wp-block-ljs-latest-event__body">' . substr(get_post($post_id)->post_content, 0, 200) . '...</div>
-                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-green text-black">mehr Infos</a>
+                <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">mehr Infos</a>
             </div>
         </div>';
         return $block;

@@ -1,9 +1,9 @@
 import BlockEdit from "./edit";
 import BlockSave from "./save";
 
-const { registerBlockType } = window.wp.blocks;
-const { withSelect } = window.wp.data;
-const { __ } = window.wp.i18n;
+const { registerBlockType } = wp.blocks;
+const { withSelect } = wp.data;
+const { __ } = wp.i18n;
 
 registerBlockType("ljs/hero", {
   apiVersion: 2,

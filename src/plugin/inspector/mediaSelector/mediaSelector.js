@@ -1,8 +1,8 @@
-const { MediaUpload, MediaUploadCheck } = window.wp.blockEditor;
+const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
 
-const { PanelBody, Button } = window.wp.components;
+const { PanelBody, Button } = wp.components;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default ({ attributes, setAttributes }) => {
   const onSelectMedia = (media) => {

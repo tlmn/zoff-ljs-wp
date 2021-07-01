@@ -4,9 +4,9 @@ import Image from "../../../blockComponents/image";
 import ImageSelector from "../../../inspector/imageSelector";
 import URLPicker from "../../../inspector/URLPicker";
 
-const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = wp.blockEditor;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

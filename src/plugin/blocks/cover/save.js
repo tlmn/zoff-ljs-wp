@@ -2,7 +2,7 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import Image from "../../blockComponents/image";
 
-const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {

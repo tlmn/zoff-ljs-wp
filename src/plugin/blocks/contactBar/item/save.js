@@ -1,4 +1,4 @@
-const { useBlockProps } = window.wp.blockEditor;
+const { useBlockProps } = wp.blockEditor;
 
 import FacebookIcon from "../../../assets/svg/contactItems/facebook";
 import InstagramIcon from "../../../assets/svg/contactItems/instagram";

@@ -1,8 +1,8 @@
 import BlockEdit from "./edit";
 import BlockSave from "./save";
 
-const { registerBlockType } = window.wp.blocks;
-const { withSelect } = window.wp.data;
+const { registerBlockType } = wp.blocks;
+const { withSelect } = wp.data;
 
 registerBlockType("ljs/cover", {
   apiVersion: 2,

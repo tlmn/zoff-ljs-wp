@@ -2,7 +2,7 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import Image from "../../blockComponents/image";
 
-const { RichText, useBlockProps } = window.wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {

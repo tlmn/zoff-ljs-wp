@@ -7,9 +7,9 @@ import {
 
 import ColorThemeSelector from "../../../inspector/colorThemeSelector";
 
-const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps, InspectorControls } = wp.blockEditor;
 
-const { select } = window.wp.data;
+const { select } = wp.data;
 
 export default (props) => {
   const {

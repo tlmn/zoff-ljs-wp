@@ -2,11 +2,11 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 
-const { InspectorControls, RichText, useBlockProps } = window.wp.blockEditor;
+const { InspectorControls, RichText, useBlockProps } = wp.blockEditor;
 
-const { FormToggle, PanelBody } = window.wp.components;
+const { FormToggle, PanelBody } = wp.components;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

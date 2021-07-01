@@ -1,7 +1,7 @@
 import BlockEdit from "./edit";
 import BlockSave from "./save";
 
-const { registerBlockType } = window.wp.blocks;
+const { registerBlockType } = wp.blocks;
 
 registerBlockType("ljs/contact-bar-container", {
   apiVersion: 2,

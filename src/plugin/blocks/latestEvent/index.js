@@ -1,7 +1,7 @@
 import BlockEdit from "./edit";
-const { registerBlockType } = window.wp.blocks;
+const { registerBlockType } = wp.blocks;
 
-const { withSelect } = window.wp.data;
+const { withSelect } = wp.data;
 
 registerBlockType("ljs/latest-event", {
   apiVersion: 2,

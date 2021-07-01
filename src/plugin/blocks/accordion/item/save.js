@@ -7,9 +7,9 @@ import {
 import MinusIcon from "../../../assets/svg/accordion/minus";
 import PlusIcon from "../../../assets/svg/accordion/plus";
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
-const { RichText, useBlockProps } = window.wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {

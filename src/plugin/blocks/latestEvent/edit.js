@@ -1,6 +1,6 @@
 // import ColorThemeSelector from "../../inspector/colorThemeSelector";
 
-const { useBlockProps, InspectorControls } = window.wp.blockEditor;
+const { useBlockProps, InspectorControls } = wp.blockEditor;
 
 export default (props) => {
   const blockProps = useBlockProps();

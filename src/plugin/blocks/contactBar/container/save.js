@@ -1,4 +1,4 @@
-const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
+const { useBlockProps, InnerBlocks } = wp.blockEditor;
 
 export default () => {
   const blockProps = useBlockProps.save();

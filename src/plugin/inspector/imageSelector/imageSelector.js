@@ -1,10 +1,10 @@
 import { generateSrcSet } from "../../lib/lib";
 
-const { MediaUpload, MediaUploadCheck } = window.wp.blockEditor;
+const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
 
-const { PanelBody, Button, ResponsiveWrapper } = window.wp.components;
+const { PanelBody, Button, ResponsiveWrapper } = wp.components;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const { attributes, setAttributes } = props;

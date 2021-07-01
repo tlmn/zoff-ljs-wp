@@ -2,13 +2,13 @@ import ColorThemeSelector from "../../inspector/colorThemeSelector";
 import { passColorThemeToInnerBlocks } from "../../lib/lib";
 import { useEffect } from "react";
 
-const { InnerBlocks, useBlockProps, InspectorControls } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps, InspectorControls } = wp.blockEditor;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
-const { select } = window.wp.data;
+const { select } = wp.data;
 
-const { PanelBody, FormToggle } = window.wp.components;
+const { PanelBody, FormToggle } = wp.components;
 
 export default (props) => {
   const {

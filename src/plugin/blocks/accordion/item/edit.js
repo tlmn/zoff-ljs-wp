@@ -1,8 +1,8 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../../lib/lib";
 
-const { RichText, useBlockProps } = window.wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

@@ -1,8 +1,8 @@
 import Image from "../../blockComponents/image";
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
-const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
+const { useBlockProps, InnerBlocks } = wp.blockEditor;
 
 export default (props) => {
   const {

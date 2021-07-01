@@ -3,8 +3,8 @@ import { corporateThemes, secondaryThemes } from "../../config";
 import ColorThemeOption from "../colorThemeOption";
 import React from "react";
 
-const { PanelBody } = window.wp.components;
-const { __ } = window.wp.i18n;
+const { PanelBody } = wp.components;
+const { __ } = wp.i18n;
 
 export default (props) => (
   <PanelBody title={__("Farbschema wählen")} initialOpen={true}>

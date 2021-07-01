@@ -1,6 +1,6 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
-const { RichText, useBlockProps } = window.wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 
 export default ({ attributes: { colorTheme, hasSlantedBorders, body } }) => {
   const blockProps = useBlockProps.save();

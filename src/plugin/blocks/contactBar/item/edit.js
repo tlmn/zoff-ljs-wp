@@ -1,8 +1,8 @@
-const { useBlockProps, InspectorControls } = window.wp.blockEditor;
+const { useBlockProps, InspectorControls } = wp.blockEditor;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
-const { PanelBody } = window.wp.components;
+const { PanelBody } = wp.components;
 
 import FacebookIcon from "../../../assets/svg/contactItems/facebook";
 import InstagramIcon from "../../../assets/svg/contactItems/instagram";

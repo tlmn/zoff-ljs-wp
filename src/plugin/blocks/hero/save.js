@@ -8,7 +8,7 @@ import {
 import Image from "../../blockComponents/image";
 import Logo from "../../assets/svg/logo";
 
-const { RichText, useBlockProps } = window.wp.blockEditor;
+const { RichText, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {

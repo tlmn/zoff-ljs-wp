@@ -1,9 +1,9 @@
 import { passColorThemeToInnerBlocks } from "../../../lib/lib";
 import { useEffect } from "react";
 
-const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
-const { select } = window.wp.data;
+const { select } = wp.data;
 
 export default ({ attributes: { colorTheme }, clientId }) => {
   const blockProps = useBlockProps();

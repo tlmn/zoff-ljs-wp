@@ -3,10 +3,10 @@ import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 import MediaSelector from "../../inspector/mediaSelector/mediaSelector";
 import URLPicker from "../../inspector/URLPicker";
 
-const { RichText, InspectorControls, useBlockProps } = window.wp.blockEditor;
-const { PanelBody, FormToggle } = window.wp.components;
+const { RichText, InspectorControls, useBlockProps } = wp.blockEditor;
+const { PanelBody, FormToggle } = wp.components;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

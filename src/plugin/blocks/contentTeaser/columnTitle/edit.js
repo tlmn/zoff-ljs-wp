@@ -1,8 +1,8 @@
 import { getPrimaryColorName } from "../../../lib/lib";
 
-const { InnerBlocks, useBlockProps } = window.wp.blockEditor;
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default ({ attributes: { colorTheme } }) => {
   const blockProps = useBlockProps();

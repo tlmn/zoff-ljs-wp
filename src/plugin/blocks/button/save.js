@@ -1,7 +1,7 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
-const { __ } = window.wp.i18n;
-const { useBlockProps } = window.wp.blockEditor;
+const { __ } = wp.i18n;
+const { useBlockProps } = wp.blockEditor;
 
 export default ({
   attributes: {

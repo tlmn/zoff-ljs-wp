@@ -1,7 +1,7 @@
-const { URLInputButton } = window.wp.blockEditor;
+const { URLInputButton } = wp.blockEditor;
 
-const { PanelBody } = window.wp.components;
-const { __ } = window.wp.i18n;
+const { PanelBody } = wp.components;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

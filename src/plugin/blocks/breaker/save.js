@@ -1,8 +1,8 @@
 import { getPrimaryColorName, getSecondaryColorName } from "../../lib/lib";
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
-const { useBlockProps, InnerBlocks } = window.wp.blockEditor;
+const { useBlockProps, InnerBlocks } = wp.blockEditor;
 
 export default ({ attributes: { colorTheme, hasSlantedBorders } }) => {
   const blockProps = useBlockProps.save();

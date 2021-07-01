@@ -6,11 +6,11 @@ import {
 
 import ColorThemeSelector from "../../inspector/colorThemeSelector";
 
-const { InspectorControls, useBlockProps, InnerBlocks } = window.wp.blockEditor;
+const { InspectorControls, useBlockProps, InnerBlocks } = wp.blockEditor;
 
-const { FormToggle, PanelBody } = window.wp.components;
+const { FormToggle, PanelBody } = wp.components;
 
-const { __ } = window.wp.i18n;
+const { __ } = wp.i18n;
 
 export default (props) => {
   const {

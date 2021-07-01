@@ -99,6 +99,8 @@ function ljs_render_latest_event($attributes)
         'post_status'       => 'publish',
         'posts_per_page'    => 1,
         'meta_key'          => 'time_startTime',
+        'meta_compare'      => '>',
+        'meta_value'        => date("Y-m-d H:i:s"),
         'orderby'           => 'meta_value',
         'order'             => 'ASC'
     );

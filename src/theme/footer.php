@@ -1,5 +1,5 @@
 <footer>
-    <div class="container flex items-center justify-between">
+    <div class="container flex flex-col md:flex-row items-center justify-between">
         <?php
 
         wp_nav_menu(array(

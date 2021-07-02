@@ -23,26 +23,26 @@ jobs:
 
       - name: Set environment variables for theme
         run: |
-          echo "desttheme=root@www.bv.linksjugend-solid.de:/srv/wordpress/data/wordpress/wp-content/themes/ljs-theme" >> $GITHUB_ENV
+          echo "desttheme=wp@b2sr2v1z.myraidbox.de:/home/wp/disk/wordpress/wp-content/themes/ljs-theme" >> $GITHUB_ENV
 
       - name: Sync LJS Theme with Raidboxes
         run: |
           cd dist/theme
           echo "${{secrets.DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
-          rsync --exclude 'deploy_key' -chav --delete \
+          rsync -chav --delete \
             -e 'ssh -p 22 -i ./deploy_key -o StrictHostKeyChecking=no' \
             ./ $desttheme
 
       - name: Set environment variables for plugin
         run: |
-          echo "destplugin=root@root@www.bv.linksjugend-solid.de:/srv/wordpress/data/wordpress/wp-content/plugins/ljs-blocks" >> $GITHUB_ENV
+          echo "destplugin=wp@b2sr2v1z.myraidbox.de:/home/wp/disk/wordpress/wp-content/plugins/ljs-blocks" >> $GITHUB_ENV
 
       - name: Sync LJS Plugin with Raidboxes
         run: |
           cd dist/plugin
           echo "${{secrets.DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
-          rsync --exclude 'deploy_key' -chav --delete \
+          rsync -chav --delete \
             -e 'ssh -p 22 -i ./deploy_key -o StrictHostKeyChecking=no' \
             ./ $destplugin

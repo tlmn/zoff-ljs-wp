@@ -36,7 +36,7 @@ jobs:
 
       - name: Set environment variables for plugin
         run: |
-          echo "destplugin=root@root@www.bv.linksjugend-solid.de:/srv/wordpress/data/wordpress/wp-content/plugins/ljs-blocks" >> $GITHUB_ENV
+          echo "destplugin=root@www.bv.linksjugend-solid.de:/srv/wordpress/data/wordpress/wp-content/plugins/ljs-blocks" >> $GITHUB_ENV
 
       - name: Sync LJS Plugin with Raidboxes
         run: |

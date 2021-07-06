@@ -36,7 +36,7 @@ export default ({ attributes: { colorTheme, contactType, url } }) => {
 
   return (
     <a href={url} {...blockProps}>
-      {CONTACT_TYPES.filter((item) => item.value === contactType)[0].component}
+      {CONTACT_TYPES.filter((item) => item.value === contactType)[0]?.component}
     </a>
   );
 };

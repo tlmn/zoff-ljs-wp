@@ -29,7 +29,8 @@
   @apply mb-0;
 }
 
-.wp-block-ljs-button:hover {
+.wp-block-ljs-button:hover,
+.sf-field-submit input:hover {
   transform: scale(1.1);
 }
 

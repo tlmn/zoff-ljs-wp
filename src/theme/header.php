@@ -46,8 +46,7 @@
 					));
 
 					?>
-					<div class="w-full justify-center items-center px-5 menu__search-icon hidden">
-						<!-- hide link to search for now -->
+					<div class="w-full justify-center items-center px-5 menu__search-icon">
 						<a href="/suche" style="height: 1.5rem; width: 1.5rem;" class="fill-green">
 							<?php
 							echo file_get_contents(get_template_directory() . '/assets/images/icons/lens.svg');

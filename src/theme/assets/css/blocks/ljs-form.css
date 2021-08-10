@@ -5,7 +5,7 @@
 
 .wp-block-ljs-form__wrapper {
   @apply container ljs-grid;
-  @apply py-5;
+  @apply py-7;
 }
 
 input {

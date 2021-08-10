@@ -9,12 +9,18 @@ export default ({ attributes, className, placeholder = "crowd" }) => {
     personMale: imagePersonMale,
   };
 
+  const { mediaId, mediaSrcSet } = attributes;
+
+  const {
+    ljsBlocks: { pluginURL },
+  } = window;
+
   return (
     <img
       srcSet={
-        attributes.mediaId != 0
-          ? attributes.mediaSrcSet
-          : `${window.ljsBlocks.pluginURL}${placeholderImages[placeholder]}`
+        mediaId != 0
+          ? mediaSrcSet
+          : `${pluginURL}${placeholderImages[placeholder]}`
       }
       className={className}
     />

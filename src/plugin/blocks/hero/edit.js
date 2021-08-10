@@ -17,7 +17,7 @@ const { __ } = wp.i18n;
 
 export default (props) => {
   const {
-    attributes: { logoHide, colorTheme, title },
+    attributes: { logoHide, colorTheme, title, mediaIsBW },
     setAttributes,
   } = props;
   const blockProps = useBlockProps();
@@ -42,12 +42,27 @@ export default (props) => {
             </div>
           </div>
         </PanelBody>
+
+        <PanelBody title={__("Hintergrundbild")}>
+          <div className="inspector-controls">
+            <FormToggle
+              label={__("Bild schwarz-weiß?")}
+              help={mediaIsBW ? "Ja" : "Nein"}
+              checked={mediaIsBW}
+              onChange={() => setAttributes({ mediaIsBW: !mediaIsBW })}
+              id="mediaIsBW-toggle"
+            />
+            <label htmlFor="mediaIsBW-toggle">{__("Bild schwarz-weiß?")}</label>
+          </div>
+        </PanelBody>
       </InspectorControls>
 
       <div {...blockProps}>
         <div className="wp-block-ljs-hero__overlay" />
         <Image
-          className="wp-block-ljs-hero__background"
+          className={`wp-block-ljs-hero__background ${
+            mediaIsBW ? `image-bw` : ``
+          }`}
           placeholder="crowd"
           {...props}
         />

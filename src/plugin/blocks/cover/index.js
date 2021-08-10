@@ -22,6 +22,10 @@ registerBlockType("ljs/cover", {
       type: "boolean",
       default: false,
     },
+    mediaIsBW: {
+      type: "boolean",
+      default: true,
+    },
     colorTheme: {
       type: "string",
       default: "purple_red",

@@ -6,7 +6,7 @@ const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {
-    attributes: { colorTheme, hasColoredBg, height },
+    attributes: { colorTheme, hasColoredBg, height, mediaIsBW },
   } = props;
   const blockProps = useBlockProps.save();
 
@@ -20,7 +20,9 @@ export default (props) => {
         />
       ) : (
         <Image
-          className="wp-block-ljs-cover__background"
+          className={`wp-block-ljs-hero__background ${
+            mediaIsBW ? `image-bw` : ``
+          }`}
           placeholder="crowd"
           {...props}
         />

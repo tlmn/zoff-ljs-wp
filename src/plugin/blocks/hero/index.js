@@ -19,6 +19,10 @@ registerBlockType("ljs/hero", {
       type: "string",
       default: "",
     },
+    mediaIsBW: {
+      type: "boolean",
+      default: true,
+    },
     title: {
       type: "string",
     },

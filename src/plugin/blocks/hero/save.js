@@ -12,14 +12,16 @@ const { RichText, useBlockProps } = wp.blockEditor;
 
 export default (props) => {
   const {
-    attributes: { colorTheme, title, logoHide },
+    attributes: { colorTheme, title, logoHide, mediaIsBW },
   } = props;
   const blockProps = useBlockProps.save();
   return (
     <div {...blockProps}>
       <div className="wp-block-ljs-hero__overlay" />
       <Image
-        className="wp-block-ljs-hero__background"
+        className={`wp-block-ljs-hero__background ${
+          mediaIsBW ? `image-bw` : ``
+        }`}
         placeHolder="crowd"
         {...props}
       />

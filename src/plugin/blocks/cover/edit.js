@@ -11,7 +11,7 @@ const { __ } = wp.i18n;
 
 export default (props) => {
   const {
-    attributes: { colorTheme, hasColoredBg, height },
+    attributes: { colorTheme, hasColoredBg, height, mediaIsBW },
     setAttributes,
   } = props;
 
@@ -72,6 +72,24 @@ export default (props) => {
             </label>
           </div>
         </PanelBody>
+
+        {!hasColoredBg && (
+          <PanelBody title={__("Hintergrundbild")}>
+            <div className="inspector-controls">
+              <FormToggle
+                label={__("Bild schwarz-weiß?")}
+                help={mediaIsBW ? "Ja" : "Nein"}
+                checked={mediaIsBW}
+                onChange={() => setAttributes({ mediaIsBW: !mediaIsBW })}
+                id="mediaIsBW-toggle"
+              />
+              <label htmlFor="mediaIsBW-toggle">
+                {__("Bild schwarz-weiß?")}
+              </label>
+            </div>
+          </PanelBody>
+        )}
+
         <ColorThemeSelector {...props} />
         {!hasColoredBg && <ImageSelector {...props} />}
       </InspectorControls>
@@ -85,7 +103,9 @@ export default (props) => {
           />
         ) : (
           <Image
-            className="wp-block-ljs-cover__background"
+            className={`wp-block-ljs-cover__background ${
+              mediaIsBW ? `image-bw` : ``
+            }`}
             placeholder="crowd"
             {...props}
           />

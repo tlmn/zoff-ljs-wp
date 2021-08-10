@@ -7,3 +7,8 @@
   @apply container ljs-grid;
   @apply py-5;
 }
+
+input {
+  border: 1px black solid;
+  border-radius: 0.75rem;
+}

@@ -1,4 +1,6 @@
-export default ({ fillColor = "#252525" }) => (
+import React from "react";
+
+const MailIcon = ({ fillColor = "#252525" }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
     <path
       fill-rule="evenodd"
@@ -8,3 +10,5 @@ export default ({ fillColor = "#252525" }) => (
     />
   </svg>
 );
+
+export default MailIcon;

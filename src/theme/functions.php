@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 
 include("functions/func-acf.php");
+include("functions/func-blocks.php");
 include("functions/func-custom-post-types.php");
 include("functions/func-comments.php");
 include("functions/func-admin.php");
@@ -41,3 +42,6 @@ add_action("admin_menu", "remove_posts_admin_menus");
 
 // LOAD ACF FIELDS
 add_action("init", "acf_register_json_fields");
+
+// DISALLOW UNEEDED BLOCKS
+add_filter('allowed_block_types_all', 'page_allowed_block_types_all', 10, 2);

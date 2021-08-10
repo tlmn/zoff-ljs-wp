@@ -1,4 +1,5 @@
 <?php
+global $searchandfilter;
 
 if (!defined('ABSPATH')) {
 	exit;
@@ -6,6 +7,14 @@ if (!defined('ABSPATH')) {
 
 if ($query->have_posts()) {
 	$currentPage = $query->query['paged'];
+	$getParams = $searchandfilter->_GET;
+
+	$getQuery = "";
+	while ($getParam = current($getParams)) {
+			$getQuery .= key($getParams). "=" . $getParam;
+		next($getParams);
+	}
+
 	$maxPage = $query->max_num_pages;
 	while ($query->have_posts()) {
 		$query->the_post();
@@ -47,13 +56,13 @@ if ($query->have_posts()) {
 		<?php
 		if ((int)$currentPage !== 1) {
 		?>
-			<a href="?sf_paged=<?php echo $currentPage - 1; ?>" class="wp-block-ljs-button bg-green text-black">Zurück</a>
+			<a href="?<?php echo $getQuery; ?>&sf_paged=<?php echo $currentPage - 1; ?>" class="wp-block-ljs-button bg-green text-black">Zurück</a>
 		<?php
 		}
 
 		if ((int)$currentPage !== (int)$maxPage && (int)$maxPage !== 1) {
 		?>
-			<a href="?sf_paged=<?php echo $currentPage + 1; ?>" class="wp-block-ljs-button bg-green text-black">Weiter</a>
+			<a href="?<?php echo $getQuery; ?>&sf_paged=<?php echo $currentPage + 1; ?>" class="wp-block-ljs-button bg-green text-black">Weiter</a>
 		<?php
 		}
 		?>

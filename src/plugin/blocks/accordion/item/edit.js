@@ -9,6 +9,7 @@ export default (props) => {
     attributes: { colorTheme, title, bodyLess, bodyMore },
     setAttributes,
   } = props;
+
   const blockProps = useBlockProps({
     className: `bg-${getSecondaryColorName(colorTheme)}`,
   });

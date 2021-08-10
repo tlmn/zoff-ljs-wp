@@ -6,7 +6,6 @@
 
 .wp-block-ljs-cover__background {
   @apply object-cover w-full h-full absolute top-0 left-0 border-0;
-  @apply image-bw;
   object-position: 50% 20%;
 }
 

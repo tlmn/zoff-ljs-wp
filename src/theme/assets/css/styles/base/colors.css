@@ -1,17 +1,17 @@
 @layer utilities {
-  .marker-green ul li::marker {
+  .marker-green ul li::before {
     @apply text-green;
   }
 
-  .marker-purple ul li::marker {
+  .marker-purple ul li::before {
     @apply text-purple;
   }
 
-  .marker-red ul li::marker {
+  .marker-red ul li::before {
     @apply text-red;
   }
 
-  .marker-black ul li::marker {
+  .marker-black ul li::before {
     @apply text-black;
   }
 

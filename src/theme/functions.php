@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+error_reporting(0);
 
 include("functions/func-acf.php");
 include("functions/func-blocks.php");

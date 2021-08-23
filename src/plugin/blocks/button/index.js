@@ -8,6 +8,16 @@ registerBlockType("ljs/button", {
   title: "Button",
   icon: "tide",
   category: "ljs/layout",
+  parent: [
+    "ljs/bio",
+    "ljs/breaker",
+    "ljs/container",
+    "ljs/content-teaser",
+    "ljs/bio",
+    "ljs/form",
+    "ljs/intro",
+    "ljs/quote",
+  ],
   attributes: {
     buttonText: { type: "string", default: "Hier klicken" },
     url: { type: "string" },

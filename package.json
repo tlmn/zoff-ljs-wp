@@ -41,6 +41,7 @@
     "*.{js,jsx,css,md}": "prettier --write"
   },
   "dependencies": {
+    "gulp-header": "^2.0.9",
     "tailwindcss-hyphens": "^0.1.0"
   }
 }

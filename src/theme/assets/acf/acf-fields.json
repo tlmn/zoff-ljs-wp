@@ -1,10 +1,10 @@
 [
     {
-        "key": "group_60a62fa5bfdb8",
+        "key": "group_60a90bb4afd48",
         "title": "Termine: Meta-Daten",
         "fields": [
             {
-                "key": "field_60a62fc7b1173",
+                "key": "field_60a90bb4b7b16",
                 "label": "Zeit",
                 "name": "time",
                 "type": "group",
@@ -19,7 +19,7 @@
                 "layout": "table",
                 "sub_fields": [
                     {
-                        "key": "field_60a62ffe15539",
+                        "key": "field_60a90bb4ba13f",
                         "label": "Ist Zeitraum?",
                         "name": "isPeriodOfTime",
                         "type": "true_false",
@@ -38,7 +38,7 @@
                         "ui_off_text": ""
                     },
                     {
-                        "key": "field_60a6301b1553a",
+                        "key": "field_60a90bb4ba1f1",
                         "label": "Startzeit",
                         "name": "startTime",
                         "type": "date_time_picker",
@@ -55,7 +55,7 @@
                         "first_day": 1
                     },
                     {
-                        "key": "field_60a630e41553b",
+                        "key": "field_60a90bb4ba2a5",
                         "label": "Endzeit",
                         "name": "endTime",
                         "type": "date_time_picker",
@@ -74,7 +74,7 @@
                 ]
             },
             {
-                "key": "field_60a6316f15544",
+                "key": "field_60a90bb4b7bf1",
                 "label": "ist nur online?",
                 "name": "isOnlineOnly",
                 "type": "true_false",
@@ -93,7 +93,7 @@
                 "ui_off_text": ""
             },
             {
-                "key": "field_60a6311f1553d",
+                "key": "field_60a90bb4b7c8d",
                 "label": "Ort",
                 "name": "location",
                 "type": "group",
@@ -102,7 +102,7 @@
                 "conditional_logic": [
                     [
                         {
-                            "field": "field_60a6316f15544",
+                            "field": "field_60a90bb4b7bf1",
                             "operator": "!=",
                             "value": "1"
                         }
@@ -116,7 +116,7 @@
                 "layout": "table",
                 "sub_fields": [
                     {
-                        "key": "field_60a6312a1553e",
+                        "key": "field_60a90bb4c685d",
                         "label": "Name",
                         "name": "name",
                         "type": "text",
@@ -135,7 +135,7 @@
                         "maxlength": ""
                     },
                     {
-                        "key": "field_60a631311553f",
+                        "key": "field_60a90bb4c690c",
                         "label": "Adresse",
                         "name": "address",
                         "type": "group",
@@ -150,7 +150,7 @@
                         "layout": "block",
                         "sub_fields": [
                             {
-                                "key": "field_60a6313d15540",
+                                "key": "field_60a90bb4ca9b1",
                                 "label": "Straße",
                                 "name": "street",
                                 "type": "text",
@@ -169,7 +169,7 @@
                                 "maxlength": ""
                             },
                             {
-                                "key": "field_60a6314b15541",
+                                "key": "field_60a90bb4caa4c",
                                 "label": "Postleitzahl",
                                 "name": "zipCode",
                                 "type": "text",
@@ -188,7 +188,7 @@
                                 "maxlength": ""
                             },
                             {
-                                "key": "field_60a6315615542",
+                                "key": "field_60a90bb4cab1c",
                                 "label": "Stadt",
                                 "name": "city",
                                 "type": "text",
@@ -207,7 +207,7 @@
                                 "maxlength": ""
                             },
                             {
-                                "key": "field_60a6316015543",
+                                "key": "field_60a90bb4cabbb",
                                 "label": "Land",
                                 "name": "country",
                                 "type": "text",
@@ -230,7 +230,7 @@
                 ]
             },
             {
-                "key": "field_60a631f155a72",
+                "key": "field_60a90bb4b7d25",
                 "label": "externer Link",
                 "name": "externalLink",
                 "type": "link",
@@ -245,7 +245,7 @@
                 "return_format": "array"
             },
             {
-                "key": "field_60a632038a302",
+                "key": "field_60a90bb4b7dc8",
                 "label": "Anmeldung",
                 "name": "registration",
                 "type": "group",
@@ -260,7 +260,7 @@
                 "layout": "table",
                 "sub_fields": [
                     {
-                        "key": "field_60a6322f60410",
+                        "key": "field_60a90bb4d93b2",
                         "label": "Ist verpflichtend?",
                         "name": "isCompulsory",
                         "type": "true_false",
@@ -279,7 +279,7 @@
                         "ui_off_text": ""
                     },
                     {
-                        "key": "field_60a632176040f",
+                        "key": "field_60a90bb4d944e",
                         "label": "Ist offen?",
                         "name": "isOpen",
                         "type": "true_false",
@@ -298,7 +298,7 @@
                         "ui_off_text": ""
                     },
                     {
-                        "key": "field_60a6325c60411",
+                        "key": "field_60a90bb4d94e9",
                         "label": "Anmeldelink",
                         "name": "registrationLink",
                         "type": "link",
@@ -315,7 +315,7 @@
                 ]
             },
             {
-                "key": "field_60a6327260412",
+                "key": "field_60a90bb4b7e62",
                 "label": "Freitext",
                 "name": "freeText",
                 "type": "textarea",
@@ -339,13 +339,13 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "termine"
+                    "value": "event"
                 }
             ]
         ],
         "menu_order": 0,
-        "position": "normal",
-        "style": "default",
+        "position": "acf_after_title",
+        "style": "seamless",
         "label_placement": "top",
         "instruction_placement": "label",
         "hide_on_screen": "",

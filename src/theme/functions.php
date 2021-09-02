@@ -1,15 +1,15 @@
 <?php
 error_reporting(0);
 
-include("functions/func-acf.php");
-include("functions/func-blocks.php");
-include("functions/func-custom-post-types.php");
-include("functions/func-comments.php");
-include("functions/func-admin.php");
-include("functions/func-menus.php");
-include("functions/func-scripts.php");
-include("functions/func-styles.php");
-include("functions/func-taxonomies.php");
+include "functions/func-acf.php";
+include "functions/func-blocks.php";
+include "functions/func-custom-post-types.php";
+include "functions/func-comments.php";
+include "functions/func-admin.php";
+include "functions/func-menus.php";
+include "functions/func-scripts.php";
+include "functions/func-styles.php";
+include "functions/func-taxonomies.php";
 
 // ADD CUSTOM TAXONOMIES
 add_action("init", "custom_taxonomy_buko", 0);
@@ -45,3 +45,5 @@ add_action("init", "acf_register_json_fields");
 
 // DISALLOW UNEEDED BLOCKS
 add_filter("allowed_block_types_all", "page_allowed_block_types_all", 10, 2);
+
+add_filter("acf/settings/load_json", "acf_json_load_point");

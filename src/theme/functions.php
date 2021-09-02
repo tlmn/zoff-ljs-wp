@@ -44,4 +44,4 @@ add_action("admin_menu", "remove_posts_admin_menus");
 add_action("init", "acf_register_json_fields");
 
 // DISALLOW UNEEDED BLOCKS
-add_filter('allowed_block_types_all', 'page_allowed_block_types_all', 10, 2);
+add_filter("allowed_block_types_all", "page_allowed_block_types_all", 10, 2);

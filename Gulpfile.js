@@ -17,6 +17,7 @@ const favicons = require("gulp-favicons");
 const postcss = require("gulp-postcss");
 const cleancss = require("gulp-clean-css");
 const run = require("gulp-run-command").default;
+const header = require("gulp-header");
 
 const destDir = (type, append = "") =>
   destDirs[type][process.env.NODE_ENV] + append;
@@ -86,6 +87,18 @@ gulp.task("theme:postcss:compile", function () {
       ])
     )
     .pipe(cleancss())
+    .pipe(
+      header(`/* Theme Name: LJS Theme
+    Author: Zoff Kollektiv
+    Author URI: https://www.zoff-kollektiv.net/
+    Description: WP Theme for Linksjugend ['solid]
+    Version: 1.1
+    Requires at least: 5.0
+    Tested up to: 5.4
+    Requires PHP: 7.0
+    Text Domain: LJS Theme
+    */`)
+    )
     .pipe(gulp.dest(destDir("theme")));
 });
 

@@ -3,7 +3,7 @@
 function page_allowed_block_types_all($allowed_blocks, $post)
 {
     global $BLOCKS;
-    global $typenow;
+    global $post_type;
 
     $allowed_blocks = [
         "core/button",
@@ -29,8 +29,8 @@ function page_allowed_block_types_all($allowed_blocks, $post)
         "ljs/tiles-container",
         "ljs/tiles-single",
     ];
-    
-    if ($typenow == "beschluss") {
+
+    if ($post_type == "beschluss") {
         array_push($allowed_blocks, "core/freeform");
     }
 

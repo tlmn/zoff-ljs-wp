@@ -1,7 +1,7 @@
 li[class^="icon-"] > a {
   font-family: "LJS Social Media";
   color: theme("colors.white");
-  @apply text-lg;
+  @apply text-xl;
   content: "";
   &:hover {
     color: theme("colors.green");

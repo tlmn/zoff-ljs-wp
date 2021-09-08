@@ -32,6 +32,8 @@ const setMargins = () => {
 
 $(() => setMargins());
 
+$(() => $("[class^='icon-'] > a").each((index, value) => $(value).html("")));
+
 $(window).resize(() => setMargins());
 
 $(() =>

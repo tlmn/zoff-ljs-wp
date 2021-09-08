@@ -1,0 +1,25 @@
+li[class^="icon-"] > a {
+  font-family: "LJS Social Media";
+  color: theme("colors.white");
+  @apply text-lg;
+  content: "";
+  &:hover {
+    color: theme("colors.green");
+  }
+}
+
+.icon-facebook > a::before {
+  content: "\e800";
+}
+
+.icon-twitter > a::before {
+  content: "\e802";
+}
+
+.icon-instagram > a::before {
+  content: "\e803";
+}
+
+.icon-telegram > a::before {
+  content: "\e801";
+}

@@ -39,6 +39,7 @@
 .wp-block-freeform ol {
   list-style-type: decimal;
   @apply ml-8;
+  @apply my-2;
 }
 
 @screen md {

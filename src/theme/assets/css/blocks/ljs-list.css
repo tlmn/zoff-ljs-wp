@@ -11,20 +11,34 @@
   @apply text-black;
 }
 
-.wp-block-ljs-list ul:first-child {
+#single-beschluss ul:first-child,
+.wp-block-ljs-list ul:first-child,
+.wp-block-freeform ul:first-child {
   @apply mt-3;
 }
 
-.wp-block-ljs-list ul li {
+.wp-block-ljs-list ul li,
+#single-beschluss ul li,
+.wp-block-freeform ul li,
+#single-beschluss ol li,
+.wp-block-freeform ol li {
   @apply mb-3;
   @apply pl-3;
   @apply leading-wider;
   @apply text-black;
 }
 
-.wp-block-ljs-list ul li::before {
+.wp-block-ljs-list ul li::before,
+#single-beschluss ul li::before,
+.wp-block-freeform ul li::before {
   content: "⬤";
   @apply mr-5;
+}
+
+#single-beschluss ol,
+.wp-block-freeform ol {
+  list-style-type: decimal;
+  @apply ml-8;
 }
 
 @screen md {
@@ -36,7 +50,11 @@
     @apply text-3xl;
   }
 
-  .wp-block-ljs-list ul li {
+  .wp-block-ljs-list ul li,
+  #single-beschluss ul li,
+  .wp-block-freeform ul li,
+  #single-beschluss ol li,
+  .wp-block-freeform ol li {
     @apply mb-3;
     @apply text-lg leading-wider;
   }

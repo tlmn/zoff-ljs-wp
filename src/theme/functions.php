@@ -19,6 +19,7 @@ add_action("init", "custom_taxonomy_terminart", 0);
 // ADD CUSTOM POST TYPES
 add_action("init", "custom_post_type_beschluss");
 add_action("init", "custom_post_type_termin");
+add_action("init", "custom_post_type_meldungen");
 
 // REGISTER MENUS
 add_action("after_setup_theme", "wp_register_menus", 0);

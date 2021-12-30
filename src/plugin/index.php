@@ -131,7 +131,7 @@ function ljs_render_latest_event($attributes)
                 <a href="' . get_permalink($post_id) . '" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">mehr Infos</a>
             </div>
             <div class="col-span-full flex justify-center">
-                <a href="/aktuelles" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
+                <a href="/termine" class="wp-block-ljs-button bg-' . $colorThemes[$colorTheme][0] . ' text-' . $colorThemes[$colorTheme][1] . '">
                     Alle Termine >
                 </a>
             </div>
